@@ -1,0 +1,14 @@
+body {
+	background-color: white;
+	border: 0.5px black solid;
+    display: inline-block;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+	width: 260px;
+	height: 220px;
+	margin: 280px;
+	padding-block: 15px;
+	position:relative;
+	left: 18em;
+}

@@ -1,0 +1,24 @@
+nav {
+    border-bottom: 1px solid black;
+}
+
+ul {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.connexion{
+	position: relative;
+	left: 0em;
+}
+.block{
+position:relative;
+left:16%;
+height:250px;
+width:459px;
+}
+.hypertext{
+	margin: 250px;
+	position: relative;
+	left:50%;
+}
