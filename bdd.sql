@@ -21,7 +21,10 @@ SET time_zone = "+00:00";
 --
 
 -- --------------------------------------------------------
-
+--DROP TABLE utilisateur;
+--DROP TABLE administrateur;
+--DROP TABLE Photo;
+--DROP TABLE Categorie;
 --
 -- Structure de la table `Categorie`
 --
@@ -54,8 +57,13 @@ CREATE TABLE IF NOT EXISTS Photo (
 CREATE TABLE IF NOT EXISTS utilisateur (
   `utilId` varchar(255) NOT NULL,
   `utilMdp` varchar(255) NOT NULL,
-  PRIMARY KEY (`identifiant`)
+  PRIMARY KEY (`utilId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+--
+-- Structure de la table `administrateur`
+--
 
 CREATE TABLE IF NOT EXISTS administrateur (
   `adminId` varchar(255) NOT NULL,
@@ -63,6 +71,7 @@ CREATE TABLE IF NOT EXISTS administrateur (
   PRIMARY KEY (`adminId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
