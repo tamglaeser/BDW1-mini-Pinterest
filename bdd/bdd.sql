@@ -21,10 +21,10 @@ SET time_zone = "+00:00";
 --
 
 -- --------------------------------------------------------
---DROP TABLE utilisateur;
---DROP TABLE administrateur;
---DROP TABLE Photo;
---DROP TABLE Categorie;
+DROP TABLE utilisateur;
+DROP TABLE administrateur;
+DROP TABLE Photo;
+DROP TABLE Categorie;
 --
 -- Structure de la table `Categorie`
 --
@@ -70,6 +70,32 @@ CREATE TABLE IF NOT EXISTS administrateur (
   `adminMdp` varchar(255) NOT NULL,
   PRIMARY KEY (`adminId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+--
+-- Inserer les categories dans la table Categorie
+--
+
+INSERT INTO Categorie(catId, nomCat)
+VALUES (1, 'Animaux'),
+       (2, 'Sport'),
+       (3, 'Internet'),
+       (4, 'Gens');
+
+-- --------------------------------------------------------
+--
+-- Inserer les images dans la table Photo
+--
+
+INSERT INTO Photo(photoId, nomFich, description, catId)
+VALUES (1, 'giraffe.png', 'Un dessin d''une girafe', 1),
+       (2, 'klose.jpg', 'Joueur allemand de foot Klose faisant un flip', 2),
+       (3, 'loading.gif', 'Signe de chargement d''internet', 3),
+       (4, 'petiteMaman.jpg', 'La maman de Tullia quand elle etait tres petite', 4),
+       (5, 'pikachu.gif', 'Un GIF de Pikachu (de Pokemon)', 1),
+       (6, 'shireMordor.jpg', 'L''affichage de Google Maps du Shire a Mordor (dans le Seigneur des Anneux)', 3),
+       (7, 'snowboard.png', 'un mec sur son snowboard dans l''air', 2),
+       (8, 'troisAmis.jpg', 'Une photo vieille des trois amis', 4);
 
 -- --------------------------------------------------------
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
