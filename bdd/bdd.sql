@@ -21,10 +21,10 @@ SET time_zone = "+00:00";
 --
 
 -- --------------------------------------------------------
-DROP TABLE utilisateur;
-DROP TABLE administrateur;
-DROP TABLE Photo;
-DROP TABLE Categorie;
+DROP TABLE IF EXISTS utilisateur;
+DROP TABLE IF EXISTS administrateur;
+DROP TABLE IF EXISTS Photo;
+DROP TABLE IF EXISTS Categorie;
 --
 -- Structure de la table `Categorie`
 --
@@ -42,10 +42,11 @@ CREATE TABLE IF NOT EXISTS Categorie (
 --
 
 CREATE TABLE IF NOT EXISTS Photo (
-  photoId int NOT NULL,
+  photoId int NOT NULL AUTO_INCREMENT,
   nomFich varchar(255) NOT NULL,
   description varchar(255) NOT NULL,
   catId int NOT NULL,
+  PRIMARY KEY (photoId),
   FOREIGN KEY (catId) REFERENCES Categorie(catId)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_general_ci;
 
@@ -96,6 +97,13 @@ VALUES (1, 'giraffe.png', 'Un dessin d''une girafe', 1),
        (6, 'shireMordor.jpg', 'L''affichage de Google Maps du Shire a Mordor (dans le Seigneur des Anneux)', 3),
        (7, 'snowboard.png', 'un mec sur son snowboard dans l''air', 2),
        (8, 'troisAmis.jpg', 'Une photo vieille des trois amis', 4);
+
+-- --------------------------------------------------------
+--
+-- Exporter les tables
+--
+
+
 
 -- --------------------------------------------------------
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
