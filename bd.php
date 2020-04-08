@@ -26,7 +26,7 @@ function executeQuery($link, $query)
 	//print($query);  R: utilisez ce print pour débogage 
 	$resultat = mysqli_query($link, $query) ;
 	if($resultat == FALSE){ // échec si FALSE
-		printf("Échec de la requête". mysqli_error()) ;
+		printf("Échec de la requête". mysqli_error($link)) ;
 	}
 	else {
 		//$row = mysqli_fetch_assoc($resultat); pour une ligne
