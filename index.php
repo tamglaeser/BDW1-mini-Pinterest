@@ -7,6 +7,10 @@
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
+<?php
+include 'bd.php';
+$conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
+?>
 <div style="background-image:url(img/accueil_bis.jpg);" ><B><h1>PhotoCat</h1></B><br> </div>
 	<nav class="crumbs">
 	<form name="accueil" action="index.php" method="POST">
@@ -43,12 +47,7 @@
 </html>
 
 <?php
-include 'bd.php';
-$conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 
-echo "connected successfully";
-
-closeConnexion($conn);
 session_start();
 
 if (isset($_POST['accueil'])) {
@@ -64,7 +63,7 @@ if (isset($_POST['connexion_util'])) {
     exit();
 }
 
-
+echo "enter";
 $dir = "assets/images/";
 $images = glob($dir. '*.{png,jpg,gif}', GLOB_BRACE);
 foreach($images as $image):
@@ -72,5 +71,5 @@ foreach($images as $image):
 
 endforeach;
 
-
+closeConnexion($conn);
 ?>
