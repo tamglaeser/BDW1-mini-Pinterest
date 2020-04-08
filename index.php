@@ -84,13 +84,13 @@ if (isset($_POST['connexion_util'])) {
 
 function category(string $cat, $link) {
     $catId = executeQuery($link,"SELECT catId FROM Categorie WHERE nomCat = $cat");
-    $nomImages = executeQuery($link, "SELECT nomFich FROM Photo WHERE catId = $catId");
+    /*$nomImages = executeQuery($link, "SELECT nomFich FROM Photo WHERE catId = $catId");
 
     foreach($nomImages as $image):
         $im = glob($GLOBALS['dir'] . $image, GLOB_BRACE);
         echo "<img src='" . $im . "' />";
     endforeach;
-
+*/
 }
 if ($catId = 5) {
     $images = glob($dir. '*.{png,jpg,gif}', GLOB_BRACE);
