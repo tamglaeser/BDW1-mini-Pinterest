@@ -8,8 +8,12 @@
 </head>
 <body>
 <?php
-include 'bd.php';
+require_once('bd.php');
 $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
+
+$dir = "assets/images/";
+$catId=5;
+
 ?>
 <div style="background-image:url(img/accueil_bis.jpg);" ><B><h1>PhotoCat</h1></B><br> </div>
 	<nav class="crumbs">
@@ -42,6 +46,9 @@ $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
         <a href="#gens">Gens</a>
     </div>
 </div>
+<!--<a id="animaux">
+
+</a>-->
 
 </body>
 </html>
@@ -63,13 +70,22 @@ if (isset($_POST['connexion_util'])) {
     exit();
 }
 
-echo "enter";
-$dir = "assets/images/";
-$images = glob($dir. '*.{png,jpg,gif}', GLOB_BRACE);
-foreach($images as $image):
-    echo "<img src='" . $image . "' />";
+function category(string $cat, $link) {
+    $catId = executeQuery($link,"SELECT catId FROM Categorie WHERE nomCat = $cat");
+    $nomImages = executeQuery($link, "SELECT nomFich FROM Photo WHERE catId = $catId");
 
-endforeach;
+    foreach($nomImages as $image):
+        $im = glob($GLOBALS['dir'] . $image, GLOB_BRACE);
+        echo "<img src='" . $im . "' />";
+    endforeach;
 
+}
+if ($catId = 5) {
+    $images = glob($dir. '*.{png,jpg,gif}', GLOB_BRACE);
+    foreach ($images as $image):
+        echo "<img src='" . $image . "' />";
+
+    endforeach;
+}
 closeConnexion($conn);
 ?>
