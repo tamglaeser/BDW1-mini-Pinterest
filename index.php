@@ -84,8 +84,9 @@ if (isset($_POST['connexion_util'])) {
 
 function category(string $cat, $link) {
     $catId = executeQuery($link,"SELECT catId FROM Categorie WHERE nomCat = '$cat'");
-    $nomImages = executeQuery($link, "SELECT nomFich FROM Photo WHERE catId = '$catId'");
-
+    $result = executeQuery($link, "SELECT nomFich FROM Photo WHERE catId = '$catId'");
+    $nomImages = mysqli_fetch_array($result); //row
+    
     foreach($nomImages as $image):
         $im = glob($GLOBALS['dir'] . $image, GLOB_BRACE);
         echo "<img src='" . $im . "' />";
