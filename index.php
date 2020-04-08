@@ -46,9 +46,21 @@ $catId=5;
         <a href="#gens">Gens</a>
     </div>
 </div>
-<!--<a id="animaux">
+<a id="animaux">
+    <?php category("Animaux", $conn); ?>
+</a>
 
-</a>-->
+<a id="sport">
+    <?php category("Sport", $conn); ?>
+</a>
+
+<a id="internet">
+    <?php category("Internet", $conn); ?>
+</a>
+
+<a id="gens">
+    <?php category("Gens", $conn); ?>
+</a>
 
 </body>
 </html>
