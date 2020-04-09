@@ -1,3 +1,13 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>PhotouCat</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
 <?php
 
 if (isset($_POST['show_dowpdown_value'])) {
@@ -9,6 +19,8 @@ if (isset($_POST['show_dowpdown_value'])) {
     }
     else {
 
+        ?>
+        <h1>Toutes les photos</h1><?php
         $images = glob($dir. '*.{png,jpg,gif}', GLOB_BRACE);
         foreach ($images as $image):
             echo "<img src='" . $image . "' />";
