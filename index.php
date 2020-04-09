@@ -49,23 +49,23 @@ $catId=5;
 
 <a id="animaux">
 
-    <?php echo "ANIMAUX? ";?>
-    onclick=<?php category("Animaux", $conn); ?>
+    </?php echo "ANIMAUX? ";?>
+    onclick=</?php category("Animaux", $conn); ?>
 </a>
 
 <a id="sport">
-    <?php echo "SPORT?? ";?>
-    onclick=<?php category("Sport", $conn); ?>
+    </?php echo "SPORT?? ";?>
+    onclick=</?php category("Sport", $conn); ?>
 </a>
 
 <a id="internet">
-    <?php echo "INTERNET??? ";?>
-    onclick=<?php category("Internet", $conn); ?>
+    </?php echo "INTERNET??? ";?>
+    onclick=</?php category("Internet", $conn); ?>
 </a>
 
 <a id="gens">
-    <?php echo "GENS????? ";?>
-    onclick=<?php category("Gens", $conn); ?>
+    </?php echo "GENS????? ";?>
+    onclick=</?php category("Gens", $conn); ?>
 </a>
 -->
 
