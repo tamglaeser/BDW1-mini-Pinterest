@@ -80,8 +80,9 @@ $catId=5;
         </select>
     </div>
 </form>
-
-document.getElementById("Categories").selectedIndex;
+<script>
+    document.getElementById("Categories").selectedIndex;
+</script>
 <?php/*
 
 if ($_POST['Categories'] == "Animaux") {
