@@ -81,9 +81,13 @@ $catId=5;
     </div>
 </form>
 <script>
-    document.getElementById("Categories").selectedIndex;
+    var a = "success";
+    //var index = document.getElementById("Categories").selectedIndex;
 </script>
-<?php/*
+<?php
+echo "<script>document.writeln(a);</script>";
+?>
+<!--
 
 if ($_POST['Categories'] == "Animaux") {
     echo "ANIMAUXXXX ";
@@ -105,7 +109,7 @@ else if ($_POST['Categories'] == "Gens") {
 ?>
 
 </body>
-</html>
+</html>-->
 
 <?php
 
