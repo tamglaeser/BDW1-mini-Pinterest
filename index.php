@@ -80,7 +80,9 @@ $catId=5;
         </select>
     </div>
 </form>
-<?php
+
+document.getElementById("Categories").selectedIndex;
+<?php/*
 
 if ($_POST['Categories'] == "Animaux") {
     echo "ANIMAUXXXX ";
@@ -98,7 +100,7 @@ else if ($_POST['Categories'] == "Gens") {
     echo "GENNSSSSS ";
     category("Gens", $conn);
 }
-
+*/
 ?>
 
 </body>
