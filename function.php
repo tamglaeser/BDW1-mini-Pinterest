@@ -18,9 +18,9 @@ function category(int $cat, $link) {
     //$sql = "SELECT nomFich FROM Photo WHERE catId = $cat";
     //$resultat = $link->query($sql);
     while($row = $resultat->fetch_assoc()) {
-        echo "nomFich: " . $row["nomFich"] . " ";
-        //$im = glob($GLOBALS['dir'] . $nomFich, GLOB_BRACE);
-        //echo "<img src='" . $im . "' />";
+        //echo "nomFich: " . $row["nomFich"] . " ";
+        $im = glob($GLOBALS['dir'] . $row["nomFich"], GLOB_BRACE);
+        echo "<img src='" . $im . "' />";
     }
 }
 
