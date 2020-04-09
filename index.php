@@ -81,11 +81,11 @@ $catId=5;
     </div>
 </form>
 <script>
-    var a = "success";
-    //var index = document.getElementById("Categories").selectedIndex;
+    var index = document.getElementById("Categories").selectedIndex;
 </script>
 <?php
-echo "<script>document.writeln(a);</script>";
+echo "<script>document.writeln(index);</script>";
+
 ?>
 <!--
 
