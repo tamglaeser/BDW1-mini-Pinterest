@@ -13,7 +13,6 @@ $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 $dir = "assets/images/";
 
 function category(int $cat, $link) {
-    echo "la category: ".$cat;
     $resultat = executeQuery($link, "SELECT nomFich FROM Photo WHERE catId = $cat");
     //$sql = "SELECT nomFich FROM Photo WHERE catId = $cat";
     //$resultat = $link->query($sql);

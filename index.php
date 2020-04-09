@@ -14,6 +14,29 @@ $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 $dir = "assets/images/";
 $catId=5;
 
+
+session_start();
+
+if (isset($_POST['accueil'])) {
+    header('Location: https://bdw1.univ-lyon1.fr/p1501149/Projet/src/index.php');
+    exit();
+}
+if (isset($_POST['connexion_ad'])) {
+    header('Location: https://bdw1.univ-lyon1.fr/p1501149/Projet/src/connexion_admin.php');
+    exit();
+}
+if (isset($_POST['connexion_util'])) {
+    header('Location: https://bdw1.univ-lyon1.fr/p1501149/Projet/src/connexion_utilisateur.php');
+    exit();
+}
+
+$images = glob($dir. '*.{png,jpg,gif}', GLOB_BRACE);
+foreach ($images as $image):
+    echo "<img src='" . $image . "' />";
+
+endforeach;
+
+
 ?>
 <div style="background-image:url(img/accueil_bis.jpg);" ><B><h1>PhotoCat</h1></B><br> </div>
 	<nav class="crumbs">
@@ -31,44 +54,6 @@ $catId=5;
 		</div>
 	</nav>
     <h1>Toutes les photos</h1>
-    <!--$dirname = "assets/images/";
-    $images = glob("{$dirname}*.png, {$dirname}*.jpg, {$dirname}*.gif");
-    foreach($images as $image) {
-        <img src=echo $image alt ="hello">
-    }
-
-<div class="dropdown">
-    <button class="dropbtn">Categories</button>
-    <div class="dropdown-content">
-        <a href="#animaux">Animaux</a>
-        <a href="#sport">Sport</a>
-        <a href="#internet">Internet</a>
-        <a href="#gens">Gens</a>
-    </div>
-</div>
-
-<a id="animaux">
-
-    </?php echo "ANIMAUX? ";?>
-    onclick=</?php category("Animaux", $conn); ?>
-</a>
-
-<a id="sport">
-    </?php echo "SPORT?? ";?>
-    onclick=</?php category("Sport", $conn); ?>
-</a>
-
-<a id="internet">
-    </?php echo "INTERNET??? ";?>
-    onclick=</?php category("Internet", $conn); ?>
-</a>
-
-<a id="gens">
-    </?php echo "GENS????? ";?>
-    onclick=</?php category("Gens", $conn); ?>
-</a>
--->
-
 
 <form action="function.php" method="post">
     <!-- here start the dropdown list -->
@@ -81,66 +66,8 @@ $catId=5;
     <input type="submit" name="show_dowpdown_value" value="Valider"/>
 </form>
 <?php include("function.php"); ?>
-<!--
-
-if ($_POST['Categories'] == "Animaux") {
-    echo "ANIMAUXXXX ";
-    category("Animaux", $conn);
-}
-else if ($_POST['Categories'] == "Sport") {
-    echo "SPORTTTT ";
-    category("Sport", $conn);
-}
-else if ($_POST['Categories'] == "Internet") {
-    echo "INTERNETTT ";
-    category("Internet", $conn);
-}
-else if ($_POST['Categories'] == "Gens") {
-    echo "GENNSSSSS ";
-    category("Gens", $conn);
-}
-*/
-?>
-
 </body>
-</html>-->
-
+</html>
 <?php
-
-session_start();
-
-if (isset($_POST['accueil'])) {
-    header('Location: https://bdw1.univ-lyon1.fr/p1501149/Projet/src/index.php');
-    exit();
-}
-if (isset($_POST['connexion_ad'])) {
-    header('Location: https://bdw1.univ-lyon1.fr/p1501149/Projet/src/connexion_admin.php');
-    exit();
-}
-if (isset($_POST['connexion_util'])) {
-    header('Location: https://bdw1.univ-lyon1.fr/p1501149/Projet/src/connexion_utilisateur.php');
-    exit();
-}
-/*
-function category(string $cat, $link) {
-    echo "la category:::: ".$cat;
-    $catId = executeQuery($link,"SELECT catId FROM Categorie WHERE nomCat ='". $cat. "'");
-    echo $catId->fetch_assoc()['catId'];
-    /*
-    $sql = "SELECT nomFich FROM Photo WHERE catId = $catId";
-    $resultat = $link->query($sql);
-    while($row = $resultat->fetch_assoc()) {
-        echo "nomFich: " . $row["nomFich"] . " ";
-        //$im = glob($GLOBALS['dir'] . $nomFich, GLOB_BRACE);
-        //echo "<img src='" . $im . "' />";
-    }
-}*/
-if ($catId = 5) {
-    $images = glob($dir. '*.{png,jpg,gif}', GLOB_BRACE);
-    foreach ($images as $image):
-        echo "<img src='" . $image . "' />";
-
-    endforeach;
-}
 closeConnexion($conn);
 ?>
