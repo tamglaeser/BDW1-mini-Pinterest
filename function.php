@@ -2,7 +2,8 @@
 
 if (isset($_POST['show_dowpdown_value'])) {
 
-    echo $_POST['dowpdown']; // this will print the value if downbox out
+    $catId = $_POST['dowpdown']; // this will print the value if downbox out
+    echo $catId;
 }
 
 /*
