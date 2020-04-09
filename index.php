@@ -34,6 +34,7 @@ $catId=5;
 <form action="function.php" method="post">
     <!-- here start the dropdown list -->
     <select name="dowpdown">
+        <option value="0">Toutes les photos</option>
         <option value="1">Animaux</option>
         <option value="2">Sport</option>
         <option value="3">Internet</option>
@@ -61,13 +62,13 @@ if (isset($_POST['connexion_ad'])) {
 if (isset($_POST['connexion_util'])) {
     header('Location: https://bdw1.univ-lyon1.fr/p1501149/Projet/src/connexion_utilisateur.php');
     exit();
-}
+}/*
 if ($catId = 5) {
     $images = glob($dir. '*.{png,jpg,gif}', GLOB_BRACE);
     foreach ($images as $image):
         echo "<img src='" . $image . "' />";
 
     endforeach;
-}
+}*/
 closeConnexion($conn);
 ?>
