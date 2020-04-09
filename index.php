@@ -73,10 +73,12 @@ $catId=5;
 <form action="function.php" method="post">
     <!-- here start the dropdown list -->
     <select name="dowpdown">
-        <option value="1">Yes</option>
-        <option value="2">No</option>
+        <option value="1">Animaux</option>
+        <option value="2">Sport</option>
+        <opion value="3">Internet</opion>
+        <option value="4">Gens</option>
     </select>
-    <input type="submit" name="show_dowpdown_value" value="show"/>
+    <input type="submit" name="show_dowpdown_value" value="Valider"/>
 </form>
 <?php include("function.php"); ?>
 <!--
