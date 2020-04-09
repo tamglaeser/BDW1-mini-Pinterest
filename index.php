@@ -84,7 +84,7 @@ if (isset($_POST['connexion_util'])) {
 
 function category(string $cat, $link) {
     $catId = executeQuery($link,"SELECT catId FROM Categorie WHERE nomCat = '$cat'");
-    echo $catId;
+    echo (string)$catId;
     /*
     $sql = "SELECT nomFich FROM Photo WHERE catId = $catId";
     $resultat = $link->query($sql);
