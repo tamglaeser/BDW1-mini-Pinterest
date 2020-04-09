@@ -44,7 +44,7 @@ $catId=5;
     </select>
     <input type="submit" name="show_dowpdown_value" value="Valider"/>
 	</div>
-	</div>
+	</div><br><br><br>
 </form>
 <?php include("function.php"); ?>
 
