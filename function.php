@@ -19,8 +19,11 @@ function category(int $cat, $link) {
     //$resultat = $link->query($sql);
     while($row = $resultat->fetch_assoc()) {
         //echo "nomFich: " . $row["nomFich"] . " ";
-        $im = glob($GLOBALS['dir'] . $row["nomFich"], GLOB_BRACE);
-        echo "<img src='" . $im . "' />";
+        $images = glob($GLOBALS['dir'] . $row["nomFich"], GLOB_BRACE);
+        foreach ($images as $image):
+            echo "<img src='" . $image . "' />";
+
+        endforeach;
     }
 }
 
