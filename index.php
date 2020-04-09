@@ -75,7 +75,7 @@ $catId=5;
     <select name="dowpdown">
         <option value="1">Animaux</option>
         <option value="2">Sport</option>
-        <opion value="3">Internet</opion>
+        <option value="3">Internet</option>
         <option value="4">Gens</option>
     </select>
     <input type="submit" name="show_dowpdown_value" value="Valider"/>
