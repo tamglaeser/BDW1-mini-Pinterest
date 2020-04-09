@@ -72,7 +72,7 @@ $catId=5;
 
 <form>
     <div class="dropdown">
-        <select id="Categories">
+        <select id="Categories" name="Categories">
             <option value="Animaux">Animaux</option>
             <option value="Sport">Sport</option>
             <option value="Internet">Internet</option>
