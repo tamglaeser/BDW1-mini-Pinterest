@@ -71,19 +71,14 @@ $catId=5;
 
 
 <form action="function.php" method="post">
-    <div class="dropdown">
-        <select id="Categories" name="Categories">
-            <option value="Animaux">Animaux</option>
-            <option value="Sport">Sport</option>
-            <option value="Internet">Internet</option>
-            <option value="Gens">Gens</option>
-        </select>
-        <input type="submit" name="show_dowpdown_value" value="show"/>
-    </div>
+    <!-- here start the dropdown list -->
+    <select name="dowpdown">
+        <option value="1">Yes</option>
+        <option value="2">No</option>
+    </select>
+    <input type="submit" name="show_dowpdown_value" value="show"/>
 </form>
-<?php
-include ("function.php");
-?>
+<?php include("function.php"); ?>
 <!--
 
 if ($_POST['Categories'] == "Animaux") {
