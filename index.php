@@ -47,19 +47,24 @@ $catId=5;
     </div>
 </div>
 <a id="animaux">
-    <?php category("Animaux", $conn); ?>
+
+    <?php echo "ANIMAUX? ";
+    category("Animaux", $conn); ?>
 </a>
 
 <a id="sport">
-    <?php category("Sport", $conn); ?>
+    <?php echo "SPORT?? ";
+    category("Sport", $conn); ?>
 </a>
 
 <a id="internet">
-    <?php category("Internet", $conn); ?>
+    <?php echo "INTERNET??? ";
+    category("Internet", $conn); ?>
 </a>
 
 <a id="gens">
-    <?php category("Gens", $conn); ?>
+    <?php echo "GENS????? ";
+    category("Gens", $conn); ?>
 </a>
 
 </body>
@@ -83,6 +88,7 @@ if (isset($_POST['connexion_util'])) {
 }
 
 function category(string $cat, $link) {
+    echo "la category:::: ".$cat;
     $catId = executeQuery($link,"SELECT catId FROM Categorie WHERE nomCat ='". $cat. "'");
     echo $catId->fetch_assoc()['catId'];
     /*
