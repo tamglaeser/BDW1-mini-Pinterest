@@ -4,18 +4,17 @@ if (isset($_POST['show_dowpdown_value'])) {
 
     $catId = $_POST['dowpdown']; // this will print the value if downbox out
     echo $catId;
+    category($catId, $conn);
 }
 
-/*
+
 require_once('bd.php');
 $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 
 $dir = "assets/images/";
 
-function category(string $cat, $link) {
+function category(int $cat, $link) {
     echo "la category: ".$cat;
-    $catId = executeQuery($link,"SELECT catId FROM Categorie WHERE nomCat ='". $cat. "'");
-    echo $catId->fetch_assoc()['catId'];
     /*
     $sql = "SELECT nomFich FROM Photo WHERE catId = $catId";
     $resultat = $link->query($sql);
@@ -23,9 +22,7 @@ function category(string $cat, $link) {
         echo "nomFich: " . $row["nomFich"] . " ";
         //$im = glob($GLOBALS['dir'] . $nomFich, GLOB_BRACE);
         //echo "<img src='" . $im . "' />";
-    }
+    }*/
 }
-
-category();*/
 
 ?>
