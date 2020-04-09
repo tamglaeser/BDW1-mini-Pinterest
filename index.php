@@ -29,10 +29,15 @@ $catId=5;
 		Connexion utilisateur
 		</button>
 		</div>
-	</nav>
+	</nav><br><br>
+	<br>
+	<br>
 <form action="function.php" method="post">
+<div style="position: relative; left: 4em;">
+	<h5> Selection de la catégorie d'image à afficher : </h5>
     <!-- here start the dropdown list -->
-    <select name="dowpdown">
+	<div style ="position: relative; left: 31em; margin: -164px; padding: 130px;">
+    <select name="dowpdown" >
         <option value="0">Toutes les photos</option>
         <option value="1">Animaux</option>
         <option value="2">Sport</option>
@@ -40,6 +45,8 @@ $catId=5;
         <option value="4">Gens</option>
     </select>
     <input type="submit" name="show_dowpdown_value" value="Valider"/>
+	</div>
+	</div>
 </form>
 <?php include("function.php"); ?>
 
