@@ -74,13 +74,32 @@ $catId=5;
     <div class="dropdown">
         <select id="Categories">
             <option value="Animaux">Animaux</option>
-            <option value="Sports">Sports</option>
+            <option value="Sport">Sport</option>
             <option value="Internet">Internet</option>
             <option value="Gens">Gens</option>
         </select>
     </div>
 </form>
-<?php $_POST['Categories']; ?>
+<?php
+$choix = $_POST['Categories'];
+if ($choix == "Animaux") {
+    echo "ANIMAUXXXX ";
+    category("Animaux", $conn);
+}
+else if ($choix == "Sport") {
+    echo "SPORTTTT ";
+    category("Sport", $conn);
+}
+else if ($choix == "Internet") {
+    echo "INTERNETTT ";
+    category("Internet", $conn);
+}
+else if ($choix == "Gens") {
+    echo "GENNSSSSS ";
+    category("Gens", $conn);
+}
+
+?>
 
 </body>
 </html>
