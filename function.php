@@ -3,7 +3,7 @@
 if (isset($_POST['show_dowpdown_value'])) {
 
     $catId = $_POST['dowpdown']; // this will print the value if downbox out
-    $dir = "assets/images/";
+    //$dir = "assets/images/";
     if ($catId != 0) {
         category($catId, $conn);
     }
@@ -34,5 +34,4 @@ function category(int $cat, $link) {
         endforeach;
     }
 }
-closeConnexion($conn);
 ?>

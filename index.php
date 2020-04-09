@@ -7,7 +7,14 @@
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
+<?php
+require_once('bd.php');
+$conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 
+$dir = "assets/images/";
+$catId=5;
+
+?>
 <div style="background-image:url(img/accueil_bis.jpg);" ><B><h1>PhotoCat</h1></B><br> </div>
 	<nav class="crumbs">
 	<form name="accueil" action="index.php" method="POST">
@@ -55,5 +62,5 @@ if (isset($_POST['connexion_util'])) {
     header('Location: https://bdw1.univ-lyon1.fr/p1501149/Projet/src/connexion_utilisateur.php');
     exit();
 }
-
+closeConnexion($conn);
 ?>
