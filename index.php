@@ -70,7 +70,7 @@ $catId=5;
 -->
 
 
-<form>
+<form action="function.php" method="post">
     <div class="dropdown">
         <select id="Categories" name="Categories">
             <option value="Animaux">Animaux</option>
@@ -78,14 +78,11 @@ $catId=5;
             <option value="Internet">Internet</option>
             <option value="Gens">Gens</option>
         </select>
+        <input type="submit" name="show_dowpdown_value" value="show"/>
     </div>
 </form>
-<script>
-    var index = document.getElementById("Categories").selectedIndex;
-</script>
 <?php
-echo "<script>document.writeln(index);</script>";
-
+include ("function.php");
 ?>
 <!--
 
@@ -127,7 +124,7 @@ if (isset($_POST['connexion_util'])) {
     header('Location: https://bdw1.univ-lyon1.fr/p1501149/Projet/src/connexion_utilisateur.php');
     exit();
 }
-
+/*
 function category(string $cat, $link) {
     echo "la category:::: ".$cat;
     $catId = executeQuery($link,"SELECT catId FROM Categorie WHERE nomCat ='". $cat. "'");
@@ -139,8 +136,8 @@ function category(string $cat, $link) {
         echo "nomFich: " . $row["nomFich"] . " ";
         //$im = glob($GLOBALS['dir'] . $nomFich, GLOB_BRACE);
         //echo "<img src='" . $im . "' />";
-    }*/
-}
+    }
+}*/
 if ($catId = 5) {
     $images = glob($dir. '*.{png,jpg,gif}', GLOB_BRACE);
     foreach ($images as $image):
