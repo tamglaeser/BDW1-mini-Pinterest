@@ -29,11 +29,9 @@ $catId=5;
 		Connexion utilisateur
 		</button>
 		</div>
-	</nav><br><br>
-	<br>
-	<br>
+	</nav><br>
 <form action="function.php" method="post">
-<div style="position: relative; left: 4em;">
+<div style="position: relative; left: 8em;">
 	<h5> Selection de la catégorie d'image à afficher : </h5>
     <!-- here start the dropdown list -->
 	<div style ="position: relative; left: 31em; margin: -164px; padding: 130px;">
