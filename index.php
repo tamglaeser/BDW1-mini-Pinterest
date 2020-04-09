@@ -84,7 +84,9 @@ if (isset($_POST['connexion_util'])) {
 
 function category(string $cat, $link) {
     $catId = executeQuery($link,"SELECT catId FROM Categorie WHERE nomCat = '$cat'");
-    echo (string)$catId;
+    while ($row = $catId->fetch_assoc()) {
+        echo $row['catId']."<br>";
+    }
     /*
     $sql = "SELECT nomFich FROM Photo WHERE catId = $catId";
     $resultat = $link->query($sql);
