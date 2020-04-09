@@ -81,20 +81,20 @@ $catId=5;
     </div>
 </form>
 <?php
-$choix = $_POST['Categories'];
-if ($choix == "Animaux") {
+
+if ($_POST['Categories'] == "Animaux") {
     echo "ANIMAUXXXX ";
     category("Animaux", $conn);
 }
-else if ($choix == "Sport") {
+else if ($_POST['Categories'] == "Sport") {
     echo "SPORTTTT ";
     category("Sport", $conn);
 }
-else if ($choix == "Internet") {
+else if ($_POST['Categories'] == "Internet") {
     echo "INTERNETTT ";
     category("Internet", $conn);
 }
-else if ($choix == "Gens") {
+else if ($_POST['Categories'] == "Gens") {
     echo "GENNSSSSS ";
     category("Gens", $conn);
 }
