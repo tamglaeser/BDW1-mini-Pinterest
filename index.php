@@ -83,7 +83,7 @@ if (isset($_POST['connexion_util'])) {
 }
 
 function category(string $cat, $link) {
-    $catId = executeQuery($link,"SELECT catId FROM Categorie WHERE nomCat = '$cat'");
+    $catId = executeQuery($link,"SELECT catId FROM Categorie WHERE nomCat ='". $cat. "'");
     while ($row = $catId->fetch_assoc()) {
         echo $row['catId']."<br>";
     }
