@@ -35,8 +35,17 @@ $catId=5;
     $images = glob("{$dirname}*.png, {$dirname}*.jpg, {$dirname}*.gif");
     foreach($images as $image) {
         <img src=echo $image alt ="hello">
-    }-->
+    }
 
+<div class="dropdown">
+    <button class="dropbtn">Categories</button>
+    <div class="dropdown-content">
+        <a href="#animaux">Animaux</a>
+        <a href="#sport">Sport</a>
+        <a href="#internet">Internet</a>
+        <a href="#gens">Gens</a>
+    </div>
+</div>
 
 <a id="animaux">
 
@@ -58,16 +67,20 @@ $catId=5;
     <?php echo "GENS????? ";?>
     onclick=<?php category("Gens", $conn); ?>
 </a>
+-->
 
-<div class="dropdown">
-    <button class="dropbtn">Categories</button>
-    <div class="dropdown-content">
-        <a href="#animaux">Animaux</a>
-        <a href="#sport">Sport</a>
-        <a href="#internet">Internet</a>
-        <a href="#gens">Gens</a>
+
+<form>
+    <div class="dropdown">
+        <select id="Categories">
+            <option value="Animaux">Animaux</option>
+            <option value="Sports">Sports</option>
+            <option value="Internet">Internet</option>
+            <option value="Gens">Gens</option>
+        </select>
     </div>
-</div>
+</form>
+<?php $_POST['Categories']; ?>
 
 </body>
 </html>
