@@ -7,14 +7,7 @@
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
-<?php
-require_once('bd.php');
-$conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 
-$dir = "assets/images/";
-$catId=5;
-
-?>
 <div style="background-image:url(img/accueil_bis.jpg);" ><B><h1>PhotoCat</h1></B><br> </div>
 	<nav class="crumbs">
 	<form name="accueil" action="index.php" method="POST">
@@ -30,7 +23,6 @@ $catId=5;
 		</button>
 		</div>
 	</nav>
-    <h1>Toutes les photos</h1>
 <form action="function.php" method="post">
     <!-- here start the dropdown list -->
     <select name="dowpdown">
@@ -62,13 +54,6 @@ if (isset($_POST['connexion_ad'])) {
 if (isset($_POST['connexion_util'])) {
     header('Location: https://bdw1.univ-lyon1.fr/p1501149/Projet/src/connexion_utilisateur.php');
     exit();
-}/*
-if ($catId = 5) {
-    $images = glob($dir. '*.{png,jpg,gif}', GLOB_BRACE);
-    foreach ($images as $image):
-        echo "<img src='" . $image . "' />";
+}
 
-    endforeach;
-}*/
-closeConnexion($conn);
 ?>
