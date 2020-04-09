@@ -37,15 +37,7 @@ $catId=5;
         <img src=echo $image alt ="hello">
     }-->
 
-<div class="dropdown">
-    <button class="dropbtn">Categories</button>
-    <div class="dropdown-content">
-        <a href="#animaux">Animaux</a>
-        <a href="#sport">Sport</a>
-        <a href="#internet">Internet</a>
-        <a href="#gens">Gens</a>
-    </div>
-</div>
+
 <a id="animaux">
 
     <?php echo "ANIMAUX? ";?>
@@ -66,6 +58,16 @@ $catId=5;
     <?php echo "GENS????? ";?>
     onclick=<?php category("Gens", $conn); ?>
 </a>
+
+<div class="dropdown">
+    <button class="dropbtn">Categories</button>
+    <div class="dropdown-content">
+        <a href="#animaux">Animaux</a>
+        <a href="#sport">Sport</a>
+        <a href="#internet">Internet</a>
+        <a href="#gens">Gens</a>
+    </div>
+</div>
 
 </body>
 </html>
