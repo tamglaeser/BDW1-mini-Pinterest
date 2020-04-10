@@ -30,10 +30,10 @@ $dir = "assets/images/";
 		</div>
 	</nav><br>
 <form action="function.php" method="post">
-<div style="position: absolute; left: 10em;">
+<div>
 	<h5> Selection de la catégorie d'image à afficher : </h5>
     <!-- here start the dropdown list -->
-	<div style ="position: relative; left: 25em; margin: -164px; padding: 130px;">
+	<div>
     <select name="dowpdown" >
         <option value="0">Toutes les photos</option>
         <option value="1">Animaux</option>
