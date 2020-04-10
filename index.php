@@ -12,7 +12,6 @@ require_once('bd.php');
 $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 
 $dir = "assets/images/";
-$catId=5;
 
 ?>
 <div style="background-image:url(img/accueil_bis.jpg);" ><B><h1>PhotoCat</h1></B><br> </div>
