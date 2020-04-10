@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <title>PhotouCat</title>
-  <!--<link rel="stylesheet" href="bootstrap.css">-->
-  <!--<link rel="stylesheet" href="index.css">-->
+  <link rel="stylesheet" href="bootstrap.css">
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
 <?php
