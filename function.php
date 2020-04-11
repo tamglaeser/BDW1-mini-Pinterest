@@ -22,13 +22,12 @@ if (isset($_POST['show_dowpdown_value'])) {
         ?>
         <h1>Toutes les photos</h1><?php
         $images = glob($dir. '*.{png,jpg,gif}', GLOB_BRACE);
+        echo "<table>";
         foreach ($images as $image):
             echo "
-                <table>
-                    <td><img src='" . $image . "' /></td>
-                </table>";
-
+                <td><img src='" . $image . "' /></td>";
         endforeach;
+        echo "</table>";
     }
 }
 
@@ -59,13 +58,12 @@ function category(int $cat, $link) {
 
     while($row = $resultat->fetch_assoc()) {
         $images = glob($GLOBALS['dir'] . $row["nomFich"], GLOB_BRACE);
+        echo "<table>";
         foreach ($images as $image):
             echo "
-            <table>
-                    <td><img src='" . $image . "' /></td>
-            </table>";
-
+                    <td><img src='" . $image . "' /></td>";
         endforeach;
+        echo "</table>";
     }
 }
 ?>
