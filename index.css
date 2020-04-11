@@ -76,11 +76,5 @@ width:459px;
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
 
 table {
-	table-layout: auto;
-	width: 150px;
-}
-td {
-	overflow: hidden;
-	text-overflow: ellipsis;
-	word-wrap: break-word;
+	columns: 100px 3;
 }
