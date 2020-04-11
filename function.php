@@ -64,3 +64,5 @@ function category(int $cat, $link) {
     echo "</table>";
 }
 ?>
+</body>
+</html>
