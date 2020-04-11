@@ -57,7 +57,12 @@ function category(int $cat, $link) {
     while($row = $resultat->fetch_assoc()) {
         $images = glob($GLOBALS['dir'] . $row["nomFich"], GLOB_BRACE);
         foreach ($images as $image):
-            echo "<img src='" . $image . "' />";
+            echo "
+            <table>
+                <tr>
+                    <td><img src='" . $image . "' /></td>
+                </tr>
+            </table>";
 
         endforeach;
     }
