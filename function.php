@@ -23,7 +23,10 @@ if (isset($_POST['show_dowpdown_value'])) {
         <h1>Toutes les photos</h1><?php
         $images = glob($dir. '*.{png,jpg,gif}', GLOB_BRACE);
         foreach ($images as $image):
-            echo "<img src='" . $image . "' />";
+            echo "
+                <table>
+                    <td><img src='" . $image . "' /></td>
+                </table>";
 
         endforeach;
     }
@@ -59,9 +62,7 @@ function category(int $cat, $link) {
         foreach ($images as $image):
             echo "
             <table>
-                <tr>
                     <td><img src='" . $image . "' /></td>
-                </tr>
             </table>";
 
         endforeach;
