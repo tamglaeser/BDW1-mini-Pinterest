@@ -22,10 +22,9 @@ if (isset($_POST['show_dowpdown_value'])) {
         ?>
         <h1>Toutes les photos</h1><?php
         $images = glob($dir. '*.{png,jpg,gif}', GLOB_BRACE);
-        echo "<table>";
+        echo "<table width='100%' border='0' cellspacing='0' cellpadding='0'>";
         foreach ($images as $image):
-            echo "
-                <td><img src='" . $image . "' /></td>";
+            echo "<td><img src='" . $image . "' /></td>";
         endforeach;
         echo "</table>";
     }
@@ -58,10 +57,9 @@ function category(int $cat, $link) {
 
     while($row = $resultat->fetch_assoc()) {
         $images = glob($GLOBALS['dir'] . $row["nomFich"], GLOB_BRACE);
-        echo "<table>";
+        echo "<table width='100%' border='0' cellspacing='0' cellpadding='0'>";
         foreach ($images as $image):
-            echo "
-                    <td><img src='" . $image . "' /></td>";
+            echo "<td><img src='" . $image . "' /></td>";
         endforeach;
         echo "</table>";
     }
