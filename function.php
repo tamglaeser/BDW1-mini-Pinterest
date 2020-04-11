@@ -8,6 +8,10 @@
 </head>
 <body>
 
+<script>
+    $("table").width($(window).width());
+</script>
+
 <?php
 
 if (isset($_POST['show_dowpdown_value'])) {
@@ -22,11 +26,11 @@ if (isset($_POST['show_dowpdown_value'])) {
         ?>
         <h1>Toutes les photos</h1><?php
         $images = glob($dir. '*.{png,jpg,gif}', GLOB_BRACE);
-        echo "<table><tbody>";
+        echo "<table id='table'>";
         foreach ($images as $image):
             echo "<td><img src='" . $image . "' /></td>";
         endforeach;
-        echo "</tbody></table>";
+        echo "</table>";
     }
 }
 
@@ -54,13 +58,13 @@ function category(int $cat, $link) {
     }
 
     $resultat = executeQuery($link, "SELECT nomFich FROM Photo WHERE catId = $cat");
-    echo "<table><tbody>";
+    echo "<table id='table' '>";
     while($row = $resultat->fetch_assoc()) {
         $images = glob($GLOBALS['dir'] . $row["nomFich"], GLOB_BRACE);
         foreach ($images as $image):
             echo "<td><img src='" . $image . "' /></td>";
         endforeach;
     }
-    echo "</tbody></table>";
+    echo "</table>";
 }
 ?>
