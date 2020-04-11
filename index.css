@@ -76,7 +76,8 @@ width:459px;
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
 
 table {
-	table-layout: fixed;
+	table-layout: auto;
+	width: 150px;
 }
 td {
 	overflow: hidden;
