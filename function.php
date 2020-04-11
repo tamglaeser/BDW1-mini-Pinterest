@@ -22,11 +22,11 @@ if (isset($_POST['show_dowpdown_value'])) {
         ?>
         <h1>Toutes les photos</h1><?php
         $images = glob($dir. '*.{png,jpg,gif}', GLOB_BRACE);
-        echo "<div><table>";
+        echo "<table>";
         foreach ($images as $image):
             echo "<td><img src='" . $image . "' /></td>";
         endforeach;
-        echo "</table></div>";
+        echo "</table>";
     }
 }
 
@@ -54,13 +54,13 @@ function category(int $cat, $link) {
     }
 
     $resultat = executeQuery($link, "SELECT nomFich FROM Photo WHERE catId = $cat");
-    echo "<div><table>";
+    echo "<table>";
     while($row = $resultat->fetch_assoc()) {
         $images = glob($GLOBALS['dir'] . $row["nomFich"], GLOB_BRACE);
         foreach ($images as $image):
             echo "<td><img src='" . $image . "' /></td>";
         endforeach;
     }
-    echo "</table></div>";
+    echo "</table>";
 }
 ?>
