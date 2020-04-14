@@ -55,7 +55,8 @@ function category(int $cat, $link) {
     while($row = $resultat->fetch_assoc()) {
         $images = glob($GLOBALS['dir'] . $row["nomFich"], GLOB_BRACE);
         foreach ($images as $image):
-            echo "<img src='" . $image . "' hspace = '10' border = '5' onclick='details.php'/>";
+            echo "<a href='details.php' target='voteframe'><img src='" . $image . "' hspace = '10' border = '5'/></a>
+            <iframe id='voteframe' style='/*display:none*/'/>";
         endforeach;
     }
 }
