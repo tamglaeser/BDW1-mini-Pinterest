@@ -17,10 +17,12 @@ $photoId = $_GET['photoId'];
 details($photoId, $conn);
 
 function details($ImageId, $link) {
-    $resultat = executeQuery($link, "SELECT description, catId FROM Photo WHERE nomFich=$nomIm");
-    $src = glob($GLOBALS['dir'] .$nomIm, GLOB_BRACE);
-    echo "<img src='" . $src . "' hspace = '10' border = '5'/>";
-
+    $resultat_imNom = executeQuery($link, "SELECT nomFich FROM Photo WHERE photoId = $ImageId");
+    $row_imNom = $resultat_imNom->fetch_assoc();
+    $images = glob($GLOBALS['dir'] . $row_imNom["nomFich"], GLOB_BRACE);
+    foreach ($images as $image):
+        echo "<img src='" . $image . "' hspace = '10' border = '5'/>";
+    endforeach;
 }
 
 ?>
