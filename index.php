@@ -11,6 +11,7 @@
 require_once('bd.php');
 $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 
+global $dir;
 $dir = "assets/images/";
 
 ?>
