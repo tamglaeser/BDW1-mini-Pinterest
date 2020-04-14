@@ -8,8 +8,6 @@
 </head>
 <body>
 
-<?php
-echo "ciao";?>
 
 <?php
 echo $_GET['name'];
@@ -19,7 +17,15 @@ function details($nomIm, $link) {
     echo "<img src='" . $src . "' hspace = '10' border = '5'/>";
 
 }
+
 ?>
+<button onclick="goBack()">Go Back</button>
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
 
 </body>
 </html>
