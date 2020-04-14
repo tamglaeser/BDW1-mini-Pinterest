@@ -13,7 +13,7 @@
 echo $_GET['photoId'];
 $photoId = $_GET['photoId'];
 
-details($photoId, $conn);
+details($photoId, $GLOBALS['conn']);
 
 function details($ImageId, $link) {
     $resultat_imNom = executeQuery($link, "SELECT nomFich FROM Photo WHERE photoId = $ImageId");
