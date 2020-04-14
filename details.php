@@ -11,7 +11,10 @@
 
 <?php
 echo $_GET['photoId'];
+$photoId = $_GET['photoId'];
+$conn = $_GET['link'];
 function details($nomIm, $link) {
+    $photoId = $_GET['photoId'];
     $resultat = executeQuery($link, "SELECT description, catId FROM Photo WHERE nomFich=$nomIm");
     $src = glob($GLOBALS['dir'] .$nomIm, GLOB_BRACE);
     echo "<img src='" . $src . "' hspace = '10' border = '5'/>";
