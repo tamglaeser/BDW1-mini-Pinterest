@@ -35,21 +35,10 @@ $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 
 
 function category(int $cat, $link) {
-    if ($cat == 1){
-        ?><h1>Les photos de la catégorie Animaux</h1><?php
-    }
+        $catNom = executeQuery($link, "SELECT nomCat FROM Categorie WHERE catId = $cat");
+        $row1 = $catNom->fetch_assoc();
+        echo "<h1>Les photos de la catégorie " . $row1 . "</h1>";
 
-    else if ($cat == 2){
-        ?><h1>Les photos de la catégorie Sport</h1><?php
-    }
-
-    else if ($cat == 3){
-        ?><h1>Les photos de la catégorie Internet</h1><?php
-    }
-
-    else if ($cat == 4){
-        ?><h1>Les photos de la catégorie Gens</h1><?php
-    }
 
     $resultat = executeQuery($link, "SELECT nomFich FROM Photo WHERE catId = $cat");
     while($row = $resultat->fetch_assoc()) {
