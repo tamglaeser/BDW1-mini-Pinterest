@@ -55,12 +55,12 @@ function category(int $cat, $link) {
     while($row = $resultat->fetch_assoc()) {
         $images = glob($GLOBALS['dir'] . $row["nomFich"], GLOB_BRACE);
         foreach ($images as $image):
-            echo "<img onclick='details();' style='cursor: pointer;' src='" . $image . "' hspace = '10' border = '5'/>";
+            echo "<img onclick='details()' style='cursor: pointer;' src='" . $image . "' hspace = '10' border = '5'/>";
         endforeach;
     }
 }
 
-function details() {
+function() {
     echo "DETAILS";
 }
 
