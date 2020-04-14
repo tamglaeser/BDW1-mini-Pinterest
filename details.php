@@ -27,10 +27,21 @@ function details($ImageId, $link) {?>
     $images = glob($GLOBALS['dir'] . $row_imNom["nomFich"], GLOB_BRACE);
     foreach ($images as $image):
         echo "<img src='" . $image . "' hspace = '10' border = '5'/>";
-    endforeach;?>
+    endforeach;
+
+    $resultat_description = executeQuery($link, "SELECT description FROM Photo WHERE photoId = $ImageId");
+    $row_description = $resultat_description->fetch_assoc();
+    ?>
+
+
 
     <table>
-        
+        <tr>
+           <th>Description:</th>
+            <td><?php
+                echo $row_description
+                ?></td>
+        </tr>
     </table>
 
     <?php
