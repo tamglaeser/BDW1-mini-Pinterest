@@ -24,12 +24,7 @@ if (isset($_POST['show_dowpdown_value'])) {
         $images = glob($dir. '*.{png,jpg,gif}', GLOB_BRACE);
         foreach ($images as $image):
             echo "<img src='" . $image . "' hspace='10' border='5 />";
-        endforeach;?>
-        <script>
-            function details(im) {
-                document.write("enter");
-            }
-        </script><?php
+        endforeach;
     }
 }
 
