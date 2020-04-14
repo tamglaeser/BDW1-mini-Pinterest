@@ -15,6 +15,7 @@ echo $_GET['photoId'];
 $photoId = $_GET['photoId'];
 
 $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
+$dir = "assets/images/";
 
 details($photoId, $conn);
 
