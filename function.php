@@ -42,7 +42,7 @@ function category(int $cat, $link)
 
     $resultat0 = executeQuery($link, "SELECT photoId FROM Photo WHERE catId = $cat");
     while ($row0 = $resultat0->fetch_assoc()) {
-        $resultat1 = executeQuery($link, "SELECT nomFich FROM Photo WHERE catId = $row0");
+        $resultat1 = executeQuery($link, "SELECT nomFich FROM Photo WHERE photoId = " . $row0["photoId"] );
         $row1 = $resultat1->fetch_assoc();
         $images = glob($GLOBALS['dir'] . $row1["nomFich"], GLOB_BRACE);
         foreach ($images as $image):
