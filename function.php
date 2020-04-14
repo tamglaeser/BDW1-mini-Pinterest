@@ -30,6 +30,7 @@ if (isset($_POST['show_dowpdown_value'])) {
 
 
 require_once('bd.php');
+global $conn;
 $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 
 
