@@ -15,13 +15,13 @@ if (isset($_POST['show_dowpdown_value'])) {
     $catId = $_POST['dowpdown']; // this will print the value if downbox out
     //$dir = "assets/images/";
     if ($catId != 0) {
-        category($catId, $conn);
+        category($catId, $GLOBALS['conn']);
     }
     else {
 
         ?>
         <h1>Toutes les photos</h1><?php
-        $images = glob($dir. '*.{png,jpg,gif}', GLOB_BRACE);
+        $images = glob($GLOBALS['dir']. '*.{png,jpg,gif}', GLOB_BRACE);
         foreach ($images as $image):
             echo "<img src='" . $image . "' hspace='10' border='5' />";
         endforeach;
@@ -30,8 +30,7 @@ if (isset($_POST['show_dowpdown_value'])) {
 
 
 require_once('bd.php');
-//global $conn;
-$conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
+//$conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 
 
 
