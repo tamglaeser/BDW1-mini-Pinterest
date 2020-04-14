@@ -19,13 +19,21 @@ $dir = "assets/images/";
 
 details($photoId, $conn);
 
-function details($ImageId, $link) {
+function details($ImageId, $link) {?>
+    <h1>Les détails sur cette photo</h1>
+    <?php
     $resultat_imNom = executeQuery($link, "SELECT nomFich FROM Photo WHERE photoId = $ImageId");
     $row_imNom = $resultat_imNom->fetch_assoc();
     $images = glob($GLOBALS['dir'] . $row_imNom["nomFich"], GLOB_BRACE);
     foreach ($images as $image):
         echo "<img src='" . $image . "' hspace = '10' border = '5'/>";
-    endforeach;
+    endforeach;?>
+
+    <table>
+        
+    </table>
+
+    <?php
 }
 
 ?>
