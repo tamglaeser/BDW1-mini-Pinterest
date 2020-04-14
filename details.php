@@ -10,7 +10,7 @@
 
 
 <?php
-require_once('function.php');
+require_once('bd.php');
 echo $_GET['photoId'];
 $photoId = $_GET['photoId'];
 
