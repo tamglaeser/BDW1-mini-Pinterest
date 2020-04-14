@@ -37,7 +37,7 @@ $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 function category(int $cat, $link) {
         $catNom = executeQuery($link, "SELECT nomCat FROM Categorie WHERE catId = $cat");
         $row1 = $catNom->fetch_assoc();
-        echo "<h1>Les photos de la catégorie " . $row1 . "</h1>";
+        echo "<h1>Les photos de la catégorie " . $row1["nomCat"] . "</h1>";
 
 
     $resultat = executeQuery($link, "SELECT nomFich FROM Photo WHERE catId = $cat");
