@@ -32,7 +32,7 @@ function details($ImageId, $link) {?>
     $resultat_description = executeQuery($link, "SELECT description FROM Photo WHERE photoId = $ImageId");
     $row_description = $resultat_description->fetch_assoc();
 
-    $resultat_cat = executeQuery($link, "SELECT catId FROM Photo WHERE photoId = $ImageId");
+    $resultat_cat = executeQuery($link, "SELECT nomCat FROM Categorie WHERE catId = (SELECT catId FROM Photo WHERE photoId = $ImageId)");
     $row_cat = $resultat_cat->fetch_assoc();
     ?>
 
@@ -59,7 +59,7 @@ function details($ImageId, $link) {?>
             <th>Catégorie</th>
             <td>
                 <?php
-                echo $row_cat['catId'];
+                echo $row_cat['nomCat'];
                 ?>
             </td>
         </tr>
