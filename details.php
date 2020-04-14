@@ -31,16 +31,37 @@ function details($ImageId, $link) {?>
 
     $resultat_description = executeQuery($link, "SELECT description FROM Photo WHERE photoId = $ImageId");
     $row_description = $resultat_description->fetch_assoc();
+
+    $resultat_cat = executeQuery($link, "SELECT catId FROM Photo WHERE photoId = $ImageId");
+    $row_cat = $resultat_cat->fetch_assoc();
     ?>
 
 
 
     <table>
         <tr>
-           <th>Description:</th>
-            <td><?php
+            <th>Description</th>
+            <td>
+                <?php
                 echo $row_description['description'];
-                ?></td>
+                ?>
+            </td>
+        </tr>
+        <tr>
+            <th>Nom du fichier</th>
+            <td>
+                <?php
+                echo $row_imNom['nomFich'];
+                ?>
+            </td>
+        </tr>
+        <tr>
+            <th>Catégorie</th>
+            <td>
+                <?php
+                echo $row_cat['catId'];
+                ?>
+            </td>
         </tr>
     </table>
 
