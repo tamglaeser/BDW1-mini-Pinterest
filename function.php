@@ -36,27 +36,18 @@ $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 
 function category(int $cat, $link)
 {
-    $resultat = executeQuery($link, "SELECT nomCat FROM Categorie WHERE catId = $cat");
-    $row = $resultat->fetch_assoc();
-    echo "<h1>Les photos de la catégorie " . $row["nomCat"] . "</h1>";
+    $resultat_catNoms = executeQuery($link, "SELECT nomCat FROM Categorie WHERE catId = $cat");
+    $row_catNom = $resultat_catNoms->fetch_assoc();
+    echo "<h1>Les photos de la catégorie " . $row_catNom["nomCat"] . "</h1>";
 
-    $resultat0 = executeQuery($link, "SELECT photoId FROM Photo WHERE catId = $cat");
-    while ($row0 = $resultat0->fetch_assoc()) {
-        $resultat1 = executeQuery($link, "SELECT nomFich FROM Photo WHERE photoId = " . $row0["photoId"] );
-        $row1 = $resultat1->fetch_assoc();
-        $images = glob($GLOBALS['dir'] . $row1["nomFich"], GLOB_BRACE);
+    $resultat_photId = executeQuery($link, "SELECT photoId FROM Photo WHERE catId = $cat");
+    while ($row_photoId = $resultat_photId->fetch_assoc()) {
+        $resultat_imNom = executeQuery($link, "SELECT nomFich FROM Photo WHERE photoId = " . $row_photoId["photoId"] );
+        $row_imNom = $resultat_imNom->fetch_assoc();
+        $images = glob($GLOBALS['dir'] . $row_imNom["nomFich"], GLOB_BRACE);
         foreach ($images as $image):
-            echo "<a href='details.php?name=" . $row1["nomFich"] . "'><img src='" . $image . "' hspace = '10' border = '5'/></a>";
+            echo "<a href='details.php?name=" . $row_imNom["nomFich"] . "'><img src='" . $image . "' hspace = '10' border = '5'/></a>";
         endforeach;
-        /*
-                $resultat1 = executeQuery($link, "SELECT nomFich FROM Photo WHERE catId = $cat");
-            while($row1 = $resultat1->fetch_assoc()) {
-                $images = glob($GLOBALS['dir'] . $row1["nomFich"], GLOB_BRACE);
-                foreach ($images as $image):
-                    echo "<a href='details.php?name=" . $row1["nomFich"] . "'><img src='" . $image . "' hspace = '10' border = '5'/></a>";
-                endforeach;
-            }
-        */
     }
 }
 
