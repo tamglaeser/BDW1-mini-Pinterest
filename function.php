@@ -46,7 +46,7 @@ function category(int $cat, $link)
         $row_imNom = $resultat_imNom->fetch_assoc();
         $images = glob($GLOBALS['dir'] . $row_imNom["nomFich"], GLOB_BRACE);
         foreach ($images as $image):
-            echo "<a href='details.php?photoId=" . $row_photoId["photoId"] . "&link=" . $link . "'><img src='" . $image . "' hspace = '10' border = '5'/></a>";
+            echo "<a href='details.php?photoId=" . $row_photoId["photoId"] . "'><img src='" . $image . "' hspace = '10' border = '5'/></a>";
         endforeach;
     }
 }
