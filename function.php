@@ -55,15 +55,21 @@ function category(int $cat, $link) {
     while($row = $resultat->fetch_assoc()) {
         $images = glob($GLOBALS['dir'] . $row["nomFich"], GLOB_BRACE);
         foreach ($images as $image):
-            echo "<img onclick='details()' style='cursor: pointer;' src='" . $image . "' hspace = '10' border = '5'/>";
+            echo "<img onclick='document.location.href='/details.php';return false; style='cursor: pointer;' src='" . $image . "' hspace = '10' border = '5'/>";
         endforeach;
     }
 }
+/*
+function details() {
+    $.ajax({
+        url: 'details.php',
+        success: function(response) {
 
-function() {
+    }
+    })
     echo "DETAILS";
 }
-
+*/
 ?>
 </body>
 </html>
