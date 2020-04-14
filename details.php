@@ -39,7 +39,7 @@ function details($ImageId, $link) {?>
         <tr>
            <th>Description:</th>
             <td><?php
-                echo $row_description
+                echo $row_description['description'];
                 ?></td>
         </tr>
     </table>
