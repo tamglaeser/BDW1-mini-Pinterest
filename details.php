@@ -9,7 +9,10 @@
 <body>
 
 <?php
-echo "ciao";
+echo "ciao";?>
+
+<?php
+echo $_GET['name'];
 function details($nomIm, $link) {
     $resultat = executeQuery($link, "SELECT description, catId FROM Photo WHERE nomFich=$nomIm");
     $src = glob($GLOBALS['dir'] .$nomIm, GLOB_BRACE);
