@@ -11,8 +11,6 @@
 require_once('bd.php');
 
 $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
-
-
 $dir = "assets/images/";
 
 ?>
@@ -53,6 +51,11 @@ $dir = "assets/images/";
 </html>
 
 <?php
+
+if (isset($_GET['catId'])) {
+    $Id = htmlspecialchars($_GET["catId"]);
+    include("function.php");
+}
 
 session_start();
 
