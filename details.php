@@ -12,7 +12,6 @@
 
 <?php
 require_once ('bd.php');
-require_once ('function.php');
 $photoId = $_GET['photoId'];
 
 $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
@@ -63,13 +62,8 @@ function details($ImageId, $link) {?>
             <th>Catégorie</th>
             <td>
                 <?php
-                require_once 'function.php';
-
-                if (isset($_GET['categorie'])) {
-                    category($row_cat_id, $link);
-                }
-                ?>
-                <a href="?categorie">Animaux</a>
+                echo $row_cat['nomCat'];
+               ?>
             </td>
         </tr>
     </table>
