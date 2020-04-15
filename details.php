@@ -12,6 +12,7 @@
 
 <?php
 require_once ('bd.php');
+require_once ('function.php');
 $photoId = $_GET['photoId'];
 
 $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
@@ -59,7 +60,9 @@ function details($ImageId, $link) {?>
             <th>Catégorie</th>
             <td>
                 <?php
-                echo $row_cat['nomCat'];
+                //$url = htmlspecialchars($_SERVER['HTTP_REFERER']);
+                echo "<a href='function.php?Categorie'>" . $row_cat['nomCat'] . "</a>";
+                e//cho $row_cat['nomCat'];
                 ?>
             </td>
         </tr>
@@ -68,7 +71,7 @@ function details($ImageId, $link) {?>
     <?php
 }
 $url = htmlspecialchars($_SERVER['HTTP_REFERER']);
-echo "<a href='$url'>back</a>";
+echo "<a href='$url'>BACK</a>";
 
 ?>
 

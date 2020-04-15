@@ -10,7 +10,7 @@
 
 <?php
 
-if (isset($_POST['show_dowpdown_value'])) {
+if (isset($_POST['show_dowpdown_value']) OR isset(($_GET['Categorie']))) {
 
     $catId = $_POST['dowpdown']; // this will print the value if downbox out
     //$dir = "assets/images/";
