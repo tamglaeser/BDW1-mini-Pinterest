@@ -11,6 +11,7 @@
 <?php
 require_once ('bd.php');
 $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
+$dir = "assets/images/";
 
 
 if (isset($_POST['show_dowpdown_value'])) {
