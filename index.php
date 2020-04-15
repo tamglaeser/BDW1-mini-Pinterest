@@ -51,11 +51,11 @@ $dir = "assets/images/";
 </html>
 
 <?php
-
+/**
 if (isset($_GET['catId'])) {
     $Id = htmlspecialchars($_GET["catId"]);
     include("function.php");
-}
+}**/
 
 session_start();
 
