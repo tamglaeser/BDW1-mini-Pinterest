@@ -64,7 +64,7 @@ function details($ImageId, $link) {?>
                 <?php
                 echo $row_cat['nomCat'];
 
-                echo "<a href='function.php?catId=" . $row_cat_id['catId']. "'></a>"?>
+                echo "<a href='function.php?catId=" . $row_cat_id['catId']. "'>Categorie</a>"?>
             </td>
         </tr>
     </table>
