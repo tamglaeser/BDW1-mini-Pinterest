@@ -35,6 +35,9 @@ function details($ImageId, $link) {?>
 
     $resultat_cat = executeQuery($link, "SELECT nomCat FROM Categorie WHERE catId = (SELECT catId FROM Photo WHERE photoId = $ImageId)");
     $row_cat = $resultat_cat->fetch_assoc();
+
+    $resultat_cat_Id = executeQuery($link, "SELECT catId FROM Photo WHERE photoId = $ImageId");
+    $row_cat_id = $resultat_cat_Id->fetch_assoc();
     ?>
 
 
@@ -60,10 +63,13 @@ function details($ImageId, $link) {?>
             <th>Catégorie</th>
             <td>
                 <?php
-                //$url = htmlspecialchars($_SERVER['HTTP_REFERER']);
-                echo "<a href='function.php?Categorie'>" . $row_cat['nomCat'] . "</a>";
-                e//cho $row_cat['nomCat'];
+                require_once 'function.php';
+
+                if (isset($_GET['categorie'])) {
+                    category($row_cat_id, $link);
+                }
                 ?>
+                <a href="?categorie"><?php $row_cat['nomCat'] ?></a>
             </td>
         </tr>
     </table>
