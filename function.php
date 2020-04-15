@@ -9,6 +9,8 @@
 <body>
 
 <?php
+$conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
+
 
 if (isset($_POST['show_dowpdown_value'])) {
 
@@ -35,7 +37,7 @@ if (isset($_POST['show_dowpdown_value'])) {
 
 if (isset($_GET['catId'])) {
     $Id = htmlspecialchars($_GET["catId"]);
-    category($Id, $GLOBALS['conn']);
+    category($Id, $conn);
 }
 
 
