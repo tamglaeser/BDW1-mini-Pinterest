@@ -60,9 +60,6 @@ function category(int $cat, $link)
             echo "<a href='details.php?photoId=" . $row_photoId["photoId"] . "'><img src='" . $image . "' hspace = '10' border = '5'/></a>";
         endforeach;
     }
-
-    $url = htmlspecialchars($_SERVER['HTTP_REFERER']);
-    echo "<a href='$url'>BACK</a>";
 }
 
 ?>
