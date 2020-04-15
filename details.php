@@ -71,7 +71,7 @@ function details($ImageId, $link) {?>
     <?php
 }
 //$url = htmlspecialchars($_SERVER['HTTP_REFERER']);
-echo "<a href='index.php'>BACK</a>";
+echo "<a href='index.php'>ACCUEIL/HOME</a>";
 
 ?>
 
