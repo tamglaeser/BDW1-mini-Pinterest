@@ -69,7 +69,7 @@ function details($ImageId, $link) {?>
                     category($row_cat_id, $link);
                 }
                 ?>
-                <a href="?categorie"><?php $row_cat['nomCat'] ?></a>
+                <a href="?categorie">Animaux</a>
             </td>
         </tr>
     </table>
