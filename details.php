@@ -69,17 +69,16 @@ function details($ImageId, $link) {?>
 }
 
 ?>
-<!--<button onclick="history.go(-1);">Back</button>-->
+<button onclick=goBack()>Back</button>
 <?php
-header('location:index.php');
 //header("Cache-Control: no cache");
 //session_cache_limiter("private_no_expire");?>
-<!--
+
 <script>
-    function goBack() {
-        window.history.back();
+    function goBack() {</script><?php
+        header('location:index.php');?><script>
     }
 </script>
--->
+
 </body>
 </html>
