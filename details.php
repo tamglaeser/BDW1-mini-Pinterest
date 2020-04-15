@@ -69,8 +69,9 @@ function details($ImageId, $link) {?>
 }
 
 ?>
-<button onclick="history.go(-1);">Back</button>
+<!--<button onclick="history.go(-1);">Back</button>-->
 <?php
+header('location:index.php');
 //header("Cache-Control: no cache");
 //session_cache_limiter("private_no_expire");?>
 <!--
