@@ -42,7 +42,7 @@ function details($ImageId, $link) {?>
 
 <div>
     <div align="right" style="margin-right:100px">
-        <table style="width: 100%" align="right">
+        <table align="right">
             <tr>
                 <th>Description</th>
                 <td>
