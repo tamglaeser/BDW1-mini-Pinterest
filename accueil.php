@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>PhotouCat</title>
-  <!-- <link rel="stylesheet" href="bootstrap.css"> -->
+  <link rel="stylesheet" href="bootstrap.css">
   <link rel="stylesheet" href="accueil.css">
 </head>
 <body>
@@ -16,7 +16,7 @@ $dir = "assets/images/";
 ?>
 <div style="background-image:url(img/accueil_bis.jpg);" ><B><h1>PhotoCat</h1></B><br> </div>
 	<nav class="crumbs">
-	<form name="accueil" action="index.php" method="POST">
+	<form name="accueil" action="accueil.php" method="POST">
 	   <button style="float: left;" type="submit" name="accueil" class="btn btn-success">
 		Accueil
 		</button>
@@ -60,7 +60,7 @@ if (isset($_GET['catId'])) {
 session_start();
 
 if (isset($_POST['accueil'])) {
-    header('Location: https://bdw1.univ-lyon1.fr/p1501149/Projet/src/index.php');
+    header('Location: https://bdw1.univ-lyon1.fr/p1501149/Projet/src/accueil.php');
     exit();
 }
 if (isset($_POST['connexion_ad'])) {

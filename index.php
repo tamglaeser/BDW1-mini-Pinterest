@@ -15,11 +15,11 @@ session_start();
   <meta charset="utf-8">
   <title>Accueil</title>
   <link rel="stylesheet" href="bootstrap.css">
-  <link rel="stylesheet" href="accueil.css">
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
 	 <section>
-	 <form name="accueil" action="accueil.php" method="POST">
+	 <form name="accueil" action="index.php" method="POST">
 		<h1>Bienvenue sur PhotouCat</h1><br>
 			<div> 
 				Pour entrer sur le site cliqué ici
