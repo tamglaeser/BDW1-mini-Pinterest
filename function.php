@@ -14,13 +14,13 @@ $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 $dir = "assets/images/";
 
 
-if (isset($_POST['show_dowpdown_value'])) {
+if (isset($_POST['show_dowpdown_value']) and $_POST['dowpdown'] !=0) {
 
     $catId = $_POST['dowpdown']; // this will print the value if downbox out
     //$dir = "assets/images/";
-    if ($catId != 0) {
+    /*if ($catId != 0) {*/
         category($catId, $GLOBALS['conn']);
-    }
+    /*}
     else {
 
         ?>
@@ -34,7 +34,7 @@ if (isset($_POST['show_dowpdown_value'])) {
                 echo "<a href='details.php?photoId=" . $row_photoId["photoId"] . "'><img src='" . $image . "' hspace = '10' border = '5'/></a>";
             endforeach;
         }
-    }
+    }*/
 }
 
 if (isset($_GET['catId'])) {
