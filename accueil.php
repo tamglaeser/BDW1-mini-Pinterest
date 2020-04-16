@@ -45,8 +45,9 @@ $dir = "assets/images/";
 	</div>
 	</div><br><br><br>
 </form>
-<?php include("function.php"); ?>
-
+<?php if (isset($_POST['show_dowpdown_value'])) {
+    include("function.php");}
+else {?>
 <h1>Toutes les photos</h1><?php
     $resultat_photoId = executeQuery($GLOBALS['conn'], "SELECT photoId FROM Photo");
     while ($row_photoId = $resultat_photoId->fetch_assoc()) {
@@ -57,6 +58,7 @@ $dir = "assets/images/";
             echo "<a href='details.php?photoId=" . $row_photoId["photoId"] . "'><img src='" . $image . "' hspace = '10' border = '5'/></a>";
         endforeach;
     }
+}
 ?>
 </body>
 </html>
