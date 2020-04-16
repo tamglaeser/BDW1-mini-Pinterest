@@ -41,7 +41,7 @@ function details($ImageId, $link) {?>
 
 
 
-    <table>
+    <table align="right">
         <tr>
             <th>Description</th>
             <td>
