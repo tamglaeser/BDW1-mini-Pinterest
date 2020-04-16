@@ -40,33 +40,36 @@ function details($ImageId, $link) {?>
     ?>
 
 
-
-    <table align="right">
-        <tr>
-            <th>Description</th>
-            <td>
-                <?php
-                echo $row_description['description'];
-                ?>
-            </td>
-        </tr>
-        <tr>
-            <th>Nom du fichier</th>
-            <td>
-                <?php
-                echo $row_imNom['nomFich'];
-                ?>
-            </td>
-        </tr>
-        <tr>
-            <th>Catégorie</th>
-            <td>
-                <?php
-                echo "<a href='accueil.php?catId=" . $row_cat_id['catId']. "'>" . $row_cat['nomCat'] . "</a>";
-                ?>
-            </td>
-        </tr>
-    </table>
+<div>
+    <div style="margin-right:100px">
+        <table style="width: 100%" align="right">
+            <tr>
+                <th>Description</th>
+                <td>
+                    <?php
+                    echo $row_description['description'];
+                    ?>
+                </td>
+            </tr>
+            <tr>
+                <th>Nom du fichier</th>
+                <td>
+                    <?php
+                    echo $row_imNom['nomFich'];
+                    ?>
+                </td>
+            </tr>
+            <tr>
+                <th>Catégorie</th>
+                <td>
+                    <?php
+                    echo "<a href='accueil.php?catId=" . $row_cat_id['catId']. "'>" . $row_cat['nomCat'] . "</a>";
+                    ?>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
 
     <?php
 }
