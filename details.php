@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>PhotouCat</title>
     <link rel="stylesheet" href="bootstrap.css">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="accueil.css">
 </head>
 <body>
 
@@ -62,7 +62,7 @@ function details($ImageId, $link) {?>
             <th>Catégorie</th>
             <td>
                 <?php
-                echo "<a href='index.php?catId=" . $row_cat_id['catId']. "'>" . $row_cat['nomCat'] . "</a>";
+                echo "<a href='accueil.php?catId=" . $row_cat_id['catId']. "'>" . $row_cat['nomCat'] . "</a>";
                 ?>
             </td>
         </tr>
@@ -71,7 +71,7 @@ function details($ImageId, $link) {?>
     <?php
 }
 //$url = htmlspecialchars($_SERVER['HTTP_REFERER']);
-echo "<a href='index.php'>ACCUEIL/HOME</a>";
+echo "<a href='accueil.php'>ACCUEIL/HOME</a>";
 
 ?>
 
