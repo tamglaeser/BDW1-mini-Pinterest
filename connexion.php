@@ -42,7 +42,7 @@ function test_input($data){
 }
 
 if (isset($_POST['submit'])) {
-    echo empty($_POST["pseudo"]);
+    echo "empty?" . empty($_POST["pseudo"]);
     echo $_POST["pseudo"];
 	$pseudo = $_POST["pseudo"];
 	$pwd = $_POST["motdepasse"];
