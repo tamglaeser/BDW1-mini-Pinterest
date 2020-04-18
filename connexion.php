@@ -129,7 +129,9 @@ if (isset($_POST['submit'])) {
 	
 	$conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 	if(isset($_POST["pseudo"])){
+	    echo "entered username";
 		if ((isset($pseudo)) &&( isset($pwd))){
+		    echo "entered usename & password";
 			$link=getConnection($dbHost, $dbUser, $dbPwd, $dbName);
 			if($_POST['dowpdown'] ==0){
 				if(getUserAdmin($pseudo, $pwd, $link) == 1) { 
