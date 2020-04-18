@@ -92,7 +92,7 @@ function ajouter(){
             echo "Désolé, il y avait un erreur téléchargant ton fichier.";
         }
     } */
-}
+
 
 $target_dir = "/home/tullia/Documents/School/Tulane_University/Junior_Year/BDW1/ProjetFinale/bdw1_projet/assets/images/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
@@ -136,6 +136,9 @@ if ($uploadOk == 0) {
         echo "Sorry, there was an error uploading your file.";
     }
 }
+}
+
+
 ?>
 
 ?> -->
