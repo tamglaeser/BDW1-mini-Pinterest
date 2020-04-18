@@ -32,11 +32,14 @@ if (isset($_POST['accueil'])) {
 <html>
 <body>
 
-<form action="welcome.php" method="get">
+<form action="welcome.php" method="post">
     Name: <input type="text" name="name"><br>
     E-mail: <input type="text" name="email"><br>
-    <input type="submit">
+    <input type="submit" name="submit">
 </form>
+<?php if ((isset($_POST['submit']))) {
+    include("function.php");}
+?>
 
 </body>
 </html>
