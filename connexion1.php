@@ -5,8 +5,8 @@
     <title>Bienvenue sur PhotouCat</title>
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="accueil.css">
-</head>
-<?php
+</head> <!--
+<?php /*
 //require_once('bd.php');
 //require_once('utilisateur.php');
 //require_once('administrateur.php');
@@ -27,7 +27,7 @@ if (isset($_POST['accueil'])) {
             Accueil
         </button>
 </nav>
-
+-->
 <html>
 <body>
 
