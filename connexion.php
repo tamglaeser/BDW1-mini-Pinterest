@@ -42,7 +42,7 @@ function test_input($data){
 }
 
 if (isset($_POST['submit'])) {
-
+    echo $_POST["pseudo"];
 	$pseudo = $_POST["pseudo"];
 	$pwd = $_POST["motdepasse"];
 	
@@ -62,9 +62,7 @@ if (isset($_POST['submit'])) {
 	}
 	
 	$conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
-	echo "until isset post pseudo?";
 	if(isset($_POST["pseudo"])){
-	    echo "enters post pseudo??";
 		if ((isset($pseudo)) &&( isset($pwd))){
 			$link=getConnection($dbHost, $dbUser, $dbPwd, $dbName);
 			if($_POST['dowpdown'] ==0){
@@ -129,6 +127,7 @@ if (isset($_POST['submit'])) {
 					<?php
 
 						if(isset($pseudoErr) && $pseudoErr){
+						    echo "PSEUDO ERROR?";
 							echo $pseudoErr;}
 					?>
 			  </small>
@@ -143,6 +142,7 @@ if (isset($_POST['submit'])) {
 						<?php
 
                         if(isset($pwdErr) && $pwdErr){
+                                echo "MDP ERROR?";
 								echo $pwdErr;
 							}
 						?>
@@ -151,7 +151,7 @@ if (isset($_POST['submit'])) {
 				<div style="display:flex; margin-top :3em;margin-left:9em; padding-right:8em;padding-left:2em;">
 				<form action="connexion.php" method="POST">
 						<input type="submit" name="submit" value="Se Connecter"/>
-						</form>
+                </form>
 				</div></br>
 				<div style="padding-left:2em;">
 				<a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/inscription.php"> Pas encore Inscrit ? </a>
