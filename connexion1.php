@@ -5,13 +5,14 @@
     <title>Bienvenue sur PhotouCat</title>
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="accueil.css">
-</head> <!--
-<?php /*
-//require_once('bd.php');
-//require_once('utilisateur.php');
-//require_once('administrateur.php');
+</head>
+<?php
+require_once('bd.php');
+require_once('utilisateur.php');
+require_once('administrateur.php');
 /*bdw1.univ-lyon1.fr/p1501149/tp4*/
 
+?> <!--
 session_start();
 if (isset($_POST['accueil'])) {
     header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/accueil.php');
