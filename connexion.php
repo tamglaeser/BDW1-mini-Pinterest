@@ -123,7 +123,7 @@ if (isset($_POST['submit'])) {
 				Pseudo*
 			</div>
 			<div class="col-6 ">
-			  <input type="text" name="p" id="pseudo" placeholder="Pseudo">
+			  <input type="text" name="pseudo" id="pseudo" placeholder="Pseudo">
 			</div>
 				<small class="col-10">
 					<?php
