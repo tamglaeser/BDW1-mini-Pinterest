@@ -149,7 +149,7 @@ if (isset($_POST['submit'])) {
 			    echo "enter for user";
 				if(getUserUtil($pseudo, $pwd, $link) == 1) {
 				    echo "user already exists";
-					setConnectedUtil($pseudo, $link);
+					//setConnectedUtil($pseudo, $link);
 					$_SESSION["pseudo"]= $pseudo;
 					
 					header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_utilisateur.php');

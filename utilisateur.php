@@ -51,7 +51,7 @@ function getConnectedUsersUtil($link)
         $users[$n] = $row["pseudo"];
         $n += 1;
     }
-    return $users[0];
+    return $users;
 }
 
 /*Cette fonction prend en entrée un pseudo d'utilisateur et change son état en 'disconnected' dans la relation
