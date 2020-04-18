@@ -116,7 +116,7 @@ if (isset($_POST['submit'])) {
 					<option value="0">Administrateur</option>
 					<option value="1" SELECTED>Utilisateur</option>
 				</select>
-			</form>
+
 			</div>
 		<div class="row justify-content-start p-2">
 			<div class="col-5 ">
