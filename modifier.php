@@ -37,6 +37,7 @@ function ajouter(){
             while ($row_categorie = $resultat_categorie->fetch_assoc()) {
             ?>
             <option value=<?php $row_categorie["nomCat"]?>><?php $row_categorie["nomCat"] ?></option>
+            <?php}?>
         </datalist>
         <input type="submit" value="Envoyer" name="submit">
     </form>
