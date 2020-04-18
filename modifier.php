@@ -29,15 +29,15 @@ function ajouter(){
     <form action="modifier.php" method="post" enctype="multipart/form-data">
         Choisir le fichier:<br>
         <input type="file" name="Parcourir.." id="fileToUpload">
-        <br>Décrire la photo en une phrase:<br>
+        <!--<br>Décrire la photo en une phrase:<br>
         <input type="text">
         <br>Choisir une catégorie:<br>
         <input list="categories" name="catgeorie">
-        <datalist id="categories"><?php
+        <datalist id="categories"><?php/*
             while ($row_categorie = $resultat_categorie->fetch_assoc()) {
                 echo "<option value=" . $row_categorie["nomCat"] . ">" .$row_categorie["nomCat"] . "</option>";
-            }?>
-        </datalist>
+            }*/?>
+        </datalist>-->
         <input type="submit" value="Envoyer" name="submit">
     </form>
 <?php
