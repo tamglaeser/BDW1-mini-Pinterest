@@ -21,11 +21,24 @@ ajouter();
 
 
 function ajouter(){
-    echo "ajouter";?>
+
+    $resultat_categorie = executeQuery($GLOBALS['conn'], "SELECT nomCat FROM Categorie");
+
+    ?>
+    <h1>Quelle photo?</h1>
     <form action="modifier.php" method="post" enctype="multipart/form-data">
-        Choisir le fichier:
-        <input type="file" name="fileToUpload" id="fileToUpload">
-        <input type="submit" value="Upload Image" name="submit">
+        Choisir le fichier:<br>
+        <input type="file" name="Parcourir.." id="fileToUpload">
+        <br>Décrire la photo en une phrase:<br>
+        <input type="text">
+        <br>Choisir une catégorie:<br>
+        <input list="categories" name="catgeorie">
+        <datalist id="categories"><?php
+            while ($row_categorie = $resultat_categorie->fetch_assoc()) {
+            ?>
+            <option value=<?php $row_categorie["nomCat"]?>><?php $row_categorie["nomCat"] ?></option>
+        </datalist>
+        <input type="submit" value="Envoyer" name="submit">
     </form>
 <?php
 }
