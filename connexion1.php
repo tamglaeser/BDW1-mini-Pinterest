@@ -20,7 +20,7 @@ if (isset($_POST['accueil'])) {
 }
 
 ?>
-
+-->
 <div style="background-image:url(img/accueil_bis.jpg);" ><B><h1>PhotouCat</h1></B><br> </div>
 <nav class="crumbs">
     <form name="accueil" action="accueil.php" method="POST">
@@ -28,7 +28,7 @@ if (isset($_POST['accueil'])) {
             Accueil
         </button>
 </nav>
--->
+
 <html>
 <body>
 
