@@ -89,7 +89,7 @@ if (isset($_POST['connexion_util'])) {
 }
 
 if (isset($_POST['ajouter'])) {
-    include ('modifier.php');
+    header('Location: https://bdw1.univ-lyon1.fr/p1501149/Projet/src/modifier.php');
 }
 
 closeConnexion($conn);
