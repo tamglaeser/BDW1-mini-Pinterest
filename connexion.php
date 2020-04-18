@@ -107,13 +107,8 @@ function test_input($data){
   $data = htmlspecialchars($data);
   return $data;
 }
-if (isset($_POST['pseudo'])) {
-    echo "pseudo exists????";
-}
 
 if (isset($_POST['submit'])) {
-    echo "empty?" . empty($_POST["pseudo"]);
-    echo $_POST["pseudo"];
 	$pseudo = $_POST["pseudo"];
 	$pwd = $_POST["motdepasse"];
 	
