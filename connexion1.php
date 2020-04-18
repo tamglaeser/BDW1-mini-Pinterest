@@ -23,21 +23,27 @@ if (isset($_POST['accueil'])) {
 -->
 <div style="background-image:url(img/accueil_bis.jpg);" ><B><h1>PhotouCat</h1></B><br> </div>
 <nav class="crumbs">
-    <form name="accueil" action="accueil.php" method="POST">
+    <form name="accueil" action="accueil.php" method="post">
         <button style="float: left;" type="submit" name="accueil" class="btn btn-success">
             Accueil
         </button>
 </nav>
 
-<html>
-<body>
+
+
+
 
 <form action="welcome.php" method="post">
     Name: <input type="text" name="name"><br>
     E-mail: <input type="text" name="email"><br>
     <input type="submit" name="submit">
 </form>
+<?php
+if (isset($_POST['submit'])) {
+    echo "ENTER";
+    include ("welcome.php");
 
+}?>
 
 </body>
 </html>
