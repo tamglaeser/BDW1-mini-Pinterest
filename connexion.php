@@ -62,8 +62,9 @@ if (isset($_POST['submit'])) {
 	}
 	
 	$conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
-	
+	echo "until isset post pseudo?";
 	if(isset($_POST["pseudo"])){
+	    echo "enters post pseudo??";
 		if ((isset($pseudo)) &&( isset($pwd))){
 			$link=getConnection($dbHost, $dbUser, $dbPwd, $dbName);
 			if($_POST['dowpdown'] ==0){
@@ -126,8 +127,6 @@ if (isset($_POST['submit'])) {
 			</div>
 				<small class="col-10">
 					<?php
-                    echo "ARRIVES HERE??????";
-                    $pseudo = $_POST["pseudo"];
 
 						if(isset($pseudoErr) && $pseudoErr){
 							echo $pseudoErr;}
@@ -142,8 +141,6 @@ if (isset($_POST['submit'])) {
 				</div>
 					<small class="col-10">
 						<?php
-                        echo "ARRIVES HERE???MDP";
-                        $pwd = $_POST["motdepasse"];
 
                         if(isset($pwdErr) && $pwdErr){
 								echo $pwdErr;
