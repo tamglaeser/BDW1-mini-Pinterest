@@ -20,6 +20,9 @@ $dir = "assets/images/";
 	   <button style="float: left;" type="submit" name="accueil" class="btn btn-success">
 		Accueil
 		</button>
+        <button style="float: left;" type="submit" name="ajouter" class="btn btn-success">
+            Ajouter Photo
+        </button>
 		<div class='connexion'>
 		<button style="float: right;" type="submit" name="connexion_ad" class="btn btn-success">
 		Connexion Admin
@@ -84,5 +87,10 @@ if (isset($_POST['connexion_util'])) {
     header('Location: https://bdw1.univ-lyon1.fr/p1501149/Projet/src/connexion_utilisateur.php');
     exit();
 }
+
+if (isset($_POST['ajouter'])) {
+    include ('modifier.php');
+}
+
 closeConnexion($conn);
 ?>
