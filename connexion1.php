@@ -36,7 +36,10 @@ if (isset($_POST['accueil'])) {
     E-mail: <input type="text" name="email"><br>
     <input type="submit">
 </form>
-
+<?php if ((isset($_POST['submit'])))  {
+    include("function.php");
+}
+?>
 
 </body>
 </html>
