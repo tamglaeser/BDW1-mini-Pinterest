@@ -35,9 +35,8 @@ function ajouter(){
         <input list="categories" name="catgeorie">
         <datalist id="categories"><?php
             while ($row_categorie = $resultat_categorie->fetch_assoc()) {
-            ?>
-            <option value=<?php $row_categorie["nomCat"]?>><?php $row_categorie["nomCat"] ?></option>
-            <?php}?>
+                echo "<option value=" . $row_categorie["nomCat"] . ">" .$row_categorie["nomCat"] . "</option>";
+            }?>
         </datalist>
         <input type="submit" value="Envoyer" name="submit">
     </form>
