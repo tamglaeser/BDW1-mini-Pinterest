@@ -146,7 +146,9 @@ if (isset($_POST['submit'])) {
 				}
 			}
 			else{
-				if(getUserUtil($pseudo, $pwd, $link) == 1) { 
+			    echo "enter for user";
+				if(getUserUtil($pseudo, $pwd, $link) == 1) {
+				    echo "user already exists";
 					setConnectedUtil($pseudo, $link);
 					$_SESSION["pseudo"]= $pseudo;
 					
