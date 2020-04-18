@@ -42,7 +42,7 @@ function ajouter(){
     </form>
 <?php
     $target_dir = "assets/images/";
-    $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+    $target_file = $target_dir . basename($_FILES["Parcourir.."]["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
     if(isset($_POST["submit"])) {
@@ -63,7 +63,7 @@ function ajouter(){
         $uploadOk = 0;
     }
     // Voir taille du fichier
-    if ($_FILES["fileToUpload"]["size"] > 100000) {
+    if ($_FILES["Parcourir.."]["size"] > 100000) {
         echo "Desolé, ton fichier est trop grand.";
         $uploadOk = 0;
     }
