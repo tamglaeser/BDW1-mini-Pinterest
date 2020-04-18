@@ -13,6 +13,8 @@ require_once ('bd.php');
 $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 $dir = "assets/images/";
 
+ajouter();
+
 if (isset($_POST['ajouter'])) {
 ajouter();
 }
