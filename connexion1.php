@@ -8,9 +8,9 @@
 </head>
 <body>
 <?php
-require_once('bd.php');
-require_once('utilisateur.php');
-require_once('administrateur.php');
+//require_once('bd.php');
+//require_once('utilisateur.php');
+//require_once('administrateur.php');
 /*bdw1.univ-lyon1.fr/p1501149/tp4*/
 
 session_start();
