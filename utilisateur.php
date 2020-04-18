@@ -33,7 +33,7 @@ function setConnectedUtil($pseudo, $link)
 function getUserUtil($pseudo, $hashPwd, $link)
 {
 	
-	$hashPwd = md5($hashPwd);
+	//$hashPwd = md5($hashPwd);
 	$query1 = "SELECT * FROM utilisateur WHERE utilPseudo = \"$pseudo\" AND utilMdp= \"$hashPwd\"";
 	$res_req = executeQuery($link, $query1);
 	$res1= mysqli_num_rows($res_req);
