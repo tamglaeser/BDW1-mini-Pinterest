@@ -111,7 +111,6 @@ if (isset($_POST['submit'])) {
 				Selection type utilisateur*
 			</div>
 			<div class="col-6">
-			<form action="function.php" method="post">
 				<select name="dowpdown" >
 					<option value="0">Administrateur</option>
 					<option value="1" SELECTED>Utilisateur</option>
@@ -127,6 +126,9 @@ if (isset($_POST['submit'])) {
 			</div>
 				<small class="col-10">
 					<?php
+                    echo "ARRIVES HERE??????";
+                    $pseudo = $_POST["pseudo"];
+
 						if(isset($pseudoErr) && $pseudoErr){
 							echo $pseudoErr;}
 					?>
@@ -140,7 +142,10 @@ if (isset($_POST['submit'])) {
 				</div>
 					<small class="col-10">
 						<?php
-							if(isset($pwdErr) && $pwdErr){
+                        echo "ARRIVES HERE???MDP";
+                        $pwd = $_POST["motdepasse"];
+
+                        if(isset($pwdErr) && $pwdErr){
 								echo $pwdErr;
 							}
 						?>
