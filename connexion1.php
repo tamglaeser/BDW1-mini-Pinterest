@@ -31,7 +31,7 @@ if (isset($_POST['accueil'])) {
         </button>
 </nav>
 
-<form action="connexion1.php.php" method="post">
+<form action="connexion1.php" method="post">
     Name: <input type="text" name="name"><br>
     E-mail: <input type="text" name="email"><br>
     <input type="submit">
