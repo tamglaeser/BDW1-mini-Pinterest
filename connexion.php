@@ -16,84 +16,86 @@ session_start();
 ?>
 
 <!doctype html>
-<div lang="fr">
+<html lang="fr">
 <head>
   <meta charset="utf-8">
   <title>Bienvenue sur PhotouCat</title>
   <link rel="stylesheet" href="bootstrap.css">
   <link rel="stylesheet" href="accueil.css">
 </head>
-<div>
-<div style="background-image:url(img/accueil_bis.jpg);" ><B><h1>PhotouCat</h1></B><br> </div>
-<nav class="crumbs">
-	<form name="accueil" action="accueil.php" method="POST">
-	   <button style="float: left;" type="submit" name="accueil" class="btn btn-success">
-		Accueil
-		</button>
-</nav>
-<div class="row justify-content-center">
-    <div class="block container p-4 m-4 border rounded border-dark" name='block'>
-        <form action="connexion.php" method="POST">
+<body>
+    <div style="background-image:url(img/accueil_bis.jpg);" ><B><h1>PhotouCat</h1></B><br> </div>
+    <nav class="crumbs">
+        <form name="accueil" action="accueil.php" method="POST">
+           <button style="float: left;" type="submit" name="accueil" class="btn btn-success">
+            Accueil
+            </button>
+    </nav>
+    <div class="row justify-content-center">
+        <div class="block container p-4 m-4 border rounded border-dark" name='block'>
+            <form action="connexion.php" method="POST">
 
-            <div class="row justify-content-start">
-                <div class="col-4">
-                    <p>* champs requis</p>
-                </div>
-            </div>
-            <div  class="row justify-content-start p-2">
-                <div class="col-5" >
-                    Selection type utilisateur*
-                </div>
-                <div class="col-6">
-                    <select name="dowpdown" >
-                        <option value="0">Administrateur</option>
-                        <option value="1" SELECTED>Utilisateur</option>
-                    </select>
-                </div>
-                <div class="row justify-content-start p-2">
-                    <div class="col-5 ">
-                        Pseudo*
+                <div class="row justify-content-start">
+                    <div class="col-4">
+                        <p>* champs requis</p>
                     </div>
-                    <div class="col-6 ">
-                        <input type="text" name="pseudo" id="pseudo" placeholder="Pseudo">
+                </div>
+                <div  class="row justify-content-start p-2">
+                    <div class="col-5" >
+                        Selection type utilisateur*
                     </div>
-                        <small class="col-10">
-                            <?php
-                            if(isset($pseudoErr) && $pseudoErr){
-                                echo "PSEUDO ERROR?";
-                                echo $pseudoErr;}
-                            ?>
-                        </small>
+                    <div class="col-6">
+                        <select name="dowpdown" >
+                            <option value="0">Administrateur</option>
+                            <option value="1" SELECTED>Utilisateur</option>
+                        </select>
+                    </div>
                     <div class="row justify-content-start p-2">
                         <div class="col-5 ">
-                            Mot de passe*
+                            Pseudo*
                         </div>
                         <div class="col-6 ">
-                            <input type="password" name="motdepasse" id="motdepasse">
+                            <input type="text" name="pseudo" id="pseudo" placeholder="Pseudo">
                         </div>
-                        <small class="col-10">
-                            <?php
-                            if(isset($pwdErr) && $pwdErr){
-                                echo "MDP ERROR?";
-                                echo $pwdErr;
-                            }
-                            ?>
-                        </small class="col-10">
+                            <small class="col-10">
+                                <?php
+                                if(isset($pseudoErr) && $pseudoErr){
+                                    echo "PSEUDO ERROR?";
+                                    echo $pseudoErr;}
+                                ?>
+                            </small>
+                        <div class="row justify-content-start p-2">
+                            <div class="col-5 ">
+                                Mot de passe*
+                            </div>
+                            <div class="col-6 ">
+                                <input type="password" name="motdepasse" id="motdepasse">
+                            </div>
+                            <small class="col-10">
+                                <?php
+                                if(isset($pwdErr) && $pwdErr){
+                                    echo "MDP ERROR?";
+                                    echo $pwdErr;
+                                }
+                                ?>
+                            </small class="col-10">
+                        </div>
+                        <input type="submit" name="submit" value="Se Connecter"/>
+
                     </div>
                 </div>
-            </div>
-        </form>
-        <div style="display:flex; margin-top :3em;margin-left:9em; padding-right:8em;padding-left:2em;">
-            <form action="connexion.php" method="POST">
-                <input type="submit" name="submit" value="Se Connecter"/>
             </form>
-        </div></br>
-        <div style="padding-left:2em;">
-            <a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/inscription.php"> Pas encore Inscrit ? </a>
-        </div>
+            <!--<div style="display:flex; margin-top :3em;margin-left:9em; padding-right:8em;padding-left:2em;">
+                <form action="connexion.php" method="POST">
+                    <input type="submit" name="submit" value="Se Connecter"/>
+                </form>
+            </div></br>-->
+            <div style="padding-left:2em;">
+                <a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/inscription.php"> Pas encore Inscrit ? </a>
+            </div>
 
+        </div>
     </div>
-</div>
 
 <?php
 
