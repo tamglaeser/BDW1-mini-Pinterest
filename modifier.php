@@ -41,6 +41,49 @@ function ajouter(){
         <input type="submit" value="Envoyer" name="submit">
     </form>
 <?php
+    $target_dir = "assets/images/";
+    $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+    $uploadOk = 1;
+    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    if(isset($_POST["submit"])) {
+        $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+        if($check !== false) {
+            echo "Fichier est bien une image - " . $check["mime"] . ".";
+            $uploadOk = 1;
+        } else {
+            echo "Fichier n'est pas une image.";
+            $uploadOk = 0;
+        }
+
+    }
+
+    //Voir si le fichier existe deja
+    if (file_exists($target_file)) {
+        echo "Desolé, le fichier existe déjà.";
+        $uploadOk = 0;
+    }
+    // Voir taille du fichier
+    if ($_FILES["fileToUpload"]["size"] > 100000) {
+        echo "Desolé, ton fichier est trop grand.";
+        $uploadOk = 0;
+    }
+
+    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "gif") {
+        echo "Desolé, on n'accepte que les fichiers JPG, PNG & GIF.";
+        $uploadOk = 0;
+    }
+
+    // Voir si $uploadOk est mis a 0 par un erreur
+    if ($uploadOk == 0) {
+        echo "Desolé, ton fichier n'était pas téléchargé.";
+    // si tout va bien, essayer de télécharger le fichier
+    } else {
+        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+            echo "Le fichier ". basename( $_FILES["fileToUpload"]["name"]). " était téléchargé.";
+        } else {
+            echo "Désolé, il y avait un erreur téléchargant ton fichier.";
+        }
+    }
 }
 ?>
 </body>
