@@ -43,7 +43,7 @@ function ajouter(){
         <input type="text">
         <br>Choisir une catégorie:<br>
         <input list="categories" name="catgeorie">
-        <datalist id="categories"><?php echo "1";/*
+        <datalist id="categories"><?php/*
             while ($row_categorie = $resultat_categorie->fetch_assoc()) {
                 echo "<option value=" . $row_categorie["nomCat"] . ">" .$row_categorie["nomCat"] . "</option>";
             }*/?>
@@ -93,9 +93,9 @@ function ajouter(){
         } else {
             echo "Désolé, il y avait un erreur téléchargant ton fichier.";
         }
-    } */
+    } */?> -->
 
-
+<?php
 $target_dir = "/home/tullia/Documents/School/Tulane_University/Junior_Year/BDW1/ProjetFinale/bdw1_projet/assets/images/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
@@ -149,6 +149,5 @@ if ($uploadOk == 0) {
 
 ?>
 
-?> -->
 </body>
 </html>
