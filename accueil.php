@@ -74,7 +74,7 @@ if (isset($_POST['accueil'])) {
     exit();
 }
 if (isset($_POST['connexion'])) {
-    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/connexion.php');
+    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/connexion1.php');
     exit();
 }
 
