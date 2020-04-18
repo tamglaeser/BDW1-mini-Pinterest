@@ -32,6 +32,8 @@ function ajouter(){
     <input type="submit" value="Upload Image" name="submit">
 </form>
 
+
+
 <!--
     <h1>Quelle photo?</h1>
     <form action="modifier.php" method="post" enctype="multipart/form-data">
@@ -41,7 +43,7 @@ function ajouter(){
         <input type="text">
         <br>Choisir une catégorie:<br>
         <input list="categories" name="catgeorie">
-        <datalist id="categories"><?php /*
+        <datalist id="categories"><?php echo "1";/*
             while ($row_categorie = $resultat_categorie->fetch_assoc()) {
                 echo "<option value=" . $row_categorie["nomCat"] . ">" .$row_categorie["nomCat"] . "</option>";
             }*/?>
