@@ -21,19 +21,16 @@ $dir = "assets/images/";
 		Accueil
 		</button>
 		<div class='connexion'>
-		<button style="float: right;" type="submit" name="connexion_ad" class="btn btn-success">
-		Connexion Admin
-		</button>
-		<button style="float: right;" type="submit" name="connexion_util" class="btn btn-success">
-		Connexion utilisateur
+		<button style="float: right;" type="submit" name="connexion" class="btn btn-success">
+		Connexion 
 		</button>
 		</div>
 	</nav><br>
 <form action="function.php" method="post">
-<div>
+<div style="display:flex; margin-left:16em;">
 	<h5> Selection de la catégorie d'image à afficher : </h5>
     <!-- here start the dropdown list -->
-	<div>
+	<div style='display:flex; margin-left:5em;'>
     <select name="dowpdown" >
         <option value="0">Toutes les photos</option>
         <option value="1">Animaux</option>
@@ -73,18 +70,13 @@ if (isset($_GET['catId'])) {
 session_start();
 
 if (isset($_POST['accueil'])) {
-    header('Location: https://bdw1.univ-lyon1.fr/p1501149/Projet/src/accueil.php');
+    header('Location:https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/accueil.php');
     exit();
 }
-if (isset($_POST['connexion_ad'])) {
-    header('Location: https://bdw1.univ-lyon1.fr/p1501149/Projet/src/connexion_admin.php');
+if (isset($_POST['connexion'])) {
+    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/connexion.php');
     exit();
 }
-if (isset($_POST['connexion_util'])) {
-    header('Location: https://bdw1.univ-lyon1.fr/p1501149/Projet/src/connexion_utilisateur.php');
-    exit();
-}
-
 
 closeConnexion($conn);
 ?>
