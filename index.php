@@ -1,8 +1,7 @@
-
 <?php
 session_start();
  if (isset($_POST['submit'])) {
-	header('Location: https://bdw1.univ-lyon1.fr/p1501149/Projet/src/index.php');
+	header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/index.php');
 	exit();
 								
 								}
