@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="accueil.css">
 </head>
-<body>
 <?php
 //require_once('bd.php');
 //require_once('utilisateur.php');
