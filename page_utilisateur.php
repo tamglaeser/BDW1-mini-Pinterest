@@ -4,6 +4,7 @@
 /*bdw1.univ-lyon1.fr/p1501149/tp4*/
 
 $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
+$dir = "assets/images/";
 ?>
 
 <!doctype html>
