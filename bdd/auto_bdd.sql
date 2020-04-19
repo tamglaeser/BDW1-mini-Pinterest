@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 16, 2020 at 05:26 PM
+-- Generation Time: Apr 19, 2020 at 07:05 PM
 -- Server version: 10.3.22-MariaDB-1:10.3.22+maria~bionic-log
--- PHP Version: 7.2.24-0ubuntu0.18.04.3
+-- PHP Version: 7.2.24-0ubuntu0.18.04.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -92,15 +92,16 @@ INSERT INTO `Photo` (`photoId`, `nomFich`, `description`, `catId`, `utilId`) VAL
 CREATE TABLE `utilisateur` (
   `utilId` int(11) NOT NULL,
   `utilPseudo` varchar(255) NOT NULL,
-  `utilMdp` varchar(255) NOT NULL
+  `utilMdp` varchar(255) NOT NULL,
+  `etat` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `utilisateur`
 --
 
-INSERT INTO `utilisateur` (`utilId`, `utilPseudo`, `utilMdp`) VALUES
-(1, 'p1926029', 'ef5d0c');
+INSERT INTO `utilisateur` (`utilId`, `utilPseudo`, `utilMdp`, `etat`) VALUES
+(1, 'p1926029', 'ef5d0c', 'disconnected');
 
 --
 -- Indexes for dumped tables
