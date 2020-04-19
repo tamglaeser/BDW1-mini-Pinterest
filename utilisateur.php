@@ -16,7 +16,7 @@ array('red', 'green', 'blue', 'black', 'yellow', 'orange') et enregistre le nouv
 function registerUtil($pseudo, $hashPwd, $link)
 {
 	//$hashPwd = md5($hashPwd);
-	$query = "INSERT INTO utilisateur(utilPseudo, utilMdp) VALUES (\"$pseudo\", \"$hashPwd\")"; // R: il fallait utiliser \"
+	$query = "INSERT INTO utilisateur(utilPseudo, utilMdp, etat) VALUES (\"$pseudo\", \"$hashPwd\", \"disconnected\")"; // R: il fallait utiliser \"
 	executeUpdate($link, $query) ;
 }
 
@@ -43,12 +43,12 @@ function getUserUtil($pseudo, $hashPwd, $link)
 /*Cette fonction renvoie un tableau (array) contenant tous les pseudos d'utilisateurs dont l'état est 'connected'*/
 function getConnectedUsersUtil($link)
 {
-	$req = "SELECT pseudo FROM utilisateur WHERE etat = 'connected'";
+	$req = "SELECT utilPseudo FROM utilisateur WHERE etat = 'connected'";
     $result = executeQuery($link, $req);
     $users = array();
     $n = 0;
     while($row = mysqli_fetch_assoc($result)) {
-        $users[$n] = $row["pseudo"];
+        $users[$n] = $row["utilPseudo"];
         $n += 1;
     }
     return $users;

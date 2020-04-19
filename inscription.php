@@ -6,7 +6,6 @@
 
 <?php
 session_start();
-echo "reenter inscription.php";
 
 ?>
 
@@ -116,7 +115,6 @@ echo "reenter inscription.php";
 
 <?php
 
-echo "enter after form??";
 
 /*Cette fonction doit être définie hors d'une condition (if/else), donc on la définie avant de l'utiliser dans une boucle*/
 function test_input($data){
@@ -126,16 +124,13 @@ function test_input($data){
     return $data;
 }
 
-echo "enter before submit if";
 if (isset($_POST['submit'])) {
-    echo "l";
 
     $pseudo = $_POST["pseudo"];
     $pwd = $_POST["motdepasse"];
     $confpwd = $_POST["confmotdepasse"];
 
     if (empty($_POST["pseudo"])){
-        echo "9";
         $pseudoErr = "Il vous faut un pseudo";
     }
     else {
@@ -160,10 +155,8 @@ if (isset($_POST['submit'])) {
         $confpwd = " la confirmation de mot de passe n'est pas la même qu'au dessus";
     }
     if ( ! (empty($_POST["pseudo"]) || empty($_POST["motdepasse"]) || empty($_POST["confmotdepasse"])) ) {
-        echo "3";
         $link = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
         if($_POST['dowpdown'] ==0){
-            echo"4";
             if(checkAvailabilityAdmin($pseudo, $link)==1){
                 registerAdmin($pseudo, $pwd, $link);
                 header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/connexion.php');
