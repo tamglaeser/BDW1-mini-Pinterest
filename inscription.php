@@ -45,12 +45,12 @@ echo "reenter inscription.php";
                     Selection type utilisateur*
                 </div>
                 <div class="col-6">
-                <form action="function.php" method="post">
+                <!--<form action="function.php" method="post">-->
                     <select name="dowpdown" >
                         <option value="0">Administrateur</option>
                         <option value="1" SELECTED>Utilisateur</option>
                     </select>
-                </form>
+                <!--</form>-->
                 </div>
                 <div class="row justify-content-start p-2">
                     <div class="col-5 ">

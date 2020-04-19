@@ -116,6 +116,7 @@ if (isset($_POST['submit'])) {
 
                     </div>
                 </div>
+
             </form>
             <!--<div style="display:flex; margin-top :3em;margin-left:9em; padding-right:8em;padding-left:2em;">
                 <form action="connexion.php" method="POST">
