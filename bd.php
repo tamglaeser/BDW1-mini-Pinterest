@@ -40,9 +40,6 @@ qu'une requête SQL INSERT/UPDATE/DELETE et ne renvoie rien si la mise à jour a
 message d'erreur est affiché.*/
 function executeUpdate($link, $query)
 {
-    echo "enter into bd.php execute update";
-    echo "query : " . $query;
-
     //print($query);  R: utilisez ce print pour débogage
 	$resultat = mysqli_query($link, $query) ;
 	if($resultat == FALSE){ // échec si FALSE
