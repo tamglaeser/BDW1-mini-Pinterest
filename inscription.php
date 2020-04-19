@@ -161,7 +161,7 @@ if (isset($_POST['submit'])) {
     }
     if ( ! (empty($_POST["pseudo"]) || empty($_POST["motdepasse"]) || empty($_POST["confmotdepasse"])) ) {
         echo "3";
-        $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
+        $link = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
         if($_POST['dowpdown'] ==0){
             echo"4";
             if(checkAvailabilityAdmin($pseudo, $link)==1){
