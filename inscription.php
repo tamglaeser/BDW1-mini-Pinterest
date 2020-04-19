@@ -176,7 +176,7 @@ if (isset($_POST['submit'])) {
         else{
             if(checkAvailabilityUtil($pseudo, $link)==1){
                 registerUtil($pseudo, $pwd, $link);
-                header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/connexion.php');
+                //header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/connexion.php');
                 exit();
             }
             else {
