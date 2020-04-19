@@ -27,6 +27,7 @@ $dir = "assets/images/";
 		Deconnexion
 		</button>
 		</div>
+    </form>
 	</nav></br>
 	<form action="function.php" method="post">
 <div style="display:flex; margin-left:16em;">
