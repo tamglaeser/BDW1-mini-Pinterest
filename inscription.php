@@ -115,6 +115,8 @@ echo "reenter inscription.php";
 
 <?php
 
+echo "enter after form??";
+
 /*Cette fonction doit être définie hors d'une condition (if/else), donc on la définie avant de l'utiliser dans une boucle*/
 function test_input($data){
     $data = trim($data);
@@ -123,6 +125,7 @@ function test_input($data){
     return $data;
 }
 
+echo "enter before submit if";
 if (isset($_POST['submit'])) {
     echo "l";
 
