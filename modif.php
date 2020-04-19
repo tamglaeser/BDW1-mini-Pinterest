@@ -36,16 +36,16 @@ if (isset($_POST['submit'])) {
     <nav class="crumbs">
         <?php 
 	if(empty($_SESSION['pseudo']) && empty($_SESSION['motdepasse'])){
-		echo "<a href='accueil.php'>ACCUEIL</a>";
+		echo "<a href='https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/accueil.php'>ACCUEIL</a>";
 	}else{
 		
 		if(getUserAdmin($_SESSION['pseudo'], $_SESSION['motdepasse'], $conn) == 1) { 
-			echo "<a href='page_administrateur.php'>ACCUEIL</a>";
+			echo "<a href='https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_administrateur.php'>ACCUEIL</a>";
 				
 		}else{
 					
 			if(getUserUtil($_SESSION['pseudo'], $_SESSION['motdepasse'], $conn) == 1) {
-				echo "<a href='page_utilisateur.php'>ACCUEIL</a>";
+				echo "<a href='https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_utilisateur.php'>ACCUEIL</a>";
 					
 			}
 		}
@@ -112,7 +112,7 @@ if (isset($_POST['submit'])) {
 function modif($photoId,$pseudo,$query) {
 				echo "a";
 				if(isset($_SESSION['motdepasse'])){$pwd= $_SESSION['motdepasse'];}
-				$conn = getConnection('localhost', "p1501149", "49afdf", "p1501149");
+				$conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 				
 				if(getUserUtil($pseudo,$_SESSION['motdepasse'],$conn) ==1){
 					$result_pseudo= executeQuery($conn, "SELECT utilId FROM utilisateur WHERE utilPseudo= \"$pseudo\"");
@@ -120,18 +120,18 @@ function modif($photoId,$pseudo,$query) {
 					if($result_photo== $result_pseudo){
 						executeUpdate($conn, $query);
 						echo "la description a ete modifier";
-						header('Location: https://bdw1.univ-lyon1.fr/p1501149/bdw1_projet-master/page_utilisateur.php');
+						header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_utilisateur.php');
 						exit();
 					}
 					else{
 						echo "vous ne pouvez pas la modifier ";
-						header('Location: https://bdw1.univ-lyon1.fr/p1501149/bdw1_projet-master/page_utilisateur.php');
+						header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_utilisateur.php');
 					}
 				}
 			   else {
 					if(getUserAdmin($pseudo,$_SESSION['motdepasse'],$conn) ==1){
 						executeUpdate($conn, $query);
-						header('Location: https://bdw1.univ-lyon1.fr/p1501149/bdw1_projet-master/page_administrateur.php');
+						header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_administrateur.php');
 						
 						exit();
 					}
