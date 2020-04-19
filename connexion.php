@@ -170,9 +170,8 @@ if (isset($_POST['submit'])) {
 					$_SESSION["pseudo"]= $pseudo;
 					$_SESSION["motdepasse"] =$pwd;
 
-					echo "pseudo : " . $pseudo;
 
-					//header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_utilisateur.php?pseudo='.$pseudo);
+					header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_utilisateur.php?pseudo='.$pseudo);
 					exit();
 				
 				}
