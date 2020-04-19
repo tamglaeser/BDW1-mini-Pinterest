@@ -22,16 +22,16 @@ $dir = "assets/images/";
 	    <button style="float: left;" type="submit" name="accueil" class="btn btn-success">
 		Accueil
 		</button>
-        <div class='deconnexion'>
-            <button style="float: right;" type="submit" name="ajouter" class="btn btn-success">
-                Ajouter une Photo
-            </button>
-        </div>
 		<div class='deconnexion'>
 		<button style="float: right;" type="submit" name="deconnexion" class="btn btn-success">
 		Deconnexion
 		</button>
 		</div>
+        <div class='ajouter'>
+            <button style="float: right;" type="submit" name="ajouter" class="btn btn-success">
+                Ajouter une Photo
+            </button>
+        </div>
 	</nav></br>
 <form action="function.php" method="post">
 <div style="display:flex; margin-left:16em;">
