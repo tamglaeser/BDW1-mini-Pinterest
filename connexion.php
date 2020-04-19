@@ -163,16 +163,16 @@ if (isset($_POST['submit'])) {
 				}
 			}
 			else{
-			    echo "enter for user";
+			    //echo "enter for user";
 				if(getUserUtil($pseudo, $pwd, $link) == 1) {
-				    echo "user already exists";
+				    //echo "user already exists";
 					setConnectedUtil($pseudo, $link);
 					$_SESSION["pseudo"]= $pseudo;
 					$_SESSION["motdepasse"] =$pwd;
 
-					echo "entered right before url to go to page_utilisateur.php with pseudo";
+					echo "pseudo : " . $pseudo;
 
-					//header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_utilisateur.php?pseudo='.$pseudo);
+					header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_utilisateur.php?pseudo='.$pseudo);
 					exit();
 				
 				}
