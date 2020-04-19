@@ -18,7 +18,7 @@ $dir = "assets/images/";
 <body>
 <div style="background-image:url(img/accueil_bis.jpg);" ><B><h1>PhotouCat_Util</h1></B><br> </div>
     <nav class="crumbs">
-	<form name="accueil_util" action="page_utilisateur.php?pseudo= <?php echo $_GET['pseudo']?>" method="post">
+	<form name="accueil_util" action="page_utilisateur.php?pseudo=<?php echo $_GET['pseudo']?>" method="post">
 	    <button style="float: left;" type="submit" name="accueil" class="btn btn-success">
 		Accueil
 		</button>
@@ -76,10 +76,8 @@ if (isset($_POST['accueil'])) {
 }
 if (isset($_POST['deconnexion'])) {
     $pseudo = $_GET['pseudo'];
-    echo "pseudo page util = " . $pseudo;
-    echo "enter into deconnexion";
     setDisconnectedUtil($pseudo, $conn);
-    //header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/accueil.php');
+    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/accueil.php');
     exit();
 }
 
