@@ -36,66 +36,6 @@ function test_input($data){
   $data = htmlspecialchars($data);
   return $data;
 }
-
-if (isset($_POST['submit'])) {
-	echo "l";
-
-	$pseudo = $_POST["pseudo"];
-	$pwd = $_POST["motdepasse"];
-	$confpwd = $_POST["confmotdepasse"];
-
-  if (empty($_POST["pseudo"])){
-	  echo "9";
-    $pseudoErr = "Il vous faut un pseudo";
-  }
-	else {
-		$pseudo = test_input($_POST["pseudo"]);
-		$pseudoErr = "";
-	}
-	if (empty($_POST["motdepasse"])) {
-		$pwdErr = "le mot de passe est requis";
-	}
-	else {
-		$pwd = test_input($_POST["motdepasse"]);
-	}
-	if (empty($_POST["confmotdepasse"])) {
-		$confpwd = " la confirmation de mot de passe est requis";
-	}
-	else {
-		$confpwd = test_input($_POST["confmotdepasse"]);
-	}
-
-	if ( isset($pwd) && $pwd != $confpwd){
-		$pwdErr = "le mot de passe n'est pas le même que le champ d'en dessous";
-		$confpwd = " la confirmation de mot de passe n'est pas la même qu'au dessus";
-	}
-	if ( ! (empty($_POST["pseudo"]) || empty($_POST["motdepasse"]) || empty($_POST["confmotdepasse"])) ) {
-		echo "3";
-		$conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
-		if($_POST['dowpdown'] ==0){
-			echo"4";
-			if(checkAvailabilityAdmin($pseudo, $link)==1){
-				registerAdmin($pseudo, $pwd, $link);
-				header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/connexion.php');
-				exit();
-			}
-			else {
-				$pseudoErr="pseudo déjâ pris";
-			}
-		}
-		else{
-			if(checkAvailabilityUtil($pseudo, $link)==1){
-				registerUtil($pseudo, $pwd, $link);
-				header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/connexion.php');
-				exit();
-			}
-			else {
-				$pseudoErr="pseudo déjâ pris";
-			}
-		}
-		
-	}
-}
 ?>
 
 <!-- utilisation du framework bootstrap.
@@ -165,9 +105,7 @@ if (isset($_POST['submit'])) {
 					?>
 					</small>
 				</div>
-                <?php echo "before submit valider";?>
                 <input type="submit" name="submit" value="Valider"/>
-                <?php echo "after submit valider";?>
                 </form>
 				<div style="display:flex;margin-top:1em; margin-left:9em; padding-right:8em;padding-left:2em;">
 				</div></br>
@@ -179,14 +117,78 @@ if (isset($_POST['submit'])) {
 </div>
 
 
-</body>
-</html>
+
+
+
+
 <?php
+if (isset($_POST['submit'])) {
+    echo "l";
+
+    $pseudo = $_POST["pseudo"];
+    $pwd = $_POST["motdepasse"];
+    $confpwd = $_POST["confmotdepasse"];
+
+    if (empty($_POST["pseudo"])){
+        echo "9";
+        $pseudoErr = "Il vous faut un pseudo";
+    }
+    else {
+        $pseudo = test_input($_POST["pseudo"]);
+        $pseudoErr = "";
+    }
+    if (empty($_POST["motdepasse"])) {
+        $pwdErr = "le mot de passe est requis";
+    }
+    else {
+        $pwd = test_input($_POST["motdepasse"]);
+    }
+    if (empty($_POST["confmotdepasse"])) {
+        $confpwd = " la confirmation de mot de passe est requis";
+    }
+    else {
+        $confpwd = test_input($_POST["confmotdepasse"]);
+    }
+
+    if ( isset($pwd) && $pwd != $confpwd){
+        $pwdErr = "le mot de passe n'est pas le même que le champ d'en dessous";
+        $confpwd = " la confirmation de mot de passe n'est pas la même qu'au dessus";
+    }
+    if ( ! (empty($_POST["pseudo"]) || empty($_POST["motdepasse"]) || empty($_POST["confmotdepasse"])) ) {
+        echo "3";
+        $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
+        if($_POST['dowpdown'] ==0){
+            echo"4";
+            if(checkAvailabilityAdmin($pseudo, $link)==1){
+                registerAdmin($pseudo, $pwd, $link);
+                header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/connexion.php');
+                exit();
+            }
+            else {
+                $pseudoErr="pseudo déjâ pris";
+            }
+        }
+        else{
+            if(checkAvailabilityUtil($pseudo, $link)==1){
+                registerUtil($pseudo, $pwd, $link);
+                header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/connexion.php');
+                exit();
+            }
+            else {
+                $pseudoErr="pseudo déjâ pris";
+            }
+        }
+
+    }
+}
+
 
 if (isset($_POST['accueil'])) {
     header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/accueil.php');
     exit();
 }
-
-
 ?>
+
+
+</body>
+</html>
