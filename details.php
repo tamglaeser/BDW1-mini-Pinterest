@@ -20,7 +20,7 @@ $photoId = $_GET['photoId'];
 $pseudo= $_SESSION['pseudo'];
 $pwd= $_SESSION['motdepasse'];
 
-$conn = getConnection('localhost', "p1501149", "49afdf", "p1501149");
+$conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 $dir = "assets/images/";
 
 details($photoId, $conn);
