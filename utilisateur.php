@@ -15,6 +15,7 @@ function checkAvailabilityUtil($pseudo, $link)
 array('red', 'green', 'blue', 'black', 'yellow', 'orange') et enregistre le nouvel utilisateur dans la relation utilisateur via la connexion*/
 function registerUtil($pseudo, $hashPwd, $link)
 {
+	echo "enter here?";
 	$hashPwd = md5($hashPwd);
 	$query = "INSERT INTO utilisateur VALUES (\"$pseudo\", \"$hashPwd\",\"disconnected\")"; // R: il fallait utiliser \" 
 	executeUpdate($link, $query) ;
