@@ -11,16 +11,22 @@
 
 
 <?php
+session_start();
 require_once ('bd.php');
+require_once ('administrateur.php');
+require_once ('utilisateur.php');
+require_once ('function.php');
 $photoId = $_GET['photoId'];
+$pseudo= $_SESSION['pseudo'];
+$pwd= $_SESSION['motdepasse'];
 
-$conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
+$conn = getConnection('localhost', "p1501149", "49afdf", "p1501149");
 $dir = "assets/images/";
 
 details($photoId, $conn);
 
 function details($ImageId, $link) {?>
-    <h1>Les détails sur cette photo</h1>
+    <h1>Les détails sur cette photo</h1><br><br><p> <p><br><br>
     <?php
     $resultat_imNom = executeQuery($link, "SELECT nomFich FROM Photo WHERE photoId = $ImageId");
     $row_imNom = $resultat_imNom->fetch_assoc();
@@ -66,13 +72,28 @@ function details($ImageId, $link) {?>
             </td>
         </tr>
     </table>
+	</br></br>
+		<form method="POST">
+			<input name="supression" id="sup" type="submit" value="supprimer la photo">
+			
+		</form>
+		
+		
+			
 
+		
     <?php
-}
-//$url = htmlspecialchars($_SERVER['HTTP_REFERER']);
-echo "<a href='accueil.php'>ACCUEIL/HOME</a>";
+}	
+//$url = htmlspecialchars($_SERVER['HTTP_REFERER']);?><script>
+			var btn = document.querySelector('input');
+			var aff = document.querySelector('p');
+		</script>	<?php
+			echo "p";
+			 if (isset($_POST['supression'])) {
+				 include("sup.php");
+			 }
+			?>
 
-?>
 
 
 </body>
