@@ -19,7 +19,7 @@ $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 <body>
 <div style="background-image:url(img/accueil_bis.jpg);" ><B><h1>PhotouCat_Admin</h1></B><br> </div>
 <nav class="crumbs">
-	<form name="accueil" action="accueil.php" method="POST">
+	<form name="accueil_stats" action="Stats.php" method="POST">
 	   <button style="float: left;" type="submit" name="accueil" class="btn btn-success">
 		Accueil
 		</button>
