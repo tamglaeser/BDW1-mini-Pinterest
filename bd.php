@@ -41,7 +41,10 @@ message d'erreur est affiché.*/
 function executeUpdate($link, $query)
 {
     echo "enter into bd.php execute update";
-	//print($query);  R: utilisez ce print pour débogage 
+    echo "query : " . $query;
+    echo "link : " . $link;
+
+    //print($query);  R: utilisez ce print pour débogage
 	$resultat = mysqli_query($link, $query) ;
 	if($resultat == FALSE){ // échec si FALSE
 		printf("Échec de la mise à jour") ;
