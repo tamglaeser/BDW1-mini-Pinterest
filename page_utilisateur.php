@@ -17,18 +17,18 @@ $dir = "assets/images/";
 </head>
 <body>
 <div style="background-image:url(img/accueil_bis.jpg);" ><B><h1>PhotouCat_Util</h1></B><br> </div>
-<nav class="crumbs">
-	<form name="accueil" action="page_utilisateur.php" method="post">
-	   <button style="float: left;" type="submit" name="accueil" class="btn btn-success">
+    <nav class="crumbs">
+	<form name="util" action="page_utilisateur.php" method="post">
+	    <button style="float: left;" type="submit" name="accueil" class="btn btn-success">
 		Accueil
 		</button>
-		<div class='connexion'>
+		<div class='deconnexion'>
 		<button style="float: right;" type="submit" name="deconnexion" class="btn btn-success">
 		Deconnexion
 		</button>
 		</div>
 	</nav></br>
-	<form action="function.php" method="post">
+<form action="function.php" method="post">
 <div style="display:flex; margin-left:16em;">
 	<h5> Selection de la catégorie d'image à afficher : </h5>
     <!-- here start the dropdown list -->
