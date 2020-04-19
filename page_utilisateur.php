@@ -5,6 +5,7 @@
 
 $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 $dir = "assets/images/";
+$pseudo = $_GET['pseudo'];
 ?>
 
 <!doctype html>
@@ -76,7 +77,7 @@ if (isset($_POST['accueil'])) {
 }
 if (isset($_POST['deconnexion'])) {
     echo "enter into deconnexion";
-    setDisconnectedUtil($_GET['pseudo'], $conn);
+    setDisconnectedUtil($pseudo, $conn);
     //header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/accueil.php');
     exit();
 }
