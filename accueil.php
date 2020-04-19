@@ -31,12 +31,21 @@ $dir = "assets/images/";
 	<h5> Selection de la catégorie d'image à afficher : </h5>
     <!-- here start the dropdown list -->
 	<div style='display:flex; margin-left:5em;'>
+        <?php
+        $resultat_cat = executeQuery($GLOBALS['conn'], "SELECT nomCat FROM Categorie");
+        ?>
     <select name="dowpdown" >
         <option value="0">Toutes les photos</option>
-        <option value="1">Animaux</option>
+        <?php
+        $val = 0;
+        while ($row_cat = $resultat_cat->fetch_assoc()){
+            echo "<option value=" . ++$val . ">". $row_cat['nomCat'] . "</option>";
+        }
+        ?>
+        <!--<option value="1">Animaux</option>
         <option value="2">Sport</option>
         <option value="3">Internet</option>
-        <option value="4">Gens</option>
+        <option value="4">Gens</option>-->
     </select>
     <input type="submit" name="show_dowpdown_value" value="Valider"/>
 	</div>
