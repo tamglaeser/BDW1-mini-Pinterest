@@ -14,8 +14,8 @@ function checkAvailabilityAdmin($pseudo, $link)
 array('red', 'green', 'blue', 'black', 'yellow', 'orange') et enregistre le nouvel administrateur dans la relation administrateur via la connexion*/
 function registerAdmin($pseudo, $hashPwd, $link)
 {
-	$hashPwd = md5($hashPwd);
-	$query = "INSERT INTO administrateur VALUES (\"$pseudo\", \"$hashPwd\")"; // R: il fallait utiliser \" 
+	//$hashPwd = md5($hashPwd);
+	$query = "INSERT INTO administrateur(adminPseudo, adminMdp) VALUES (\"$pseudo\", \"$hashPwd\")"; // R: il fallait utiliser \"
 	executeUpdate($link, $query) ;
 }
 
@@ -25,7 +25,7 @@ function registerAdmin($pseudo, $hashPwd, $link)
 function getUserAdmin($pseudo, $hashPwd, $link)
 {
 	
-	$hashPwd = md5($hashPwd);
+	//$hashPwd = md5($hashPwd);
 	$query1 = "SELECT * FROM administrateur WHERE aminPseudo = \"$pseudo\" AND adminMdp= \"$hashPwd\"";
 	$res_req = executeQuery($link, $query1);
 	$res1= mysqli_num_rows($res_req);
