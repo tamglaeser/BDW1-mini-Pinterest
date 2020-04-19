@@ -26,7 +26,7 @@ function getUserAdmin($pseudo, $hashPwd, $link)
 {
 	
 	//$hashPwd = md5($hashPwd);
-	$query1 = "SELECT * FROM administrateur WHERE aminPseudo = \"$pseudo\" AND adminMdp= \"$hashPwd\"";
+	$query1 = "SELECT * FROM administrateur WHERE adminPseudo = \"$pseudo\" AND adminMdp= \"$hashPwd\"";
 	$res_req = executeQuery($link, $query1);
 	$res1= mysqli_num_rows($res_req);
 	return $res1;
