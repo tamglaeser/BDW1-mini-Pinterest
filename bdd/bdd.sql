@@ -106,7 +106,6 @@ INSERT INTO Photo(nomFich, description, catId, utilId)
 VALUES ('bracelet.gif', 'Un bracelet fait des emballages des bonbons Starbursts', 1, 1),
        ('composants.gif', 'Deux individuel emballages des bonbons Starbursts', 1, 1),
        ('EgliseDC.jpeg', 'l''interieur de la basilique a DC', 2, 1),
-       ('erreur.png', 'Une graphe comparant les erreurs des 4 differents methods de la fonction mathematique FFT', 3, 1),
        ('giraffe.png', 'Un dessin d''une girafe', 4, 1),
        ('loading.gif', 'Signe de chargement d''internet', 3, 1),
        ('pikachu.gif', 'Un GIF de Pikachu (de Pokemon)', 4, 1),
@@ -115,7 +114,6 @@ VALUES ('bracelet.gif', 'Un bracelet fait des emballages des bonbons Starbursts'
        ('inconnu.jpeg', 'Un photo d''un endroit et d''un mec qu''on a oublie (probablement en Europe)', 2, 1),
        ('kisses.gif', 'Un dessin de des Hershey Kisses', 6, 1),
        ('linkedIn.png', 'Le photo LinkedIn de Tullia', 5, 1),
-       ('matlab.png', 'Le debut d''une fonction de matlab pour les devoirs des maths de Tullia', 3, 1),
        ('plantcell.gif', 'Le diagram de la cellule d''une plante', 6, 1);
 
 -- --------------------------------------------------------
