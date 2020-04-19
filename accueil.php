@@ -78,5 +78,16 @@ if (isset($_POST['connexion'])) {
     exit();
 }
 
+if (isset($_POST['accueil_util'])) {
+    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_utilisateur.php');
+    exit();
+}
+if (isset($_POST['deconnexion'])) {
+    echo "enter into deconnexion";
+    setDisconnectedUtil($_GET['pseudo'], $conn);
+    //header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/accueil.php');
+    exit();
+}
+
 closeConnexion($conn);
 ?>
