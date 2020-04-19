@@ -42,7 +42,6 @@ function executeUpdate($link, $query)
 {
     echo "enter into bd.php execute update";
     echo "query : " . $query;
-    echo "link : " . $link;
 
     //print($query);  R: utilisez ce print pour débogage
 	$resultat = mysqli_query($link, $query) ;
