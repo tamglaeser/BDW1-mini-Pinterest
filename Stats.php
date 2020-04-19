@@ -40,7 +40,7 @@ if (isset($_GET['catId'])) {
 
 
 if (isset($_POST['accueil'])) {
-    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/accueil.php');
+    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_administrateur.php');
     exit();
 }
 if (isset($_POST['deconnexion'])) {
