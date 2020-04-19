@@ -9,10 +9,43 @@
 <?php
 session_start();
  if (isset($_POST['accueil'])) {
-	header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/accueil.php');
+	header('Location: https://bdw1.univ-lyon1.fr/p1501149/bdw1_projet-master/accueil.php');
 	exit();
 }
+if (isset($_POST['submit'])) {
 
+  if (empty($_POST["pseudo"])){
+    $pseudoErr = "Il vous faut un pseudo";
+  }
+	else {
+		$pseudo = test_input($_POST["pseudo"]);
+		$pseudoErr = "";
+	}
+	if (empty($_POST["motdepasse"])) {
+		$pwdErr = "le mot de passe est requis";
+	}
+	else {
+		$pwd = test_input($_POST["motdepasse"]);
+	}
+	$conn = getConnection('localhost', "p1501149", "49afdf", "p1501149");
+	if(isset($_POST["pseudo"])){
+		if ((isset($pseudo)) &&( isset($pwd))){
+			$link=getConnection($dbHost, $dbUser, $dbPwd, $dbName);
+			if($_POST['dowpdown'] ==0){
+				if(getUserAdmin($pseudo, $pwd, $link) != 1) { 
+				
+					$pwdErr = "le pseudo/mot de passe sont erroné ou l'admin n'existe pas";
+				}
+			}
+			else{
+				if(getUserUtil($pseudo, $pwd, $link) != 1) {
+				   		
+					$pwdErr = "le pseudo/mot de passe sont erroné ou l'utilisateur n'existe pas";
+				}
+			}
+		}
+	}
+}
 ?>
 
 <!doctype html>
@@ -61,7 +94,6 @@ session_start();
                             <small class="col-10">
                                 <?php
                                 if(isset($pseudoErr) && $pseudoErr){
-                                    echo "PSEUDO ERROR?";
                                     echo $pseudoErr;}
                                 ?>
                             </small>
@@ -75,7 +107,6 @@ session_start();
                             <small class="col-10">
                                 <?php
                                 if(isset($pwdErr) && $pwdErr){
-                                    echo "MDP ERROR?";
                                     echo $pwdErr;
                                 }
                                 ?>
@@ -92,7 +123,7 @@ session_start();
                 </form>
             </div></br>-->
             <div style="padding-left:2em;">
-                <a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/inscription.php"> Pas encore Inscrit ? </a>
+                <a href="https://bdw1.univ-lyon1.fr/p1501149/bdw1_projet-master/inscription.php"> Pas encore Inscrit ? </a>
             </div>
 
         </div>
@@ -112,32 +143,16 @@ if (isset($_POST['submit'])) {
 	$pseudo = $_POST["pseudo"];
 	$pwd = $_POST["motdepasse"];
 	
-
-  if (empty($_POST["pseudo"])){
-    $pseudoErr = "Il vous faut un pseudo";
-  }
-	else {
-		$pseudo = test_input($_POST["pseudo"]);
-		$pseudoErr = "";
-	}
-	if (empty($_POST["motdepasse"])) {
-		$pwdErr = "le mot de passe est requis";
-	}
-	else {
-		$pwd = test_input($_POST["motdepasse"]);
-	}
-	
-	$conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
+	$conn = getConnection('localhost', "p1501149", "49afdf", "p1501149");
 	if(isset($_POST["pseudo"])){
-	    echo "entered username";
 		if ((isset($pseudo)) &&( isset($pwd))){
-		    echo "entered usename & password";
 			$link=getConnection($dbHost, $dbUser, $dbPwd, $dbName);
 			if($_POST['dowpdown'] ==0){
 				if(getUserAdmin($pseudo, $pwd, $link) == 1) { 
 				$_SESSION["pseudo"]= $pseudo;
+				$_SESSION["motdepasse"] =$pwd;
 				
-				header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_administrateur.php');
+				header('Location: https://bdw1.univ-lyon1.fr/p1501149/bdw1_projet-master/page_administrateur.php');
 				exit();
 			
 				}
@@ -151,8 +166,8 @@ if (isset($_POST['submit'])) {
 				    echo "user already exists";
 					setConnectedUtil($pseudo, $link);
 					$_SESSION["pseudo"]= $pseudo;
-					
-					header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_utilisateur.php');
+					$_SESSION["motdepasse"] =$pwd;
+					header('Location: https://bdw1.univ-lyon1.fr/p1501149/bdw1_projet-master/page_utilisateur.php');
 					exit();
 				
 				}
