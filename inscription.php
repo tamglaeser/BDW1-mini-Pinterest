@@ -27,17 +27,6 @@ echo "reenter inscription.php";
 		</button>
 	</nav>
 
-<?php
-
-/*Cette fonction doit être définie hors d'une condition (if/else), donc on la définie avant de l'utiliser dans une boucle*/
-function test_input($data){
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
-?>
-
 <!-- utilisation du framework bootstrap.
 	Beaucoup de mot compliqués pour désigner une feuille de style toute prète.
 -->
@@ -46,74 +35,76 @@ function test_input($data){
 	<div class="block container p-4 m-4 border rounded border-dark" name='block'>
 		<form action="inscription.php" method="POST">
 
-		<div class="row justify-content-start">
-			<div class="col-4">
-				<p>* champs requis</p>
-			</div>
-		</div>
-		<div  class="row justify-content-start p-2">
-			<div class="col-5" >
-				Selection type utilisateur*
-			</div>
-			<div class="col-6">
-			<form action="function.php" method="post">
-				<select name="dowpdown" >
-					<option value="0">Administrateur</option>
-					<option value="1" SELECTED>Utilisateur</option>
-				</select>
-			</form>
-			</div>
-		<div class="row justify-content-start p-2">
-			<div class="col-5 ">
-				Pseudo*
-			</div>
-			<div class="col-6 ">
-			  <input type="text" name="pseudo"  placeholder="Pseudo">
-			</div>
-				<small class="col-10">
-					<?php
-						if(isset($pseudoErr) && $pseudoErr){
-							echo $pseudoErr;}
-					?>
-			  </small>
-			<div class="row justify-content-start p-2">
-				<div class="col-5 ">
-					Mot de passe*
-				</div>
-				<div class="col-6 ">
-				  <input type="password" name="motdepasse" >
-				</div>
-					<small class="col-10">
-						<?php
-							if(isset($pwdErr) && $pwdErr){
-								echo $pwdErr;
-							}
-						?>
-				  </small class="col-10">
-				  <div class="row justify-content-start p-2">
-					<div class="col-5">
-						Confirmez votre Mot de passe
-					</div>
-					<div class="col-6 ">
-					  <input type="password" name="confmotdepasse" >
-					</div>
-				  <small class="col-10">
-				  <?php
-						if(isset($confpwdErr) && $confpwdErr){
-							echo $confpwdErr;
-						}
-					?>
-					</small>
-				</div>
-                <input type="submit" name="submit" value="Valider"/>
+            <div class="row justify-content-start">
+                <div class="col-4">
+                    <p>* champs requis</p>
+                </div>
+            </div>
+            <div  class="row justify-content-start p-2">
+                <div class="col-5" >
+                    Selection type utilisateur*
+                </div>
+                <div class="col-6">
+                <form action="function.php" method="post">
+                    <select name="dowpdown" >
+                        <option value="0">Administrateur</option>
+                        <option value="1" SELECTED>Utilisateur</option>
+                    </select>
                 </form>
-				<div style="display:flex;margin-top:1em; margin-left:9em; padding-right:8em;padding-left:2em;">
-				</div></br>
-				<div style="padding-left:2em;">
-				<a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/connexion.php"> Déja Inscrit ? </a>
-				</div>
+                </div>
+                <div class="row justify-content-start p-2">
+                    <div class="col-5 ">
+                        Pseudo*
+                    </div>
+                    <div class="col-6 ">
+                        <input type="text" name="pseudo"  placeholder="Pseudo">
+                    </div>
+                    <small class="col-10">
+                        <?php
+                            if(isset($pseudoErr) && $pseudoErr){
+                                echo $pseudoErr;}
+                        ?>
+                    </small>
+                    <div class="row justify-content-start p-2">
+                        <div class="col-5 ">
+                            Mot de passe*
+                        </div>
+                        <div class="col-6 ">
+                            <input type="password" name="motdepasse" >
+                        </div>
+                        <small class="col-10">
+                            <?php
+                                if(isset($pwdErr) && $pwdErr){
+                                    echo $pwdErr;
+                                }
+                            ?>
+                        </small class="col-10">
+                        <div class="row justify-content-start p-2">
+                            <div class="col-5">
+                                Confirmez votre Mot de passe
+                            </div>
+                            <div class="col-6 ">
+                                <input type="password" name="confmotdepasse" >
+                            </div>
+                            <small class="col-10">
+                                <?php
+                                    if(isset($confpwdErr) && $confpwdErr){
+                                        echo $confpwdErr;
+                                    }
+                                ?>
+                            </small>
+                        </div>
+                        <input type="submit" name="submit" value="Valider"/>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div style="display:flex;margin-top:1em; margin-left:9em; padding-right:8em;padding-left:2em;">
+		</div></br>
+		<div style="padding-left:2em;">
+		    <a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/connexion.php"> Déja Inscrit ? </a>
 		</div>
-	</div>
+    </div>
 </div>
 
 
@@ -121,7 +112,17 @@ function test_input($data){
 
 
 
+
 <?php
+
+/*Cette fonction doit être définie hors d'une condition (if/else), donc on la définie avant de l'utiliser dans une boucle*/
+function test_input($data){
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
 if (isset($_POST['submit'])) {
     echo "l";
 
