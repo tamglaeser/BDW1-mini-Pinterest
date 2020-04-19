@@ -25,7 +25,8 @@ echo "reenter inscription.php";
 	   <button style="float: left;" type="submit" name="accueil" class="btn btn-success">
 		Accueil
 		</button>
-	</nav>
+    </form>
+</nav>
 
 <!-- utilisation du framework bootstrap.
 	Beaucoup de mot compliqués pour désigner une feuille de style toute prète.
