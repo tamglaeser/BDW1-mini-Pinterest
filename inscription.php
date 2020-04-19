@@ -164,11 +164,9 @@ if (isset($_POST['submit'])) {
 					?>
 					</small>
 				</div>
+                <input type="submit" name="submit" value="Valider"/>
 				</form>
 				<div style="display:flex;margin-top:1em; margin-left:9em; padding-right:8em;padding-left:2em;">
-				<form action="inscription.php" method="POST">
-						<input type="submit" name="submit" value="Valider"/>
-				</form>
 				</div></br>
 				<div style="padding-left:2em;">
 				<a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/connexion.php"> Déja Inscrit ? </a>
