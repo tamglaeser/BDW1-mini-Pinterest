@@ -6,6 +6,7 @@
 
 <?php
 session_start();
+echo "reenter inscription.php";
 
 ?>
 
@@ -164,8 +165,10 @@ if (isset($_POST['submit'])) {
 					?>
 					</small>
 				</div>
+                <?php echo "before submit valider";?>
                 <input type="submit" name="submit" value="Valider"/>
-				</form>
+                <?php echo "after submit valider";?>
+                </form>
 				<div style="display:flex;margin-top:1em; margin-left:9em; padding-right:8em;padding-left:2em;">
 				</div></br>
 				<div style="padding-left:2em;">
