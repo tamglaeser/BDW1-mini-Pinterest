@@ -16,7 +16,7 @@ array('red', 'green', 'blue', 'black', 'yellow', 'orange') et enregistre le nouv
 function registerUtil($pseudo, $hashPwd, $link)
 {
 	//$hashPwd = md5($hashPwd);
-	$query = "INSERT INTO utilisateur VALUES (\"$pseudo\", \"$hashPwd\")"; // R: il fallait utiliser \"
+	$query = "INSERT INTO utilisateur(utilPseudo, utilMdp) VALUES (\"$pseudo\", \"$hashPwd\")"; // R: il fallait utiliser \"
 	executeUpdate($link, $query) ;
 }
 
