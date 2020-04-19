@@ -22,6 +22,11 @@ $dir = "assets/images/";
 	    <button style="float: left;" type="submit" name="accueil" class="btn btn-success">
 		Accueil
 		</button>
+        <div class='deconnexion'>
+            <button style="float: right;" type="submit" name="ajouter" class="btn btn-success">
+                Ajouter une Photo
+            </button>
+        </div>
 		<div class='deconnexion'>
 		<button style="float: right;" type="submit" name="deconnexion" class="btn btn-success">
 		Deconnexion
@@ -79,6 +84,10 @@ if (isset($_POST['deconnexion'])) {
     setDisconnectedUtil($pseudo, $conn);
     header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/accueil.php');
     exit();
+}
+
+if (isset($_POST['ajouter'])) {
+    echo "entered ajouter";
 }
 
 
