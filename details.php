@@ -10,7 +10,7 @@ if(isset($_SESSION['pseudo'])){$pseudo = $_SESSION['pseudo'];}
 if(isset($_SESSION['motdepasse'])){$pwd = $_SESSION['motdepasse'];}
 
 
-$conn = getConnection('localhost', "p1501149", "49afdf", "p1501149");
+$conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 ?>
 <!doctype html>
 <html lang="fr">
@@ -25,16 +25,16 @@ $conn = getConnection('localhost', "p1501149", "49afdf", "p1501149");
 	<nav class="crumbs">
 	<?php 
 	if(empty($_SESSION['pseudo']) && empty($_SESSION['motdepasse'])){
-		echo "<a href='accueil.php'>ACCUEIL</a>";
+		echo "<a href='https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/accueil.php'>ACCUEIL</a>";
 	}else{
 		
 		if(getUserAdmin($pseudo, $pwd, $conn) == 1) { 
-			echo "<a href='page_administrateur.php'>ACCUEIL</a>";
+			echo "<a href='https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_administrateur.php'>ACCUEIL</a>";
 				
 		}else{
 					
 			if(getUserUtil($pseudo, $pwd, $conn) == 1) {
-				echo "<a href='page_utilisateur.php'>ACCUEIL</a>";
+				echo "<a href='https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_utilisateur.php'>ACCUEIL</a>";
 					
 			}
 		}
@@ -109,10 +109,10 @@ function details($ImageId, $link) {?>
 		if(getUserAdmin($_SESSION['pseudo'], $_SESSION['motdepasse'], $link) == 1) { 
 			$pseudo = $_SESSION['pseudo'];?>
 			<div class="row justify-content-center p-2">
-			<a href="https://bdw1.univ-lyon1.fr/p1501149/bdw1_projet-master/sup.php"> supprimer la photo</a><br>
+			<a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/sup.php"> supprimer la photo</a><br>
 			
 			
-			<a href="https://bdw1.univ-lyon1.fr/p1501149/bdw1_projet-master/modif.php"> modifier les détails </a><br>
+			<a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/modif.php"> modifier les détails </a><br>
 			</div>
 			<?php
 	
@@ -122,8 +122,8 @@ function details($ImageId, $link) {?>
 
 		
 			?>	<div class="row justify-content-center p-2">
-				<a href="https://bdw1.univ-lyon1.fr/p1501149/bdw1_projet-master/sup.php"> supprimer la photo</a><br>
-				<a href="https://bdw1.univ-lyon1.fr/p1501149/bdw1_projet-master/modif.php"> modifier les détails </a><br>
+				<a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/sup.php"> supprimer la photo</a><br>
+				<a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/modif.php"> modifier les détails </a><br>
 				</div>
 				<?php
 				
