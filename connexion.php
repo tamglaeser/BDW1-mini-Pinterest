@@ -9,7 +9,7 @@
 <?php
 session_start();
  if (isset($_POST['accueil'])) {
-	header('Location: https://bdw1.univ-lyon1.fr/p1501149/bdw1_projet-master/accueil.php');
+	header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/accueil.php');
 	exit();
 }
 if (isset($_POST['submit'])) {
@@ -27,10 +27,10 @@ if (isset($_POST['submit'])) {
 	else {
 		$pwd = test_input($_POST["motdepasse"]);
 	}
-	$conn = getConnection('localhost', "p1501149", "49afdf", "p1501149");
+	$link = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 	if(isset($_POST["pseudo"])){
 		if ((isset($pseudo)) &&( isset($pwd))){
-			$link=getConnection($dbHost, $dbUser, $dbPwd, $dbName);
+			//$link=getConnection($dbHost, $dbUser, $dbPwd, $dbName);
 			if($_POST['dowpdown'] ==0){
 				if(getUserAdmin($pseudo, $pwd, $link) != 1) { 
 				
@@ -123,7 +123,7 @@ if (isset($_POST['submit'])) {
                 </form>
             </div></br>-->
             <div style="padding-left:2em;">
-                <a href="https://bdw1.univ-lyon1.fr/p1501149/bdw1_projet-master/inscription.php"> Pas encore Inscrit ? </a>
+                <a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/inscription.php"> Pas encore Inscrit ? </a>
             </div>
 
         </div>
@@ -145,14 +145,15 @@ if (isset($_POST['submit'])) {
 	
 	$conn = getConnection('localhost', "p1501149", "49afdf", "p1501149");
 	if(isset($_POST["pseudo"])){
+	    $link = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 		if ((isset($pseudo)) &&( isset($pwd))){
-			$link=getConnection($dbHost, $dbUser, $dbPwd, $dbName);
+			//$link=getConnection($dbHost, $dbUser, $dbPwd, $dbName);
 			if($_POST['dowpdown'] ==0){
 				if(getUserAdmin($pseudo, $pwd, $link) == 1) { 
 				$_SESSION["pseudo"]= $pseudo;
 				$_SESSION["motdepasse"] =$pwd;
 				
-				header('Location: https://bdw1.univ-lyon1.fr/p1501149/bdw1_projet-master/page_administrateur.php');
+				header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_administrateur.php');
 				exit();
 			
 				}
@@ -167,7 +168,7 @@ if (isset($_POST['submit'])) {
 					setConnectedUtil($pseudo, $link);
 					$_SESSION["pseudo"]= $pseudo;
 					$_SESSION["motdepasse"] =$pwd;
-					header('Location: https://bdw1.univ-lyon1.fr/p1501149/bdw1_projet-master/page_utilisateur.php');
+					header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_utilisateur.php');
 					exit();
 				
 				}
