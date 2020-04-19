@@ -17,7 +17,7 @@ function registerUtil($pseudo, $hashPwd, $link)
 {
 	echo "enter here into utilisateur.php registerUtil";
 	$hashPwd = md5($hashPwd);
-	$query = "INSERT INTO utilisateur VALUES (\"$pseudo\", \"$hashPwd\",\"disconnected\")"; // R: il fallait utiliser \" 
+	$query = "INSERT INTO utilisateur VALUES (2, \"$pseudo\", \"$hashPwd\")"; // R: il fallait utiliser \"
 	executeUpdate($link, $query) ;
 }
 
