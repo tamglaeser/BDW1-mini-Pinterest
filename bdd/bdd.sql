@@ -82,10 +82,12 @@ CREATE TABLE IF NOT EXISTS administrateur (
 --
 
 INSERT INTO Categorie(nomCat)
-VALUES ('Animaux'),
-       ('Sport'),
-       ('Internet'),
-       ('Gens');
+VALUES ('Starburts'),
+       ('Endroits'),
+       ('Ordinateur'),
+       ('Animaux'),
+       ('Gens'),
+       ('Dessins');
 
 -- --------------------------------------------------------
 --
@@ -101,14 +103,20 @@ VALUES ('p1926029', 'ef5d0c', 'disconnected');
 --
 
 INSERT INTO Photo(nomFich, description, catId, utilId)
-VALUES ('giraffe.png', 'Un dessin d''une girafe', 1, 1),
-       ('klose.jpg', 'Joueur allemand de foot Klose faisant un flip', 2, 1),
+VALUES ('bracelet.gif', 'Un bracelet fait des emballages des bonbons Starbursts', 1, 1),
+       ('composants.gif', 'Deux individuel emballages des bonbons Starbursts', 1, 1),
+       ('EgliseDC.jpeg', 'l''interieur de la basilique a DC', 2, 1),
+       ('erreur.png', 'Une graphe comparant les erreurs des 4 differents methods de la fonction mathematique FFT', 3, 1),
+       ('giraffe.png', 'Un dessin d''une girafe', 4, 1),
        ('loading.gif', 'Signe de chargement d''internet', 3, 1),
-       ('petiteMaman.jpg', 'La maman de Tullia quand elle etait tres petite', 4, 1),
-       ('pikachu.gif', 'Un GIF de Pikachu (de Pokemon)', 1, 1),
-       ('shireMordor.jpg', 'L''affichage de Google Maps du Shire a Mordor (dans le Seigneur des Anneux)', 3, 1),
-       ('snowboard.png', 'un mec sur son snowboard dans l''air', 2, 1),
-       ('troisAmis.jpg', 'Une photo vieille des trois amis', 4, 1);
+       ('pikachu.gif', 'Un GIF de Pikachu (de Pokemon)', 4, 1),
+       ('snowboard.png', 'un mec sur son snowboard dans l''air', 5, 1),
+       ('graphe.png', 'Une graphe fait avec Matlab pour les devoir de maths de Tullia', 3, 1),
+       ('inconnu.jpeg', 'Un photo d''un endroit et d''un mec qu''on a oublie (probablement en Europe)', 2, 1),
+       ('kisses.gif', 'Un dessin de des Hershey Kisses', 6, 1),
+       ('linkedIn.png', 'Le photo LinkedIn de Tullia', 5, 1),
+       ('matlab.png', 'Le debut d''une fonction de matlab pour les devoirs des maths de Tullia', 3, 1),
+       ('plantcell.gif', 'Le diagram de la cellule d''une plante', 6, 1);
 
 -- --------------------------------------------------------
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
