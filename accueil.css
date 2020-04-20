@@ -75,9 +75,6 @@ width:459px;
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
 
-.custom-file-input::-webkit-file-upload-button {
-	visibility: hidden;
-}
 .custom-file-input::before {
 	content: 'Select some files';
 	display: inline-block;
