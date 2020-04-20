@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 20, 2020 at 01:01 AM
+-- Generation Time: Apr 20, 2020 at 06:39 PM
 -- Server version: 10.3.22-MariaDB-1:10.3.22+maria~bionic-log
 -- PHP Version: 7.2.24-0ubuntu0.18.04.4
 
@@ -55,7 +55,8 @@ INSERT INTO `Categorie` (`catId`, `nomCat`) VALUES
 (3, 'Ordinateur'),
 (4, 'Animaux'),
 (5, 'Gens'),
-(6, 'Dessins');
+(6, 'Dessins'),
+(7, 'Sport');
 
 -- --------------------------------------------------------
 
@@ -82,12 +83,16 @@ INSERT INTO `Photo` (`photoId`, `nomFich`, `description`, `catId`, `utilId`) VAL
 (4, 'giraffe.png', 'Un dessin d\'une girafe', 4, 1),
 (5, 'loading.gif', 'Signe de chargement d\'internet', 3, 1),
 (6, 'pikachu.gif', 'Un GIF de Pikachu (de Pokemon)', 4, 1),
-(7, 'snowboard.png', 'un mec sur son snowboard dans l\'air', 5, 1),
+(7, 'snowboard.png', 'un mec sur son snowboard dans l\'air', 7, 1),
 (8, 'graphe.png', 'Une graphe fait avec Matlab pour les devoir de maths de Tullia', 3, 1),
 (9, 'inconnu.jpeg', 'Un photo d\'un endroit et d\'un mec qu\'on a oublie (probablement en Europe)', 2, 1),
 (10, 'kisses.gif', 'Un dessin de des Hershey Kisses', 6, 1),
 (11, 'linkedIn.png', 'Le photo LinkedIn de Tullia', 5, 1),
-(12, 'plantcell.gif', 'Le diagram de la cellule d\'une plante', 6, 1);
+(12, 'plantcell.gif', 'Le diagram de la cellule d\'une plante', 6, 1),
+(13, 'klose.jpg', 'Le jouer de foot allemand Klose qui fait un flip', 7, 1),
+(14, 'petiteMaman.jpg', 'La maman de Tullia quand elle etait tres petite', 5, 1),
+(15, 'shireMordor.jpg', 'Un ecran de GoogleMap pour arriver a Mordor du Shire', 3, 1),
+(16, 'troisAmis.jpg', 'La maman de Tullia dans les scouts quand elle etait petite', 5, 1);
 
 -- --------------------------------------------------------
 
@@ -153,13 +158,13 @@ ALTER TABLE `administrateur`
 -- AUTO_INCREMENT for table `Categorie`
 --
 ALTER TABLE `Categorie`
-  MODIFY `catId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `catId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `Photo`
 --
 ALTER TABLE `Photo`
-  MODIFY `photoId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `photoId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `utilisateur`
