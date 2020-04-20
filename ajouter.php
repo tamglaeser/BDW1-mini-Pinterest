@@ -25,7 +25,7 @@ $dir = "assets/images/";
     <input type="file" name="fileToUpload" id="fileToUpload"><br>
     Décrire la photo en une phrase:<br>
     <input type="text" name="description" id="description"><br>
-    Choisir une catégorie:
+    Choisir une catégorie:<br>
     <select id="categories" size="3">
         <option value="0">Toutes les photos</option>
         <?php
@@ -35,7 +35,7 @@ $dir = "assets/images/";
             echo "<option value=" . ++$val . ">". $row_cat['nomCat'] . "</option>";
         }
         ?>
-    </select>
+    </select><br>
     <input type="submit" value="Envoyer" name="submit">
 </form>
 
@@ -50,6 +50,7 @@ $uploadOk = 1;
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
 
+    echo "basename : " . basename($_FILES["fileToUpload"]["name"]);
     $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
@@ -88,5 +89,10 @@ if(isset($_POST["submit"])) {
             echo "Sorry, there was an error uploading your file.";
         }
     }
+
+
+
+
+
 }
 ?>
