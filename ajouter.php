@@ -52,6 +52,22 @@ $uploadOk = 1;
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
 
+    if ($_FILES["fileToUpload"]["name"] = null) {
+        $uploadOk = 0;
+        echo "S'il vous plait selectionner un fichier";
+    }
+
+    if (!isset($_POST["description"])) {
+        $uploadOk = 0;
+        echo "S'il vous plait remplir la description";
+    }
+
+    if (!isset($_POST["categories"])) {
+        $uploadOk = 0;
+        echo "S'il vous plait, choisir une categorie";
+    }
+
+
     $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
