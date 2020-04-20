@@ -7,14 +7,35 @@
     <link rel="stylesheet" href="accueil.css">
 </head>
 <body>
+<?php
+require_once('bd.php');
 
+$conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
+$dir = "assets/images/";
+
+?>
+
+<header>Quelle photo?</header>
 <form action="ajouter.php" method="post" enctype="multipart/form-data">
     Choisir le fichier:<br>
         <!--<label for="fileToUpload" class="btn btn-primary">Parcourir..</label>-->
     <script>$('#fileToUpload').inputFileText({
             text: 'Parcourir..'
         });</script>
-        <input type="file" name="fileToUpload" id="fileToUpload"><br>
+    <input type="file" name="fileToUpload" id="fileToUpload"><br>
+    Décrire la photo en une phrase:<br>
+    <input type="text" name="description" id="description"><br>
+    Choisir une catégorie:
+    <select id="categories" size="1">
+        <option value="0">Toutes les photos</option>
+        <?php
+        $resultat_cat = executeQuery($GLOBALS['conn'], "SELECT nomCat FROM Categorie");
+        $val = 0;
+        while ($row_cat = $resultat_cat->fetch_assoc()){
+            echo "<option value=" . ++$val . ">". $row_cat['nomCat'] . "</option>";
+        }
+        ?>
+    </select>
     <input type="submit" value="Envoyer" name="submit">
 </form>
 
