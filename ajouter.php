@@ -12,7 +12,7 @@
     Choisir le fichier:
     <div>
         <label for="fileToUpload" class="btn btn-primary">Parcourir..</label>
-        <input type="file" name="fileToUpload" id="fileToUpload" style="visibility: hidden;">
+        <input type="file" name="fileToUpload" id="fileToUpload">
     </div>
     <input type="submit" value="Envoyer" name="submit">
 </form>
