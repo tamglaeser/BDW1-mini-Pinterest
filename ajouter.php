@@ -4,7 +4,10 @@
 
 <form action="ajouter.php" method="post" enctype="multipart/form-data">
     Choisir le fichier:
-    <input type="file" value="Parcourir.." name="fileToUpload" id="fileToUpload">
+    <div>
+        <label for="fileToUpload" class="btn">Parcourir..</label>
+        <input type="file" name="fileToUpload" id="fileToUpload">
+    </div>
     <input type="submit" value="Envoyer" name="submit">
 </form>
 
