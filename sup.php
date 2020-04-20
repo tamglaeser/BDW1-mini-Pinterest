@@ -41,20 +41,20 @@ function sup($photoId,$pseudo) {
 						echo "eeeeeee";
 						executeUpdate($conn, "DELETE FROM Photo WHERE photoId =\"$photoId\"");
 						echo "la photo a ete supprimé";
-						header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_utilisateur.php');
+						header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_utilisateur.php?pseudo='.$pseudo);
 						
 						exit();
 					}
 					else{
 						echo "vous ne pouvez pas la supprimer ";
-						header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_utilisateur.php');
+						header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_utilisateur.php?pseudo='.$pseudo);
 					}
 				}
 			   else {
 					if(getUserAdmin($pseudo,$_SESSION['motdepasse'],$conn) ==1){
 						echo"sssssssssssssssssssss";
 						executeUpdate($conn, "DELETE FROM Photo WHERE photoId =\"$photoId\"");
-						header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_administrateur.php');
+						header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_administrateur.php?pseudo='.$pseudo);
 						
 						exit();
 						echo "aaaa";
