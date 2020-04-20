@@ -16,17 +16,19 @@ $dir = "assets/images/";
 ?>
 
 <h1>Quelle photo?</h1>
-<form action="ajouter.php?pseudo=<?php echo $_GET['pseudo']?>" method="post" enctype="multipart/form-data">
+
+
+<form action="ajouter.php?pseudo=<?php echo $_GET['pseudo']?>" method="post" name = "Ajouter" enctype="multipart/form-data">
     Choisir le fichier:<br>
         <!--<label for="fileToUpload" class="btn btn-primary">Parcourir..</label>-->
     <script>$('#fileToUpload').inputFileText({
             text: 'Parcourir..'
         });</script>
-    <input type="file" name="fileToUpload" id="fileToUpload"><br>
+    <input type="file" name="fileToUpload" id="fileToUpload" required><br>
     Décrire la photo en une phrase:<br>
-    <input type="text" name="description" id="description"><br>
+    <input type="text" name="description" id="description" required><br>
     Choisir une catégorie:<br>
-    <select name="categories" id="categories" size="3">
+    <select name="categories" id="categories" size="3" required>
         <option value="0">Toutes les photos</option>
         <?php
         $resultat_cat = executeQuery($GLOBALS['conn'], "SELECT nomCat FROM Categorie");
@@ -77,11 +79,17 @@ if(isset($_POST["submit"])) {
         echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
         $uploadOk = 0;
     }
+
+
+
+
 // Check if $uploadOk is set to 0 by an error
     if ($uploadOk == 0) {
         echo "Sorry, your file was not uploaded.";
 // if everything is ok, try to upload file
-    } else {
+    }
+
+    else {
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
             echo "The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
 
