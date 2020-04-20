@@ -9,9 +9,9 @@
 <body>
 
 <form action="ajouter.php" method="post" enctype="multipart/form-data">
-    Choisir le fichier:
+    Choisir le fichier:<br>
         <!--<label for="fileToUpload" class="btn btn-primary">Parcourir..</label>-->
-        <input type="file" name="fileToUpload" id="fileToUpload">
+        <input type="file" name="fileToUpload" id="fileToUpload"><br>
     <input type="submit" value="Envoyer" name="submit">
 </form>
 
