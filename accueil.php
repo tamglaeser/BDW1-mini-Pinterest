@@ -42,10 +42,6 @@ $dir = "assets/images/";
             echo "<option value=" . ++$val . ">". $row_cat['nomCat'] . "</option>";
         }
         ?>
-        <!--<option value="1">Animaux</option>
-        <option value="2">Sport</option>
-        <option value="3">Internet</option>
-        <option value="4">Gens</option>-->
     </select>
     <input type="submit" name="show_dowpdown_value" value="Valider"/>
 	</div>
