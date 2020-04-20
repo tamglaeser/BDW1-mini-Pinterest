@@ -15,7 +15,7 @@ $dir = "assets/images/";
 
 ?>
 
-<header>Quelle photo?</header>
+<h1>Quelle photo?</h1>
 <form action="ajouter.php" method="post" enctype="multipart/form-data">
     Choisir le fichier:<br>
         <!--<label for="fileToUpload" class="btn btn-primary">Parcourir..</label>-->
@@ -26,7 +26,7 @@ $dir = "assets/images/";
     Décrire la photo en une phrase:<br>
     <input type="text" name="description" id="description"><br>
     Choisir une catégorie:
-    <select id="categories" size="1">
+    <select id="categories" size="3">
         <option value="0">Toutes les photos</option>
         <?php
         $resultat_cat = executeQuery($GLOBALS['conn'], "SELECT nomCat FROM Categorie");
