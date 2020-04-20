@@ -11,8 +11,8 @@
 <form action="ajouter.php" method="post" enctype="multipart/form-data">
     Choisir le fichier:
     <div>
-        <label for="fileToUpload" class="btn btn-primary">Parcourir..</label>
-        <input type="file" name="fileToUpload" id="fileToUpload">
+        <!--<label for="fileToUpload" class="btn btn-primary">Parcourir..</label>-->
+        <input type="file" class="custom-file-input" name="fileToUpload" id="fileToUpload">
     </div>
     <input type="submit" value="Envoyer" name="submit">
 </form>
