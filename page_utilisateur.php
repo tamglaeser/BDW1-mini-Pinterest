@@ -39,8 +39,7 @@ $dir = "assets/images/";
     <!-- here start the dropdown list -->
 	<div style='display:flex; margin-left:5em;'>
         <?php
-        //echo "pseudo: ".$_GET["pseudo"];
-        //$resultat_util = executeQuery($GLOBALS['conn'], "SELECT utilId FROM utilisateur");
+        echo "pseudo: ".$_GET['pseudo'];
         $resultat_cat = executeQuery($GLOBALS['conn'], "SELECT c.nomCat FROM Categorie c JOIN Photo p ON p.catID=c.catID WHERE p.utilId IN (SELECT utilId FROM utilisateur)");
         ?>
         <select name="dowpdown" >
