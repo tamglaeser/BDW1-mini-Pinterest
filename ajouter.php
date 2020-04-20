@@ -1,11 +1,17 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>PhotouCat</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="accueil.css">
+</head>
 <body>
 
 <form action="ajouter.php" method="post" enctype="multipart/form-data">
     Choisir le fichier:
     <div>
-        <label for="fileToUpload" class="btn">Parcourir..</label>
+        <label for="fileToUpload" class="btn btn-primary btn-block btn-outlined">Parcourir..</label>
         <input type="file" name="fileToUpload" id="fileToUpload" style="visibility: hidden;">
     </div>
     <input type="submit" value="Envoyer" name="submit">
