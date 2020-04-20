@@ -110,7 +110,6 @@ if (isset($_POST['submit'])) {
 </html>
 <?php
 function modif($photoId,$pseudo,$query) {
-				echo "a";
 				if(isset($_SESSION['motdepasse'])){$pwd= $_SESSION['motdepasse'];}
 				$conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 				
@@ -120,18 +119,18 @@ function modif($photoId,$pseudo,$query) {
 					if($result_photo== $result_pseudo){
 						executeUpdate($conn, $query);
 						echo "la description a ete modifier";
-						header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_utilisateur.php');
+						header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_utilisateur.php?pseudo=' . $pseudo);
 						exit();
 					}
 					else{
 						echo "vous ne pouvez pas la modifier ";
-						header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_utilisateur.php');
+						header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_utilisateur.php?pseudo=' . $pseudo);
 					}
 				}
 			   else {
 					if(getUserAdmin($pseudo,$_SESSION['motdepasse'],$conn) ==1){
 						executeUpdate($conn, $query);
-						header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_administrateur.php');
+						header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_administrateur.php?pseudo='.$pseudo);
 						
 						exit();
 					}

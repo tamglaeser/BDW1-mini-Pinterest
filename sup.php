@@ -30,15 +30,12 @@ sup($pId,$ps);
 function sup($photoId,$pseudo) {
 				
 				if(isset($_SESSION['motdepasse'])){$pwd= $_SESSION['motdepasse'];}
-				echo "patat";
 				$conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 				
 				if(getUserUtil($pseudo,$_SESSION['motdepasse'],$conn) ==1){
-					echo"y";
 					$result_pseudo= executeQuery($conn, "SELECT utilId FROM utilisateur WHERE utilPseudo= \"$pseudo\"");
 					$result_photo= executeQuery($conn, "SELECT utilId FROM Photo WHERE photoId=\"$photoId\"");
 					if($result_photo== $result_pseudo){
-						echo "eeeeeee";
 						executeUpdate($conn, "DELETE FROM Photo WHERE photoId =\"$photoId\"");
 						echo "la photo a ete supprimé";
 						header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_utilisateur.php?pseudo='.$pseudo);
@@ -52,12 +49,10 @@ function sup($photoId,$pseudo) {
 				}
 			   else {
 					if(getUserAdmin($pseudo,$_SESSION['motdepasse'],$conn) ==1){
-						echo"sssssssssssssssssssss";
 						executeUpdate($conn, "DELETE FROM Photo WHERE photoId =\"$photoId\"");
 						header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_administrateur.php?pseudo='.$pseudo);
 						
 						exit();
-						echo "aaaa";
 					}
 					else{
 						echo " vous êtes pas connecté, vous ne pouvez pas la supprimer";
