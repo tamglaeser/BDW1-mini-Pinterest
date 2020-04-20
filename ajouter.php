@@ -12,7 +12,7 @@
 </html>
 
 <?php
-$target_dir = "assets/images/";
+$target_dir = "/home/tullia/Documents/School/Tulane_University/Junior_Year/BDW1/ProjetFinale/bdw1_projet/assets/images";
 //$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 //$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
