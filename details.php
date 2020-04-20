@@ -29,12 +29,12 @@ $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 	}else{
 		
 		if(getUserAdmin($pseudo, $pwd, $conn) == 1) { 
-			echo "<a href='https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_administrateur.php'>ACCUEIL</a>";
+			echo "<a href='https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_administrateur.php?pseudo=".$pseudo."'>ACCUEIL</a>";
 				
 		}else{
 					
 			if(getUserUtil($pseudo, $pwd, $conn) == 1) {
-				echo "<a href='https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_utilisateur.php'>ACCUEIL</a>";
+				echo "<a href='https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_utilisateur.php?pseudo=".$pseudo."'>ACCUEIL</a>";
 					
 			}
 		}
