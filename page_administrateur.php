@@ -16,7 +16,7 @@ $dir = "assets/images/";
 ?>
 <div style="background-image:url(img/accueil_bis.jpg);" ><B><h1>PhotoCat Admin</h1></B><br> </div>
 	<nav class="crumbs">
-	<form name="accueil_admin" action="page_administrateur.php" method="POST">
+	<form name="accueil_admin" action="page_administrateur.php?pseudo=<?php echo $_GET['pseudo']?>" method="POST">
 	   <button style="float: left;" type="submit" name="accueil" class="btn btn-success">
 		Accueil
 		</button>
@@ -37,13 +37,18 @@ $dir = "assets/images/";
 	<h5> Selection de la catégorie d'image à afficher : </h5>
     <!-- here start the dropdown list -->
 	<div style='display:flex; margin-left:5em;'>
-    <select name="dowpdown" >
-        <option value="0">Toutes les photos</option>
-        <option value="1">Animaux</option>
-        <option value="2">Sport</option>
-        <option value="3">Internet</option>
-        <option value="4">Gens</option>
-    </select>
+        <?php
+        $resultat_cat = executeQuery($GLOBALS['conn'], "SELECT nomCat FROM Categorie");
+        ?>
+        <select name="dowpdown" >
+            <option value="0">Toutes les photos</option>
+            <?php
+            $val = 0;
+            while ($row_cat = $resultat_cat->fetch_assoc()){
+                echo "<option value=" . ++$val . ">". $row_cat['nomCat'] . "</option>";
+            }
+            ?>
+        </select>
     <input type="submit" name="show_dowpdown_value" value="Valider"/>
 	</div>
 	</div><br><br><br>
@@ -74,9 +79,10 @@ if (isset($_GET['catId'])) {
 }**/
 
 session_start();
+$pseudo = $_GET['pseudo'];
 
 if (isset($_POST['accueil'])) {
-    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_administrateur.php');
+    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_administrateur.php?pseudo='.$pseudo);
     exit();
 }
 if (isset($_POST['deconnexion'])) {
@@ -84,7 +90,7 @@ if (isset($_POST['deconnexion'])) {
     exit();
 }
 if (isset($_POST['Stats'])) {
-    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/Stats.php');
+    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/Stats.php?pseudo='.$pseudo);
     exit();
 }
 

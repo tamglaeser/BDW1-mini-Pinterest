@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 19, 2020 at 07:05 PM
+-- Generation Time: Apr 20, 2020 at 01:01 AM
 -- Server version: 10.3.22-MariaDB-1:10.3.22+maria~bionic-log
 -- PHP Version: 7.2.24-0ubuntu0.18.04.4
 
@@ -50,10 +50,12 @@ CREATE TABLE `Categorie` (
 --
 
 INSERT INTO `Categorie` (`catId`, `nomCat`) VALUES
-(1, 'Animaux'),
-(2, 'Sport'),
-(3, 'Internet'),
-(4, 'Gens');
+(1, 'Starburts'),
+(2, 'Endroits'),
+(3, 'Ordinateur'),
+(4, 'Animaux'),
+(5, 'Gens'),
+(6, 'Dessins');
 
 -- --------------------------------------------------------
 
@@ -74,14 +76,18 @@ CREATE TABLE `Photo` (
 --
 
 INSERT INTO `Photo` (`photoId`, `nomFich`, `description`, `catId`, `utilId`) VALUES
-(1, 'giraffe.png', 'Un dessin d\'une girafe', 1, 1),
-(2, 'klose.jpg', 'Joueur allemand de foot Klose faisant un flip', 2, 1),
-(3, 'loading.gif', 'Signe de chargement d\'internet', 3, 1),
-(4, 'petiteMaman.jpg', 'La maman de Tullia quand elle etait tres petite', 4, 1),
-(5, 'pikachu.gif', 'Un GIF de Pikachu (de Pokemon)', 1, 1),
-(6, 'shireMordor.jpg', 'L\'affichage de Google Maps du Shire a Mordor (dans le Seigneur des Anneux)', 3, 1),
-(7, 'snowboard.png', 'un mec sur son snowboard dans l\'air', 2, 1),
-(8, 'troisAmis.jpg', 'Une photo vieille des trois amis', 4, 1);
+(1, 'bracelet.gif', 'Un bracelet fait des emballages des bonbons Starbursts', 1, 1),
+(2, 'composants.gif', 'Deux individuel emballages des bonbons Starbursts', 1, 1),
+(3, 'EgliseDC.jpeg', 'l\'interieur de la basilique a DC', 2, 1),
+(4, 'giraffe.png', 'Un dessin d\'une girafe', 4, 1),
+(5, 'loading.gif', 'Signe de chargement d\'internet', 3, 1),
+(6, 'pikachu.gif', 'Un GIF de Pikachu (de Pokemon)', 4, 1),
+(7, 'snowboard.png', 'un mec sur son snowboard dans l\'air', 5, 1),
+(8, 'graphe.png', 'Une graphe fait avec Matlab pour les devoir de maths de Tullia', 3, 1),
+(9, 'inconnu.jpeg', 'Un photo d\'un endroit et d\'un mec qu\'on a oublie (probablement en Europe)', 2, 1),
+(10, 'kisses.gif', 'Un dessin de des Hershey Kisses', 6, 1),
+(11, 'linkedIn.png', 'Le photo LinkedIn de Tullia', 5, 1),
+(12, 'plantcell.gif', 'Le diagram de la cellule d\'une plante', 6, 1);
 
 -- --------------------------------------------------------
 
@@ -147,13 +153,13 @@ ALTER TABLE `administrateur`
 -- AUTO_INCREMENT for table `Categorie`
 --
 ALTER TABLE `Categorie`
-  MODIFY `catId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `catId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `Photo`
 --
 ALTER TABLE `Photo`
-  MODIFY `photoId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `photoId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `utilisateur`
