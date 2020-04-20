@@ -87,8 +87,10 @@ if(isset($_POST["submit"])) {
 
 
             $resultat_utilId = executeQuery($GLOBALS['conn'], "SELECT utilId FROM utilisateur WHERE utilPseudo='" . $_GET['pseudo'] . "'");
-            $resultat_nom = executeQuery($GLOBALS['conn'], "INSERT INTO Photo(nomFich, description, catId, utilId) VALUES ('".basename($_FILES["fileToUpload"]["name"]) . "', '".$_POST["description"]. "', " . $_POST["categories"] . ", " . $resultat_utilId->fetch_assoc());
-            
+             while ($row_utilId=$resultat_utilId->fetch_assoc()) {
+
+                 $resultat_nom = executeQuery($GLOBALS['conn'], "INSERT INTO Photo(nomFich, description, catId, utilId) VALUES ('" . basename($_FILES["fileToUpload"]["name"]) . "', '" . $_POST["description"] . "', " . $_POST["categories"] . ", " . $row_utilId['utilId']);
+             }
             
         } else {
             echo "Sorry, there was an error uploading your file.";
