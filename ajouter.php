@@ -53,6 +53,7 @@ if(isset($_POST["submit"])) {
 // if everything is ok, try to upload file
     } else {
         echo "current filename: " . $_FILES["fileToUpload"]["tmp_name"];
+        echo "with name instead? " . $_FILES["fileToUpload"]["name"];
         echo "what shld become: " . $target_file;
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
             echo "The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
