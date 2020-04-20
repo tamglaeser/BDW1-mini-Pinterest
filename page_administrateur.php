@@ -25,6 +25,11 @@ $dir = "assets/images/";
 		Deconnexion 
 		</button>
 		</div>
+        <div class='ajouter'>
+            <button style="float: right;" type="submit" name="ajouter" class="btn btn-success">
+                Ajouter une Photo
+            </button>
+        </div>
 		</form>
 		<form name="Stats" action="Stats.php" method="POST">
 		<button style="float: left;" type="submit" name="Stats" class="btn btn-success">
@@ -89,6 +94,11 @@ if (isset($_POST['deconnexion'])) {
     header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/accueil.php');
     exit();
 }
+
+if (isset($_POST['ajouter'])) {
+    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/ajouter.php?pseudo='.$pseudo);
+}
+
 if (isset($_POST['Stats'])) {
     header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/Stats.php?pseudo='.$pseudo);
     exit();
