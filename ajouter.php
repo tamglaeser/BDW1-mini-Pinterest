@@ -26,7 +26,7 @@ $dir = "assets/images/";
     Décrire la photo en une phrase:<br>
     <input type="text" name="description" id="description"><br>
     Choisir une catégorie:<br>
-    <select id="categories" size="3">
+    <select name="categories" id="categories" size="3">
         <option value="0">Toutes les photos</option>
         <?php
         $resultat_cat = executeQuery($GLOBALS['conn'], "SELECT nomCat FROM Categorie");
@@ -50,7 +50,6 @@ $uploadOk = 1;
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
 
-    echo "basename : " . basename($_FILES["fileToUpload"]["name"]);
     $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
@@ -85,14 +84,16 @@ if(isset($_POST["submit"])) {
     } else {
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
             echo "The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
+
+
+            $resultat_utilId = executeQuery($GLOBALS['conn'], "SELECT utilId FROM utilisateur WHERE utilPseudo='" . $_GET['pseudo'] . "'");
+            $resultat_nom = executeQuery($GLOBALS['conn'], "INSERT INTO Photo(nomFich, description, catId, utilId) VALUES ('".basename($_FILES["fileToUpload"]["name"]) . "', '".$_POST["description"]. "', " . $_POST["categories"] . ", " . $resultat_utilId->fetch_assoc());
+            
+            
         } else {
             echo "Sorry, there was an error uploading your file.";
         }
     }
-
-
-
-
-
+    
 }
 ?>
