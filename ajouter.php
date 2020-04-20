@@ -88,8 +88,6 @@ if(isset($_POST["submit"])) {
 
             $resultat_utilId = executeQuery($GLOBALS['conn'], "SELECT utilId FROM utilisateur WHERE utilPseudo='" . $_GET['pseudo'] . "'");
              while ($row_utilId=$resultat_utilId->fetch_assoc()) {
-                echo "1";
-                echo "utilId: " . $row_utilId["utilId"];
                  $resultat_nom = executeQuery($GLOBALS['conn'], "INSERT INTO Photo(nomFich, description, catId, utilId) VALUES ('" . basename($_FILES["fileToUpload"]["name"]) . "', '" . $_POST["description"] . "', " . $_POST["categories"] . ", " . $row_utilId["utilId"] . ")");
              }
             
