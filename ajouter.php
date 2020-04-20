@@ -16,7 +16,7 @@ $dir = "assets/images/";
 ?>
 
 <h1>Quelle photo?</h1>
-<form action="ajouter.php" method="post" enctype="multipart/form-data">
+<form action="ajouter.php?pseudo=<?php echo $_GET['pseudo']?>" method="post" enctype="multipart/form-data">
     Choisir le fichier:<br>
         <!--<label for="fileToUpload" class="btn btn-primary">Parcourir..</label>-->
     <script>$('#fileToUpload').inputFileText({
