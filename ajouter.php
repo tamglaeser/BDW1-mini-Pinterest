@@ -56,11 +56,6 @@ function getValue($key) {
     return $_GET[$key];
 }
 
-if (getValue('myvar') == 'something') {
-// Do something
-}
-
-
 
 
 $target_dir = "assets/images/";
@@ -69,8 +64,6 @@ $uploadOk = 1;
 //$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
-
-    echo "ENTER SUBMIT";
 
 
     $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
@@ -113,12 +106,10 @@ if(isset($_POST["submit"])) {
 
     else {
 
-        echo "enter to move file";
 
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
             echo "The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
 
-            echo "QUI :" . $_GET['qui'];
 
             if (getValue('qui') == 'util') {
                 echo "found util pseudo";
@@ -130,7 +121,7 @@ if(isset($_POST["submit"])) {
 
             else if (getValue('qui') == 'admin') {
                 echo "found admin pseudo";
-                $resultat_adminId = executeQuery($GLOBALS['conn'], "SELECT adminId FROM administrateyr WHERE adminPseudo='" . $_GET['pseudo'] . "'");
+                $resultat_adminId = executeQuery($GLOBALS['conn'], "SELECT adminId FROM administrateur WHERE adminPseudo='" . $_GET['pseudo'] . "'");
                 while ($row_adminId = $resultat_adminId->fetch_assoc()) {
                     $resultat_nom = executeQuery($GLOBALS['conn'], "INSERT INTO Photo(nomFich, description, catId, adminId) VALUES ('" . basename($_FILES["fileToUpload"]["name"]) . "', '" . $_POST["description"] . "', " . $_POST["categories"] . ", " . $row_utilId["utilId"] . ")");
                 }
