@@ -9,7 +9,6 @@ $_SESSION['photoId']=$photoId;
 if(isset($_SESSION['pseudo'])){$pseudo = $_SESSION['pseudo'];}
 if(isset($_SESSION['motdepasse'])){$pwd = $_SESSION['motdepasse'];}
 
-$photoId=$_GET['photoId'];
 
 
 $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
@@ -139,7 +138,7 @@ function details($ImageId, $link) {?>
 			<a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/sup.php"> supprimer la photo</a><br>
 			
 			
-			<a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/modif.php?photoId=<?php echo $GLOBALS['photoId']?>"> modifier les détails </a><br>
+			<a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/modif.php"> modifier les détails </a><br>
 			</div>
 			<?php
 	
@@ -150,7 +149,7 @@ function details($ImageId, $link) {?>
 		
 			?>	<div class="row justify-content-center p-2">
 				<a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/sup.php"> supprimer la photo</a><br>
-				<a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/modif.php?photoId=<?php echo $GLOBALS['photoId']?>"> modifier les détails </a><br>
+				<a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/modif.php"> modifier les détails </a><br>
 				</div>
 				<?php
 				
