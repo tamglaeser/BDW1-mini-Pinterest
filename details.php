@@ -1,5 +1,4 @@
 <?php session_start();
-$temp=$_SESSION['expire'] - time(); /* MARINE */
 require_once ('bd.php');
 require_once ('administrateur.php');
 require_once ('utilisateur.php');
@@ -28,6 +27,7 @@ $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 
 }
     else {
+        $temp=$_SESSION['expire'] - time(); /* MARINE */
         $now = time(); // Checking the time now when home page starts.
 
         if ($now > $_SESSION['expire']) {
