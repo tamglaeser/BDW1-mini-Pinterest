@@ -52,6 +52,8 @@ $uploadOk = 1;
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
 
+    echo "ENTER SUBMIT";
+
 
     $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
@@ -92,10 +94,14 @@ if(isset($_POST["submit"])) {
     }
 
     else {
+
+        echo "enter to move file";
+
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
             echo "The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
 
             if (isset($_GET['utilpseudo'])) {
+                echo "found util pseudo";
                 $resultat_utilId = executeQuery($GLOBALS['conn'], "SELECT utilId FROM utilisateur WHERE utilPseudo='" . $_GET['utilpseudo'] . "'");
                 while ($row_utilId = $resultat_utilId->fetch_assoc()) {
                     $resultat_nom = executeQuery($GLOBALS['conn'], "INSERT INTO Photo(nomFich, description, catId, utilId) VALUES ('" . basename($_FILES["fileToUpload"]["name"]) . "', '" . $_POST["description"] . "', " . $_POST["categories"] . ", " . $row_utilId["utilId"] . ")");
@@ -103,6 +109,7 @@ if(isset($_POST["submit"])) {
             }
 
             else if (isset($_GET['adminpseudo'])) {
+                echo "found admin pseudo";
                 $resultat_adminId = executeQuery($GLOBALS['conn'], "SELECT adminId FROM administrateyr WHERE adminPseudo='" . $_GET['adminpseudo'] . "'");
                 while ($row_adminId = $resultat_adminId->fetch_assoc()) {
                     $resultat_nom = executeQuery($GLOBALS['conn'], "INSERT INTO Photo(nomFich, description, catId, adminId) VALUES ('" . basename($_FILES["fileToUpload"]["name"]) . "', '" . $_POST["description"] . "', " . $_POST["categories"] . ", " . $row_utilId["utilId"] . ")");
