@@ -169,7 +169,7 @@ if (isset($_GET['catId'])) {
 if (isset($_POST['accueil'])) {
     echo "RENTRE DANS ACCUEIL";
     $pseudo=$_SESSION['pseudo'];
-    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_administrateur.php?pseudo='.$pseudo);
+    //header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_administrateur.php?pseudo='.$pseudo);
     exit();
 }
 if (isset($_POST['deconnexion'])) {
@@ -179,7 +179,7 @@ if (isset($_POST['deconnexion'])) {
     unset($_SESSION["motdepasse"]);
     session_destroy();
     //MARINE
-    header('Location:https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/accueil.php');
+    //header('Location:https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/accueil.php');
     exit();
 }
 
