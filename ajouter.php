@@ -44,7 +44,25 @@ $dir = "assets/images/";
 </body>
 </html>
 
+
+
 <?php
+
+
+function getValue($key) {
+    if (!isset($_GET[$key])) {
+        return false;
+    }
+    return $_GET[$key];
+}
+
+if (getValue('myvar') == 'something') {
+// Do something
+}
+
+
+
+
 $target_dir = "assets/images/";
 //$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
@@ -102,7 +120,7 @@ if(isset($_POST["submit"])) {
 
             echo "QUI :" . $_GET['qui'];
 
-            if ($_GET['qui'] ?? '' == 'util') {
+            if (getValue('qui') == 'util') {
                 echo "found util pseudo";
                 $resultat_utilId = executeQuery($GLOBALS['conn'], "SELECT utilId FROM utilisateur WHERE utilPseudo='" . $_GET['pseudo'] . "'");
                 while ($row_utilId = $resultat_utilId->fetch_assoc()) {
@@ -110,7 +128,7 @@ if(isset($_POST["submit"])) {
                 }
             }
 
-            else if ($_GET['qui'] ?? '' == 'admin') {
+            else if (getValue('qui') == 'admin') {
                 echo "found admin pseudo";
                 $resultat_adminId = executeQuery($GLOBALS['conn'], "SELECT adminId FROM administrateyr WHERE adminPseudo='" . $_GET['pseudo'] . "'");
                 while ($row_adminId = $resultat_adminId->fetch_assoc()) {
