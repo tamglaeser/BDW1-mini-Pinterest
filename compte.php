@@ -54,19 +54,11 @@ $dir = "assets/images/";
         <button style="float: left;" type="submit" name="accueil" class="btn btn-success">
             Accueil
         </button>
-        <button style="float: left;" type="submit" name="cat" class="btn btn-success">
-            Ajouter Catégorie
-        </button>
         <div class='connexion'>
             <button style="float: right;" type="submit" name="deconnexion" class="btn btn-success">
                 Deconnexion
             </button>
         </div>
-    </form>
-    <form name="Stats" action="Stats.php" method="POST">
-        <button style="float: left;" type="submit" name="Stats" class="btn btn-success">
-            Statistique
-        </button>
     </form>
 </nav><br>
 <div class="row justify-content-center">
@@ -208,14 +200,6 @@ if (isset($_POST['deconnexion'])) {
     unset($_SESSION["pseudo"]);
     unset($_SESSION["motdepasse"]);
     header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/accueil.php');
-    exit();
-}
-if (isset($_POST['cat'])) {
-    header('Location:https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/cat.php');
-    exit();
-}
-if (isset($_POST['Stats'])) {
-    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/Stats.php');
     exit();
 }
 closeConnexion($conn);
