@@ -3,6 +3,9 @@
 	require_once('utilisateur.php');
 /*bdw1.univ-lyon1.fr/p1501149/tp4*/
 
+session_start();
+$pseudo = $_SESSION['pseudo'];
+
 $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 $dir = "assets/images/";
 ?>
@@ -18,7 +21,7 @@ $dir = "assets/images/";
 <body>
 <div style="background-image:url(img/accueil_bis.jpg);" ><B><h1>PhotouCat_Util</h1></B><br> </div>
     <nav class="crumbs">
-	<form name="accueil_util" action="page_utilisateur.php?pseudo=<?php echo $_GET['pseudo']?>" method="post">
+	<form name="accueil_util" action="page_utilisateur.php?pseudo=<?php echo $pseudo?>" method="post">
 	    <button style="float: left;" type="submit" name="accueil" class="btn btn-success">
 		Accueil
 		</button>
@@ -36,7 +39,7 @@ $dir = "assets/images/";
             </button>
         </div>
 	</nav></br>
-<form action="page_utilisateur.php?pseudo=<?php echo $_GET['pseudo']?>" method="post">
+<form action="page_utilisateur.php?pseudo=<?php echo $pseudo?>" method="post">
 <div style="display:flex; margin-left:16em;">
 	<h5> Selection de la catégorie d'image à afficher : </h5>
     <!-- here start the dropdown list -->
@@ -82,8 +85,7 @@ if (isset($_GET['catId'])) {
     include("function.php");
 }**/
 
-session_start();
-$pseudo = $_GET['pseudo'];
+
 
 if (isset($_POST['accueil'])) {
     header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_utilisateur.php?pseudo='.$pseudo);

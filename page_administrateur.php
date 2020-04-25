@@ -8,6 +8,8 @@
 </head>
 <body>
 <?php
+session_start();
+$pseudo = $_SESSION['pseudo'];
 require_once('bd.php');
 
 $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
@@ -16,7 +18,7 @@ $dir = "assets/images/";
 ?>
 <div style="background-image:url(img/accueil_bis.jpg);" ><B><h1>PhotoCat Admin</h1></B><br> </div>
 	<nav class="crumbs">
-	<form name="accueil_admin" action="page_administrateur.php?pseudo=<?php echo $_SESSION['pseudo']?>" method="POST">
+	<form name="accueil_admin" action="page_administrateur.php?pseudo=<?php echo $pseudo?>" method="POST">
 	   <button style="float: left;" type="submit" name="accueil" class="btn btn-success">
 		Accueil
 		</button>
@@ -45,7 +47,7 @@ $dir = "assets/images/";
 		</button>
 		</form>
 	</nav><br>
-<form action="page_administrateur.php?pseudo=<?php $_SESSION['pseudo']?>" method="post">
+<form action="page_administrateur.php?pseudo=<?php $pseudo?>" method="post">
 <div style="display:flex; margin-left:16em;">
 	<h5> Selection de la catégorie d'image à afficher : </h5>
     <!-- here start the dropdown list -->
@@ -91,8 +93,6 @@ if (isset($_GET['catId'])) {
     include("function.php");
 }**/
 
-session_start();
-$pseudo = $_GET['pseudo'];
 
 if (isset($_POST['accueil'])) {
     header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_administrateur.php?pseudo='.$pseudo);
