@@ -59,8 +59,9 @@ else { //Starting this else one [else1]
 		Deconnexion
 		</button>
 		</div>
-	</nav></br>
     </form>
+</nav></br>
+
 
 
 
@@ -166,10 +167,13 @@ if (isset($_GET['catId'])) {
 
 
 if (isset($_POST['accueil'])) {
-    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_administrateur.php?pseudo='.$_SESSION['pseudo']);
+    echo "RENTRE DANS ACCUEIL";
+    $pseudo=$_SESSION['pseudo'];
+    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_administrateur.php?pseudo='.$pseudo);
     exit();
 }
 if (isset($_POST['deconnexion'])) {
+    echo "RENTRE DANS DECONNEXION";
     //MARINE
     unset($_SESSION["pseudo"]);
     unset($_SESSION["motdepasse"]);
