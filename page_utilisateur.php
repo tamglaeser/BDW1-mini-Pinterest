@@ -93,7 +93,7 @@ if (isset($_POST['deconnexion'])) {
 }
 
 if (isset($_POST['ajouter'])) {
-    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/ajouter.php?utilpseudo='.$pseudo);
+    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/ajouter.php?qui=util&pseudo='.$pseudo);
 }
 
 

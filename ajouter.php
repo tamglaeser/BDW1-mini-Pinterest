@@ -18,7 +18,7 @@ $dir = "assets/images/";
 <h1>Quelle photo?</h1>
 
 
-<form action="ajouter.php?pseudo=<?php echo $_GET['pseudo']?>" method="post" name = "Ajouter" enctype="multipart/form-data">
+<form action="ajouter.php?qui=<?php echo $_GET['qui']?>pseudo=<?php echo $_GET['pseudo']?>" method="post" name = "Ajouter" enctype="multipart/form-data">
     Choisir le fichier:<br>
         <!--<label for="fileToUpload" class="btn btn-primary">Parcourir..</label>-->
     <script>$('#fileToUpload').inputFileText({
@@ -100,17 +100,17 @@ if(isset($_POST["submit"])) {
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
             echo "The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
 
-            if (isset($_GET['utilpseudo'])) {
+            if ($_GET['qui'] == 'util') {
                 echo "found util pseudo";
-                $resultat_utilId = executeQuery($GLOBALS['conn'], "SELECT utilId FROM utilisateur WHERE utilPseudo='" . $_GET['utilpseudo'] . "'");
+                $resultat_utilId = executeQuery($GLOBALS['conn'], "SELECT utilId FROM utilisateur WHERE utilPseudo='" . $_GET['pseudo'] . "'");
                 while ($row_utilId = $resultat_utilId->fetch_assoc()) {
                     $resultat_nom = executeQuery($GLOBALS['conn'], "INSERT INTO Photo(nomFich, description, catId, utilId) VALUES ('" . basename($_FILES["fileToUpload"]["name"]) . "', '" . $_POST["description"] . "', " . $_POST["categories"] . ", " . $row_utilId["utilId"] . ")");
                 }
             }
 
-            else if (isset($_GET['adminpseudo'])) {
+            else if ($_GET['qui'] == 'admin') {
                 echo "found admin pseudo";
-                $resultat_adminId = executeQuery($GLOBALS['conn'], "SELECT adminId FROM administrateyr WHERE adminPseudo='" . $_GET['adminpseudo'] . "'");
+                $resultat_adminId = executeQuery($GLOBALS['conn'], "SELECT adminId FROM administrateyr WHERE adminPseudo='" . $_GET['pseudo'] . "'");
                 while ($row_adminId = $resultat_adminId->fetch_assoc()) {
                     $resultat_nom = executeQuery($GLOBALS['conn'], "INSERT INTO Photo(nomFich, description, catId, adminId) VALUES ('" . basename($_FILES["fileToUpload"]["name"]) . "', '" . $_POST["description"] . "', " . $_POST["categories"] . ", " . $row_utilId["utilId"] . ")");
                 }
