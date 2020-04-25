@@ -1,4 +1,5 @@
 <?php session_start();
+$temp=$_SESSION['expire'] - time(); /* MARINE */
 require_once ('bd.php');
 require_once ('administrateur.php');
 require_once ('utilisateur.php');
@@ -22,7 +23,29 @@ $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 </head>
 <body>
 <div style="background-image:url(img/accueil_bis.jpg);" ><B><h1>PhotoCat</h1></B><br> </div>
-	<nav class="crumbs">
+<?php
+    if (!isset($_SESSION['pseudo'])) {
+
+}
+    else {
+        $now = time(); // Checking the time now when home page starts.
+
+        if ($now > $_SESSION['expire']) {
+            session_destroy();
+            header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/connexion.php');
+        }
+        else { //Starting this else one [else1]
+            ?>
+            <!-- From here all HTML coding can be done -->
+            <h5>Welcome
+                <?php echo $_SESSION['pseudo']; ?></h5>
+            <h6> votre temps de connexion restant :  <?php
+                echo $temp; ?></h6>
+                    <?php
+        }
+    } ?>
+
+<nav class="crumbs">
 	<?php 
 	if(empty($_SESSION['pseudo']) && empty($_SESSION['motdepasse'])){
 		echo "<a href='https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/accueil.php'>ACCUEIL</a>";
