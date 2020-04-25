@@ -162,7 +162,9 @@ if (isset($_POST['val'])){
         executeUpdate($conn,"UPDATE administrateur SET adminMdp= \"$m\" ,adminPseudo= \"$p\"");
         $_SESSION['motdepasse']=$m;
         $_SESSION['pseudo']=$p;
-        header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_administrateur.php');
+        $pseudo = $p;//MARINE
+        $pwd = $m;//MARINE
+        header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_administrateur.php?pseudo='.$pseudo);
         exit();
 
     }else{echo "yy";
@@ -171,7 +173,10 @@ if (isset($_POST['val'])){
             executeUpdate($conn,"UPDATE utilisateur SET utilMdp= \"$m\" ,utilPseudo= \"$p\"");
             $_SESSION['motdepasse']=$m;
             $_SESSION['pseudo']=$p;
-            header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_utilisateur.php');
+            $pseudo=$p; //MARINE
+            $pwd=$m; //MARINE
+
+            header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_utilisateur.php?pseudo='.$pseudo);
             exit();
 
         }
