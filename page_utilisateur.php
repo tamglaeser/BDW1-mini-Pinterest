@@ -88,6 +88,11 @@ if (isset($_POST['accueil'])) {
 }
 if (isset($_POST['deconnexion'])) {
     setDisconnectedUtil($pseudo, $conn);
+    //MARINE
+    unset($_SESSION["pseudo"]);
+    unset($_SESSION["motdepasse"]);
+    session_destroy();
+    //MARINE
     header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/accueil.php');
     exit();
 }
