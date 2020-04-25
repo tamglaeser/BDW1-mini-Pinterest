@@ -153,8 +153,12 @@ if (isset($_POST['submit'])) {
 				if(getUserAdmin($pseudo, $pwd, $link) == 1) { 
 				$_SESSION["pseudo"]= $pseudo;
 				$_SESSION["motdepasse"] =$pwd;
-				
-				header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_administrateur.php?pseudo='.$pseudo);
+				/*MARINE*/
+				$_SESSION['start'] = time();
+                $_SESSION['expire'] = $_SESSION['start'] + (30 * 6);
+                /*MARINE*/
+
+                    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_administrateur.php?pseudo='.$pseudo);
 				exit();
 			
 				}
@@ -169,9 +173,13 @@ if (isset($_POST['submit'])) {
 					setConnectedUtil($pseudo, $link);
 					$_SESSION["pseudo"]= $pseudo;
 					$_SESSION["motdepasse"] =$pwd;
+					/*MARINE*/
+                    $_SESSION['start'] = time();
+                    $_SESSION['expire'] = $_SESSION['start'] + (30 * 60);
+                    /*MARINE*/
 
 
-					header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_utilisateur.php?pseudo='.$pseudo);
+                    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_utilisateur.php?pseudo='.$pseudo);
 					exit();
 				
 				}

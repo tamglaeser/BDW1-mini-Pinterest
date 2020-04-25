@@ -22,6 +22,7 @@ $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 </head>
 <body>
 <div style="background-image:url(img/accueil_bis.jpg);" ><B><h1>PhotoCat</h1></B><br> </div>
+<!-- MARINE -->
 <?php
     if (!isset($_SESSION['pseudo'])) {
 
@@ -44,7 +45,7 @@ $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
                     <?php
         }
     } ?>
-
+<!-- MARINE -->
 <nav class="crumbs">
 	<?php 
 	if(empty($_SESSION['pseudo']) && empty($_SESSION['motdepasse'])){
