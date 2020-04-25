@@ -39,7 +39,7 @@ $dir = "assets/images/";
     <!-- here start the dropdown list -->
 	<div style='display:flex; margin-left:5em;'>
         <?php
-        $resultat_cat = executeQuery($GLOBALS['conn'], "SELECT DISTINCT c.nomCat FROM Categorie c JOIN Photo p ON p.catID=c.catID WHERE p.utilId IN (SELECT utilId FROM utilisateur WHERE utilPseudo='" . $_GET['pseudo'] . "')");
+        $resultat_cat = executeQuery($GLOBALS['conn'], "SELECT DISTINCT c.nomCat FROM Categorie c JOIN Photo p ON p.catId=c.catId WHERE p.utilId IN (SELECT utilId FROM utilisateur WHERE utilPseudo='" . $_GET['pseudo'] . "')");
         ?>
         <select name="dowpdown" >
             <option value="0">Toutes les photos</option>
