@@ -5,9 +5,11 @@
 
 session_start();
 $pseudo = $_SESSION['pseudo'];
+$temp=$_SESSION['expire'] - time(); //MARINE
 
 $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 $dir = "assets/images/";
+
 ?>
 
 <!doctype html>
@@ -19,7 +21,37 @@ $dir = "assets/images/";
   <link rel="stylesheet" href="accueil.css">
 </head>
 <body>
-<div style="background-image:url(img/accueil_bis.jpg);" ><B><h1>PhotouCat_Util</h1></B><br> </div>
+<div style="background-image:url(img/accueil_bis.jpg);" ><B><h1>PhotouCat_Util</h1></B><br>
+    <?php if (!isset($_SESSION['pseudo'])) {
+        echo "Please Login again";
+        header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/connexion.php');
+    }
+    else {
+        $now = time(); // Checking the time now when home page starts.
+
+        if ($now > $_SESSION['expire']) {
+            session_destroy();
+            header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/connexion.php');
+        }
+        else { //Starting this else one [else1]
+            ?>
+            <!-- From here all HTML coding can be done -->
+            <h5>Welcome
+            <?php
+            echo $_SESSION['pseudo'];
+            ?></h5>
+            <h6> votre temps de connexion restant :  <?php
+            echo $temp;
+            ?></h6>
+
+            <?php
+        }
+    }
+
+    ?></div>
+
+
+
     <nav class="crumbs">
 	<form name="accueil_util" action="page_utilisateur.php?pseudo=<?php echo $pseudo?>" method="post">
 	    <button style="float: left;" type="submit" name="accueil" class="btn btn-success">

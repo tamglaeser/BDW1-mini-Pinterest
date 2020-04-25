@@ -38,10 +38,10 @@ $dir = "assets/images/";
     <h5>Welcome
         <?php
         echo $_SESSION['pseudo'];
-        ?><h5>
+        ?></h5>
             <h6> votre temps de connexion restant :  <?php
                 echo $temp;
-                ?><h6>
+                ?></h6>
 
                     <?php
                     }
