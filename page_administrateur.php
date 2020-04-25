@@ -45,7 +45,7 @@ $dir = "assets/images/";
 		</button>
 		</form>
 	</nav><br>
-<form action="function.php" method="post">
+<form action="page_administrateur.php?pseudo=<?php $_GET['pseudo']?>" method="post">
 <div style="display:flex; margin-left:16em;">
 	<h5> Selection de la catégorie d'image à afficher : </h5>
     <!-- here start the dropdown list -->

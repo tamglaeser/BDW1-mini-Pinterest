@@ -26,7 +26,7 @@ $dir = "assets/images/";
 		</button>
 		</div>
 	</nav><br>
-<form action="function.php" method="post">
+<form action="accueil.php" method="post">
 <div style="display:flex; margin-left:16em;">
 	<h5> Selection de la catégorie d'image à afficher : </h5>
     <!-- here start the dropdown list -->
