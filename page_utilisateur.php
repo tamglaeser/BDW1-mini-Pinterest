@@ -22,7 +22,10 @@ $dir = "assets/images/";
 	    <button style="float: left;" type="submit" name="accueil" class="btn btn-success">
 		Accueil
 		</button>
-		<div class='deconnexion'>
+        <button style="float: left;" type="submit" name="compte" class="btn btn-success">
+            Mon Compte
+        </button>
+        <div class='deconnexion'>
 		<button style="float: right;" type="submit" name="deconnexion" class="btn btn-success">
 		Deconnexion
 		</button>

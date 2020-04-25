@@ -20,7 +20,15 @@ $dir = "assets/images/";
 	   <button style="float: left;" type="submit" name="accueil" class="btn btn-success">
 		Accueil
 		</button>
-		<div class='connexion'>
+        <!--MARINE-->
+        <button style="float: left;" type="submit" name="compte" class="btn btn-success">
+            Mon Compte
+        </button>
+        <button style="float: left;" type="submit" name="cat" class="btn btn-success">
+            Ajouter Catégorie
+        </button>
+        <!--MARINE-->
+        <div class='connexion'>
 		<button style="float: right;" type="submit" name="deconnexion" class="btn btn-success">
 		Deconnexion 
 		</button>
@@ -91,9 +99,25 @@ if (isset($_POST['accueil'])) {
     exit();
 }
 if (isset($_POST['deconnexion'])) {
+    //MARINE
+    unset($_SESSION["pseudo"]);
+    unset($_SESSION["motdepasse"]);
+    session_destroy();
+    //MARINE
     header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/accueil.php');
     exit();
 }
+
+/*MARINE*/
+if (isset($_POST['compte'])) {
+    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/compte.php?pseudo='.$pseudo);
+    exit();
+}
+if (isset($_POST['cat'])) {
+    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/cat.php?pseudo='.$pseudo);
+    exit();
+}
+/*MARINE*/
 
 if (isset($_POST['ajouter'])) {
     header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/ajouter.php?qui=admin&pseudo='.$pseudo);
