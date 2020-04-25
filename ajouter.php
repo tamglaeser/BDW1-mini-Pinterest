@@ -112,18 +112,17 @@ if(isset($_POST["submit"])) {
 
 
             if (getValue('qui') == 'util') {
-                echo "found util pseudo";
                 $resultat_utilId = executeQuery($GLOBALS['conn'], "SELECT utilId FROM utilisateur WHERE utilPseudo='" . $_GET['pseudo'] . "'");
                 while ($row_utilId = $resultat_utilId->fetch_assoc()) {
                     $resultat_nom = executeQuery($GLOBALS['conn'], "INSERT INTO Photo(nomFich, description, catId, utilId) VALUES ('" . basename($_FILES["fileToUpload"]["name"]) . "', '" . $_POST["description"] . "', " . $_POST["categories"] . ", " . $row_utilId["utilId"] . ")");
                 }
             }
 
+            // FIXER -- ON A PAS LA UTILID A METTRE ????
             else if (getValue('qui') == 'admin') {
-                echo "found admin pseudo";
-                $resultat_adminId = executeQuery($GLOBALS['conn'], "SELECT adminId FROM administrateur WHERE adminPseudo='" . $_GET['pseudo'] . "'");
-                while ($row_adminId = $resultat_adminId->fetch_assoc()) {
-                    $resultat_nom = executeQuery($GLOBALS['conn'], "INSERT INTO Photo(nomFich, description, catId, adminId) VALUES ('" . basename($_FILES["fileToUpload"]["name"]) . "', '" . $_POST["description"] . "', " . $_POST["categories"] . ", " . $row_utilId["utilId"] . ")");
+                $resultat_utilId = executeQuery($GLOBALS['conn'], "SELECT utilId FROM utilisateur");
+                while ($row_utilId = $resultat_utilId->fetch_assoc()) {
+                    $resultat_nom = executeQuery($GLOBALS['conn'], "INSERT INTO Photo(nomFich, description, catId) VALUES ('" . basename($_FILES["fileToUpload"]["name"]) . "', '" . $_POST["description"] . "', " . $_POST["categories"] . ")");
                 }
 
             }
