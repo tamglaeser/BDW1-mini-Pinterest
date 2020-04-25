@@ -16,7 +16,7 @@ $dir = "assets/images/";
 ?>
 <div style="background-image:url(img/accueil_bis.jpg);" ><B><h1>PhotoCat Admin</h1></B><br> </div>
 	<nav class="crumbs">
-	<form name="accueil_admin" action="page_administrateur.php?pseudo=<?php echo $_GET['pseudo']?>" method="POST">
+	<form name="accueil_admin" action="page_administrateur.php?pseudo=<?php echo $_SESSION['pseudo']?>" method="POST">
 	   <button style="float: left;" type="submit" name="accueil" class="btn btn-success">
 		Accueil
 		</button>
@@ -45,7 +45,7 @@ $dir = "assets/images/";
 		</button>
 		</form>
 	</nav><br>
-<form action="page_administrateur.php?pseudo=<?php $_GET['pseudo']?>" method="post">
+<form action="page_administrateur.php?pseudo=<?php $_SESSION['pseudo']?>" method="post">
 <div style="display:flex; margin-left:16em;">
 	<h5> Selection de la catégorie d'image à afficher : </h5>
     <!-- here start the dropdown list -->
