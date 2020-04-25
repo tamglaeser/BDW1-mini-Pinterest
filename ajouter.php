@@ -118,11 +118,11 @@ if(isset($_POST["submit"])) {
                 }
             }
 
-            // FIXER -- ON A PAS LA UTILID A METTRE -- ON MET 0 POUR DEFAULT????
+            // FIXER -- ON A PAS LA UTILID A METTRE -- ON MET NULL POUR DEFAULT????
             else if (getValue('qui') == 'admin') {
                 $resultat_utilId = executeQuery($GLOBALS['conn'], "SELECT utilId FROM utilisateur");
                 while ($row_utilId = $resultat_utilId->fetch_assoc()) {
-                    $resultat_nom = executeQuery($GLOBALS['conn'], "INSERT INTO Photo(nomFich, description, catId, utilId) VALUES ('" . basename($_FILES["fileToUpload"]["name"]) . "', '" . $_POST["description"] . "', " . $_POST["categories"] . ", 0)");
+                    $resultat_nom = executeQuery($GLOBALS['conn'], "INSERT INTO Photo(nomFich, description, catId, utilId) VALUES ('" . basename($_FILES["fileToUpload"]["name"]) . "', '" . $_POST["description"] . "', " . $_POST["categories"] . ", NULL)");
                 }
 
             }
