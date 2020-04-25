@@ -166,7 +166,7 @@ if (isset($_GET['catId'])) {
 
 
 if (isset($_POST['accueil'])) {
-    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_administrateur.php');
+    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_administrateur.php?pseudo='.$_SESSION['pseudo']);
     exit();
 }
 if (isset($_POST['deconnexion'])) {
