@@ -45,7 +45,7 @@ $dir = "assets/images/";
                     ?>
 </div>
 <nav class="crumbs">
-    <form name="accueil" action="page_administrateur.php" method="POST">
+    <form name="accueil" action="page_administrateur.php?pseudo<?php $_SESSION['pseudo']?>" method="POST">
         <button style="float: left;" type="submit" name="accueil" class="btn btn-success">
             Accueil
         </button>
