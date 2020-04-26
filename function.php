@@ -14,6 +14,7 @@ $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 $dir = "assets/images/";
 
 if ($GLOBALS['qui'] != 'personne') {
+    $qui = $GLOBALS['qui'];
     $pseudo = $_SESSION['pseudo']; // seulement affiche quand on est connecte
 }
 

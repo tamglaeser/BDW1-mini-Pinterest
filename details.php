@@ -8,7 +8,7 @@ $photoId = $_GET['photoId'];
 $_SESSION['photoId']=$photoId;
 if(isset($_SESSION['pseudo'])){$pseudo = $_SESSION['pseudo'];}
 if(isset($_SESSION['motdepasse'])){$pwd = $_SESSION['motdepasse'];}
-
+//$qui = $GLOBALS['qui'];
 
 
 $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
@@ -54,7 +54,7 @@ $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 		echo "<a href='https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/accueil.php'>ACCUEIL</a>";
 	}else{
 		
-		if(getUserAdmin($pseudo, $pwd, $conn) == 1) { 
+		if(getUserAdmin($pseudo, $pwd, $conn) == 1) {
 			echo "<a href='https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_administrateur.php?pseudo=".$pseudo."'>ACCUEIL</a>";
 				
 		}else{
@@ -118,9 +118,30 @@ function details($ImageId, $link) {?>
         <tr>
             <th>Catégorie</th>
             <td>
+
+                <?php
+                if(empty($_SESSION['pseudo']) && empty($_SESSION['motdepasse'])){
+                    echo "<a href='accueil.php?catId=" . $row_cat_id['catId']. "'>" . $row_cat['nomCat'] . "</a>";
+                }else{
+
+                    if(getUserAdmin($GLOBALS['pseudo'], $GLOBALS['pwd'], $link) == 1) {
+                        echo "<a href='page_administrateur.php?catId=" . $row_cat_id['catId']. "'>" . $row_cat['nomCat'] . "</a>";
+
+                    }else{
+
+                        if(getUserUtil($GLOBALS['pseudo'], $GLOBALS['pwd'], $link) == 1) {
+                            echo "<a href='page_utilisateur.php?catId=" . $row_cat_id['catId']. "'>" . $row_cat['nomCat'] . "</a>";
+
+                        }
+                    }
+                }
+                ?>
+
+
+                <!--
                 <?php
                 echo "<a href='accueil.php?catId=" . $row_cat_id['catId']. "'>" . $row_cat['nomCat'] . "</a>";
-                ?>
+                ?>-->
             </td>
         </tr>
     </table>
