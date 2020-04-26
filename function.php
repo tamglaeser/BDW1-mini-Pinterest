@@ -26,7 +26,7 @@ if (isset($_POST['show_dowpdown_cache_value']) and $_POST['dowpdown_cache'] !=0)
 
     echo "CACHE";
 
-    $catId = $_POST['dowpdown']; // this will print the value if downbox out
+    $catId = $_POST['dowpdown_cache']; // this will print the value if downbox out
     category($catId, $GLOBALS['conn'], 'cache');
 }
 
