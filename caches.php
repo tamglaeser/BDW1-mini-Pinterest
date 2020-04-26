@@ -4,7 +4,8 @@ require_once('utilisateur.php');
 /*bdw1.univ-lyon1.fr/p1501149/tp4*/
 
 //session_start();
-//$pseudo = $_SESSION['pseudo'];
+$pseudo = $GLOBALS['pseudo'];
+echo "PSEUDO: ".$pseudo;
 //$temp=$_SESSION['expire'] - time(); //MARINE
 
 $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
