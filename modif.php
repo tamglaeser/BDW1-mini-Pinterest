@@ -125,7 +125,6 @@ if (isset($_POST['submit'])) {
 	if(isset($_POST["des"])){
 		$des=$_POST["des"];
 		if (isset($des) ){
-			echo "a" ;
 			$query="UPDATE Photo SET description = \"$des\" WHERE photoId = \"$pId\"";
 			modif($pId,$ps,$query);
 			

@@ -10,7 +10,6 @@
 
 <?php
 
-echo "enter into function.php for cache";
 
 require_once ('bd.php');
 require_once ('utilisateur.php');
@@ -24,7 +23,6 @@ $dir = "assets/images/";
 
 if (isset($_POST['show_dowpdown_cache_value']) and $_POST['dowpdown_cache'] !=0) {
 
-    echo "CACHE";
 
     $catId = $_POST['dowpdown_cache']; // this will print the value if downbox out
     category($catId, $GLOBALS['conn'], 'cache');
@@ -48,7 +46,14 @@ function category(int $cat, $link, $statut)
 {
     $resultat_catNoms = executeQuery($link, "SELECT nomCat FROM Categorie WHERE catId = $cat");
     $row_catNom = $resultat_catNoms->fetch_assoc();
-    echo "<h1>Les photos de la catégorie " . $row_catNom["nomCat"] . "</h1>";
+    if ($statut == 'cache') {
+        echo "<h1>Les photos caches de la catégorie " . $row_catNom["nomCat"] . "</h1>";
+    }
+
+    else if ($statut == 'montre') {
+        echo "<h1>Les photos de la catégorie " . $row_catNom["nomCat"] . "</h1>";
+    }
+
     if (!empty($_SESSION['pseudo']) && !empty($_SESSION['motdepasse']) && getUserUtil($_SESSION['pseudo'], $_SESSION['motdepasse'], $link) == 1) { //seulement afficher ses photos de la categorie choisi
         $resultat_photoId = executeQuery($link, "SELECT p.photoId FROM Photo p WHERE p.catId = $cat AND p.utilId IN (SELECT u.utilId FROM utilisateur u WHERE u.utilPseudo = '" . $_SESSION['pseudo'] . "') AND p.statut = '" . $statut . "'");
     }

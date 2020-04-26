@@ -146,11 +146,9 @@ if (isset($_POST['modif'])){?>
 <?php
 
 if (isset($_POST['val'])){
-    echo "eeeeeeeeeéé";
     $m=$_POST['m'];
     $p=$_POST['p'];
     if(getUserAdmin($pseudo, $pwd, $conn) == 1) {
-        echo "eeeerrrrrrrrrrrr";
         executeUpdate($conn,"UPDATE administrateur SET adminMdp= \"$m\" ,adminPseudo= \"$p\"");
         $_SESSION['motdepasse']=$m;
         $_SESSION['pseudo']=$p;
@@ -159,7 +157,7 @@ if (isset($_POST['val'])){
         header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_administrateur.php?pseudo='.$pseudo);
         exit();
 
-    }else{echo "yy";
+    }else{
         if(getUserUtil($pseudo, $pwd, $conn) == 1) {
 
             executeUpdate($conn,"UPDATE utilisateur SET utilMdp= \"$m\" ,utilPseudo= \"$p\"");

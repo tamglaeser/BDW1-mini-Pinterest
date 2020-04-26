@@ -175,20 +175,15 @@ function details($ImageId, $link) {?>
                     <?php
                     $resultat_statut = executeQuery($link, "SELECT p.statut FROM Photo p WHERE p.photoId = " . $_SESSION['photoId']);
                     while ($row_statut = $resultat_statut->fetch_assoc()) {
-                        echo "in details enter while for query";
                         $stat = $row_statut['statut'];
-                        echo "stat of pic is : ". $stat;
                     }
 
                     if ($stat == 'montre') {
-                        echo "enter to cacher";
                         ?>
-                        echo "enter to cacher";
                         <a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/cacher.php?ftn=cacher"> cacher la photo </a><br>
                     <?php }
 
                     else if ($stat == 'cache') {
-                        echo "enter to afficher";
                         ?>
                         <a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/cacher.php?ftn=afficher"> afficher la photo </a><br>
                     <?php } ?>

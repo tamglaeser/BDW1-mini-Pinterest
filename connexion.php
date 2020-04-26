@@ -167,10 +167,8 @@ if (isset($_POST['submit'])) {
 				}
 			}
 			else{
-			    //echo "enter for user";
 				if(getUserUtil($pseudo, $pwd, $link) == 1) {
-				    //echo "user already exists";
-					setConnectedUtil($pseudo, $link);
+				    setConnectedUtil($pseudo, $link);
 					$_SESSION["pseudo"]= $pseudo;
 					$_SESSION["motdepasse"] =$pwd;
 					/*MARINE*/
