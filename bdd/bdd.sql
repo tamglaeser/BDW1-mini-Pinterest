@@ -59,6 +59,7 @@ CREATE TABLE IF NOT EXISTS Photo (
   description varchar(255) NOT NULL,
   catId int NOT NULL,
   utilId int NOT NULL,
+  statut varchar(255) NOT NULL,
   PRIMARY KEY (photoId),
   FOREIGN KEY (catId) REFERENCES Categorie (catId),
   FOREIGN KEY (utilId) REFERENCES utilisateur (utilId)
@@ -103,23 +104,23 @@ VALUES ('p1926029', 'ef5d0c', 'disconnected');
 -- Inserer les images dans la table Photo
 --
 
-INSERT INTO Photo(nomFich, description, catId, utilId)
-VALUES ('bracelet.gif', 'Un bracelet fait des emballages des bonbons Starbursts', 1, 1),
-       ('composants.gif', 'Deux individuel emballages des bonbons Starbursts', 1, 1),
-       ('EgliseDC.jpeg', 'l''interieur de la basilique a DC', 2, 1),
-       ('giraffe.png', 'Un dessin d''une girafe', 4, 1),
-       ('loading.gif', 'Signe de chargement d''internet', 3, 1),
-       ('pikachu.gif', 'Un GIF de Pikachu (de Pokemon)', 4, 1),
-       ('snowboard.png', 'un mec sur son snowboard dans l''air', 7, 1),
-       ('graphe.png', 'Une graphe fait avec Matlab pour les devoir de maths de Tullia', 3, 1),
-       ('inconnu.jpeg', 'Un photo d''un endroit et d''un mec qu''on a oublie (probablement en Europe)', 2, 1),
-       ('kisses.gif', 'Un dessin de des Hershey Kisses', 6, 1),
-       ('linkedIn.png', 'Le photo LinkedIn de Tullia', 5, 1),
-       ('plantcell.gif', 'Le diagram de la cellule d''une plante', 6, 1),
-       ('klose.jpg', 'Le jouer de foot allemand Klose qui fait un flip', 7, 1),
-       ('petiteMaman.jpg', 'La maman de Tullia quand elle etait tres petite', 5, 1),
-       ('shireMordor.jpg', 'Un ecran de GoogleMap pour arriver a Mordor du Shire', 3, 1),
-       ('troisAmis.jpg', 'La maman de Tullia dans les scouts quand elle etait petite', 5, 1);
+INSERT INTO Photo(nomFich, description, catId, utilId, statut)
+VALUES ('bracelet.gif', 'Un bracelet fait des emballages des bonbons Starbursts', 1, 1, 'montre'),
+       ('composants.gif', 'Deux individuel emballages des bonbons Starbursts', 1, 1,'montre'),
+       ('EgliseDC.jpeg', 'l''interieur de la basilique a DC', 2, 1, 'montre'),
+       ('giraffe.png', 'Un dessin d''une girafe', 4, 1,'montre'),
+       ('loading.gif', 'Signe de chargement d''internet', 3, 1, 'montre'),
+       ('pikachu.gif', 'Un GIF de Pikachu (de Pokemon)', 4, 1, 'montre'),
+       ('snowboard.png', 'un mec sur son snowboard dans l''air', 7, 1, 'montre'),
+       ('graphe.png', 'Une graphe fait avec Matlab pour les devoir de maths de Tullia', 3, 1, 'montre'),
+       ('inconnu.jpeg', 'Un photo d''un endroit et d''un mec qu''on a oublie (probablement en Europe)', 2, 1, 'montre'),
+       ('kisses.gif', 'Un dessin de des Hershey Kisses', 6, 1, 'montre'),
+       ('linkedIn.png', 'Le photo LinkedIn de Tullia', 5, 1, 'montre'),
+       ('plantcell.gif', 'Le diagram de la cellule d''une plante', 6, 1, 'montre'),
+       ('klose.jpg', 'Le jouer de foot allemand Klose qui fait un flip', 7, 1, 'montre'),
+       ('petiteMaman.jpg', 'La maman de Tullia quand elle etait tres petite', 5, 1, 'montre'),
+       ('shireMordor.jpg', 'Un ecran de GoogleMap pour arriver a Mordor du Shire', 3, 1, 'montre'),
+       ('troisAmis.jpg', 'La maman de Tullia dans les scouts quand elle etait petite', 5, 1, 'montre');
 
 -- --------------------------------------------------------
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
