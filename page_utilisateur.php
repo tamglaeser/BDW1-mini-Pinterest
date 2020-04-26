@@ -78,14 +78,15 @@ $dir = "assets/images/";
 	<div style='display:flex; margin-left:5em;'>
         <?php
         // seulement afficher ses categories
-        $resultat_cat = executeQuery($GLOBALS['conn'], "SELECT DISTINCT c.nomCat FROM Categorie c JOIN Photo p ON p.catId=c.catId WHERE p.utilId IN (SELECT utilId FROM utilisateur WHERE utilPseudo='" . $pseudo . "')");
+        $resultat_cat = executeQuery($GLOBALS['conn'], "SELECT DISTINCT c.nomCat, c.catId FROM Categorie c JOIN Photo p ON p.catId=c.catId WHERE p.utilId IN (SELECT utilId FROM utilisateur WHERE utilPseudo='" . $pseudo . "')");
         ?>
         <select name="dowpdown" >
             <option value="0">Toutes les photos</option>
             <?php
-            $val = 0;
+            //$val = 0;
+
             while ($row_cat = $resultat_cat->fetch_assoc()){
-                echo "<option value=" . ++$val . ">". $row_cat['nomCat'] . "</option>";
+                echo "<option value=" . $row_cat['catId'] . ">". $row_cat['nomCat'] . "</option>";
             }
             ?>
         </select>
