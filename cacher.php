@@ -20,13 +20,16 @@ $ps = $_SESSION['pseudo'];
 <body>
 <?php
 $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
+echo "enter into cacher.php";
 cach($pId,$ps);
+echo "after calling function cach";
 
 ?>
 </body>
 </html>
 <?php
 function cach($photoId,$pseudo) {
+    echo "enter function cach?";
 
     if(getUserUtil($pseudo,$_SESSION['motdepasse'],$GLOBALS['conn']) ==1){
         $resultat= executeQuery($GLOBALS['conn'], "UPDATE Photo p SET p.statut='cache' WHERE p.photoId = " . $photoId . "AND p.utilId IN (SELECT u.utilId FROM utilisateur u WHERE utilPseudo = '" . $pseudo . "')");
