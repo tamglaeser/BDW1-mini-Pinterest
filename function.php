@@ -13,10 +13,10 @@ require_once ('bd.php');
 $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 $dir = "assets/images/";
 
-if ($GLOBALS['qui'] != 'personne') {
-    $qui = $GLOBALS['qui'];
+//if ($GLOBALS['qui'] != 'personne') {
+  //  $qui = $GLOBALS['qui'];
     $pseudo = $_SESSION['pseudo']; // seulement affiche quand on est connecte
-}
+//}
 
 if (isset($_POST['show_dowpdown_value']) and $_POST['dowpdown'] !=0) {
 
@@ -37,7 +37,7 @@ function category(int $cat, $link)
     $resultat_catNoms = executeQuery($link, "SELECT nomCat FROM Categorie WHERE catId = $cat");
     $row_catNom = $resultat_catNoms->fetch_assoc();
     echo "<h1>Les photos de la catégorie " . $row_catNom["nomCat"] . "</h1>";
-    if ($GLOBALS['qui'] == 'util') { //seulement afficher ses photos de la categorie choisi
+    if (getUserUtil($GLOBALS['pseudo'], $GLOBALS['pwd'], $link) == 1) { //seulement afficher ses photos de la categorie choisi
         $resultat_photoId = executeQuery($link, "SELECT p.photoId FROM Photo p WHERE p.catId = $cat AND p.utilId IN (SELECT u.utilId FROM utilisateur u WHERE u.utilPseudo = '" . $GLOBALS['pseudo'] . "')");
     }
     else {
