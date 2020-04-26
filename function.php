@@ -12,6 +12,7 @@
 require_once ('bd.php');
 $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 $dir = "assets/images/";
+$pseudo = $_SESSION['pseudo']; // seulement affiche quand on est connecte
 
 
 if (isset($_POST['show_dowpdown_value']) and $_POST['dowpdown'] !=0) {
@@ -33,8 +34,12 @@ function category(int $cat, $link)
     $resultat_catNoms = executeQuery($link, "SELECT nomCat FROM Categorie WHERE catId = $cat");
     $row_catNom = $resultat_catNoms->fetch_assoc();
     echo "<h1>Les photos de la catégorie " . $row_catNom["nomCat"] . "</h1>";
-
-    $resultat_photoId = executeQuery($link, "SELECT photoId FROM Photo WHERE catId = $cat");
+    if (isset($_GET['util'])) { //seulement afficher ses photos de la categorie choisi
+        $resultat_photoId = executeQuery($link, "SELECT photoId FROM Photo WHERE catId = $cat AND utilId IN (SELECT utilId FROM utilisateur WHERE utilPseudo = '" . $GLOBALS['pseudo'] . "')");
+    }
+    else {
+        $resultat_photoId = executeQuery($link, "SELECT photoId FROM Photo WHERE catId = $cat");
+    }
     while ($row_photoId = $resultat_photoId->fetch_assoc()) {
         $resultat_imNom = executeQuery($link, "SELECT nomFich FROM Photo WHERE photoId = " . $row_photoId["photoId"] );
         $row_imNom = $resultat_imNom->fetch_assoc();
