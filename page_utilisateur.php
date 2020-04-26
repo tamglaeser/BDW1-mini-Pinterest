@@ -77,9 +77,9 @@ $dir = "assets/images/";
                 </button>
             </div>
         </form>
-        <?php
-        if (isset($_POST['caches'])) {
-            include ("caches.php");
+
+        <?php if (isset($_POST['caches'])) {
+            include("caches.php");
         }
         ?>
 	</nav></br>

@@ -1,4 +1,3 @@
 <?php
-
-echo "Tous mes photos cachées";
+echo "tous mes photos caches";
 ?>
