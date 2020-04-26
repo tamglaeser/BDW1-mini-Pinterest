@@ -94,11 +94,11 @@ $dir = "assets/images/";
 	</div><br><br><br>
 </form>
 <?php if ((isset($_POST['show_dowpdown_value']) and $_POST['dowpdown'] !=0) or (isset($_GET['catId']))) {
-    include("function.php?util");}
+    include("function.php?qui=util");
+}
 else {?>
     <h1>Toutes les photos</h1><?php
         // seulement afficher ses photos
-        echo "PSEUDO :" . $pseudo;
         $resultat_photoId = executeQuery($GLOBALS['conn'], "SELECT DISTINCT p.photoId FROM Photo p WHERE p.utilId IN (SELECT u.utilId FROM utilisateur u WHERE u.utilPseudo = '" . $pseudo . "')");
         while ($row_photoId = $resultat_photoId->fetch_assoc()) {
             $resultat_imNom = executeQuery($GLOBALS['conn'], "SELECT nomFich FROM Photo WHERE photoId = " . $row_photoId["photoId"] );
