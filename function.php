@@ -10,6 +10,7 @@
 
 <?php
 require_once ('bd.php');
+require_once ('utilisateur.php');
 $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 $dir = "assets/images/";
 
