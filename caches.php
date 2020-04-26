@@ -1,4 +1,5 @@
 <?php
+require_once ('page_utilisateur.php');
 $pseudo = $_SESSION['pseudo'];
 ?>
 

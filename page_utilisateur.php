@@ -90,8 +90,8 @@ else {?>
             <!-- here start the dropdown list -->
             <div style='display:flex; margin-left:5em;'>
                 <?php
-                // seulement afficher ses categories
-                $resultat_cat = executeQuery($GLOBALS['conn'], "SELECT DISTINCT c.nomCat, c.catId FROM Categorie c JOIN Photo p ON p.catId=c.catId WHERE p.utilId IN (SELECT utilId FROM utilisateur WHERE utilPseudo='" . $pseudo . "')");
+                // seulement afficher ses categories et celles montres
+                $resultat_cat = executeQuery($GLOBALS['conn'], "SELECT DISTINCT c.nomCat, c.catId FROM Categorie c JOIN Photo p ON p.catId=c.catId WHERE p.utilId IN (SELECT utilId FROM utilisateur WHERE utilPseudo='" . $pseudo . "') AND p.statut = 'montre'");
                 ?>
                 <select name="dowpdown" >
                     <option value="0">Toutes les photos</option>
@@ -115,7 +115,7 @@ else {?>
     else {?>
         <h1>Toutes les photos</h1><?php
             // seulement afficher ses photos
-            $resultat_photoId = executeQuery($GLOBALS['conn'], "SELECT DISTINCT p.photoId FROM Photo p WHERE p.utilId IN (SELECT u.utilId FROM utilisateur u WHERE u.utilPseudo = '" . $pseudo . "')");
+            $resultat_photoId = executeQuery($GLOBALS['conn'], "SELECT DISTINCT p.photoId FROM Photo p WHERE p.utilId IN (SELECT u.utilId FROM utilisateur u WHERE u.utilPseudo = '" . $pseudo . "') AND p.statut = 'montre'");
             while ($row_photoId = $resultat_photoId->fetch_assoc()) {
                 $resultat_imNom = executeQuery($GLOBALS['conn'], "SELECT nomFich FROM Photo WHERE photoId = " . $row_photoId["photoId"] );
                 $row_imNom = $resultat_imNom->fetch_assoc();
