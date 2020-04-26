@@ -3,12 +3,11 @@ require_once('bd.php');
 require_once('utilisateur.php');
 /*bdw1.univ-lyon1.fr/p1501149/tp4*/
 
-//session_start();
+session_start();
+$temp=$_SESSION['expire'] - time();
 $pseudo = $_SESSION['pseudo'];
-echo "PSEUDO: ".$pseudo;
-//$temp=$_SESSION['expire'] - time(); //MARINE
-
-$conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
+$pwd = $_SESSION['motdepasse'];
+$conn = getConnection($dbHost, $dbUser, $dbPwd, $dbName);
 $dir = "assets/images/";
 
 ?>
