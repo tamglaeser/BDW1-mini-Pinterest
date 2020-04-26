@@ -70,20 +70,13 @@ $dir = "assets/images/";
                 Ajouter une Photo
             </button>
         </div>
-        <form action="page_utilisateur.php?pseudo=<?php echo $pseudo?>" method="post">
-            <div class='caches'>
-                <button style="float: right;" type="submit" name="caches" class="btn btn-success">
-                    Mes Photos Cachées
-                </button>
-            </div>
-        </form>
+        <div class='caches'>
+            <button style="float: right;" type="submit" name="caches" class="btn btn-success">
+                Mes Photos Cachées
+            </button>
+        </div>
 	</nav></br>
-<?php
-if (isset($_POST['caches'])) {
-    include("caches.php");
-}
 
-else {?>
     <form action="page_utilisateur.php?pseudo=<?php echo $pseudo?>" method="post">
         <div style="display:flex; margin-left:16em;">
             <h5> Selection de la catégorie d'image à afficher : </h5>
@@ -125,7 +118,7 @@ else {?>
                 endforeach;
             }
         }
-}?>
+?>
 </body>
 </html>
 
@@ -164,10 +157,10 @@ if (isset($_POST['ajouter'])) {
     header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/ajouter.php?qui=util&pseudo='.$pseudo);
 }
 
-//if (isset($_POST['caches'])) {
-  //  header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/caches.php');
+if (isset($_POST['caches'])) {
+    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/caches.php');
 
-//}
+}
 
 
 closeConnexion($conn);
