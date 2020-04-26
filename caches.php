@@ -11,7 +11,7 @@ $pseudo = $_SESSION['pseudo'];
             // seulement afficher ses categories
             $resultat_cat = executeQuery($GLOBALS['conn'], "SELECT DISTINCT c.nomCat, c.catId FROM Categorie c JOIN Photo p ON p.catId=c.catId WHERE p.utilId IN (SELECT utilId FROM utilisateur WHERE utilPseudo='" . $pseudo . "') AND p.statut='cache'");
             ?>
-            <select name="dowpdown" >
+            <select name="dowpdown_cache" >
                 <option value="0">Toutes les photos</option>
                 <?php
                 //$val = 0;
@@ -21,11 +21,11 @@ $pseudo = $_SESSION['pseudo'];
                 }
                 ?>
             </select>
-            <input type="submit" name="show_dowpdown_value" value="Valider"/>
+            <input type="submit" name="show_dowpdown_cache_value" value="Valider"/>
         </div>
     </div><br><br><br>
 </form>
-<?php if ((isset($_POST['show_dowpdown_value']) and $_POST['dowpdown'] !=0) or (isset($_GET['catId']))) {
+<?php if ((isset($_POST['show_dowpdown_cache_value']) and $_POST['dowpdown_cache'] !=0)) {
     //$qui = 'util';
     include("function.php");
 }

@@ -19,10 +19,16 @@ $dir = "assets/images/";
     //$pseudo = $_SESSION['pseudo']; // seulement affiche quand on est connecte
 //}
 
+if (isset($_POST['show_dowpdown_cache_value']) and $_POST['dowpdown_cache'] !=0) {
+
+    $catId = $_POST['dowpdown']; // this will print the value if downbox out
+    category($catId, $GLOBALS['conn'], 'cache');
+}
+
 if (isset($_POST['show_dowpdown_value']) and $_POST['dowpdown'] !=0) {
 
     $catId = $_POST['dowpdown']; // this will print the value if downbox out
-    category($catId, $GLOBALS['conn']);
+    category($catId, $GLOBALS['conn'], 'montre');
 }
 
 if (isset($_GET['catId'])) {
@@ -33,13 +39,13 @@ if (isset($_GET['catId'])) {
 
 
 
-function category(int $cat, $link)
+function category(int $cat, $link, $statut)
 {
     $resultat_catNoms = executeQuery($link, "SELECT nomCat FROM Categorie WHERE catId = $cat");
     $row_catNom = $resultat_catNoms->fetch_assoc();
     echo "<h1>Les photos de la catégorie " . $row_catNom["nomCat"] . "</h1>";
     if (!empty($_SESSION['pseudo']) && !empty($_SESSION['motdepasse']) && getUserUtil($_SESSION['pseudo'], $_SESSION['motdepasse'], $link) == 1) { //seulement afficher ses photos de la categorie choisi
-        $resultat_photoId = executeQuery($link, "SELECT p.photoId FROM Photo p WHERE p.catId = $cat AND p.utilId IN (SELECT u.utilId FROM utilisateur u WHERE u.utilPseudo = '" . $_SESSION['pseudo'] . "')");
+        $resultat_photoId = executeQuery($link, "SELECT p.photoId FROM Photo p WHERE p.catId = $cat AND p.utilId IN (SELECT u.utilId FROM utilisateur u WHERE u.utilPseudo = '" . $_SESSION['pseudo'] . "') AND p.statut = '" . $statut . "'");
     }
     else {
         $resultat_photoId = executeQuery($link, "SELECT photoId FROM Photo WHERE catId = $cat");
