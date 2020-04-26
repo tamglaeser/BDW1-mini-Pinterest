@@ -36,7 +36,7 @@ if (isset($_POST['show_dowpdown_value']) and $_POST['dowpdown'] !=0) {
 
 if (isset($_GET['catId'])) {
     $Id = htmlspecialchars($_GET["catId"]);
-    category($Id, $conn);
+    category($Id, $conn, 'montre');
 }
 
 
