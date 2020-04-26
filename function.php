@@ -12,8 +12,8 @@
 require_once ('bd.php');
 $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 $dir = "assets/images/";
-$qui = $_GET['qui'];
-if ($qui != 'personne') {
+
+if ($GLOBALS['qui'] != 'personne') {
     $pseudo = $_SESSION['pseudo']; // seulement affiche quand on est connecte
 }
 

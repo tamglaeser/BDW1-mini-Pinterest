@@ -94,7 +94,8 @@ $dir = "assets/images/";
 	</div><br><br><br>
 </form>
 <?php if ((isset($_POST['show_dowpdown_value']) and $_POST['dowpdown'] !=0) or (isset($_GET['catId']))) {
-    include("function.php?qui=util");
+    $qui = 'util';
+    include("function.php");
 }
 else {?>
     <h1>Toutes les photos</h1><?php
