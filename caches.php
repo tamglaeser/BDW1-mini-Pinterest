@@ -23,17 +23,15 @@ $dir = "assets/images/";
     <body>
     <div style="background-image:url(img/accueil_bis.jpg);" ><B><h1>PhotouCat_Util</h1></B><br>
         <?php if (!isset($_SESSION['pseudo'])) {
-            echo "entered caches but if !isset session pseudo";
             echo "Please Login again";
-            //header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/connexion.php');
+            header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/connexion.php');
         }
         else {
             $now = time(); // Checking the time now when home page starts.
 
             if ($now > $_SESSION['expire']) {
-                echo "entered caches but there is session pseudo but time expired";
                 session_destroy();
-                //header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/connexion.php');
+                header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/connexion.php');
             }
             else { //Starting this else one [else1]
                 ?>
@@ -55,7 +53,7 @@ $dir = "assets/images/";
 
 
     <nav class="crumbs">
-        <form name="accueil_util" action="page_utilisateur.php?pseudo=<?php echo $pseudo?>" method="post">
+        <form name="accueil_util" action="caches.php" method="post">
             <button style="float: left;" type="submit" name="accueil" class="btn btn-success">
                 Accueil
             </button>
