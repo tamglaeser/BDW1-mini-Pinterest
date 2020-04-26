@@ -171,7 +171,20 @@ function details($ImageId, $link) {?>
 			?>	<div class="row justify-content-center p-2">
 				    <a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/sup.php"> supprimer la photo</a><br>
 				    <a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/modif.php"> modifier les détails </a><br>
-                    <a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/cacher.php"> cacher la photo </a><br>
+
+                    <?php
+                    $resultat_statut = executeQuery($link, "SELECT p.statut FROM Photo p WHERE p.photoId = " . $_SESSION['photoId']);
+                    while ($row_statut = $resultat_statut->fetch_assoc()) {
+                        $stat = $row_statut['statut'];
+                    }
+
+                    if ($stat = 'montre') {?>
+                        <a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/cacher.php?ftn='cacher'"> cacher la photo </a><br>
+                    <?php }
+
+                    else if ($stat = 'cache') {?>
+                        <a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/cacher.php?ftn='afficher'"> afficher la photo </a><br>
+                    <?php } ?>
 				</div>
 				<?php
 				

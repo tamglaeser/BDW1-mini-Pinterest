@@ -20,8 +20,13 @@ $ps = $_SESSION['pseudo'];
 <body>
 <?php
 $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
-cach($pId,$ps);
+if ($_GET['ftn'] == 'cacher') {
+    cach($pId, $ps);
+}
 
+else if ($_GET['ftn'] == 'afficher') {
+    afficher($pId, $ps);
+}
 ?>
 </body>
 </html>
@@ -36,6 +41,20 @@ function cach($photoId,$pseudo) {
     }
     else{
         echo "vous ne pouvez pas la cacher ";
+        header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_utilisateur.php?pseudo='.$pseudo);
+    }
+}
+
+function afficher($photoId, $pseudo) {
+    if(getUserUtil($pseudo,$_SESSION['motdepasse'],$GLOBALS['conn']) ==1){
+        $resultat= executeQuery($GLOBALS['conn'], "UPDATE Photo p SET p.statut='montre' WHERE p.photoId = " . $photoId . " AND p.utilId IN (SELECT u.utilId FROM utilisateur u WHERE utilPseudo = '" . $pseudo . "')");
+        header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_utilisateur.php?pseudo='.$pseudo);
+
+        exit();
+    }
+
+    else{
+        echo "vous ne pouvez pas l'afficher ";
         header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_utilisateur.php?pseudo='.$pseudo);
     }
 }
