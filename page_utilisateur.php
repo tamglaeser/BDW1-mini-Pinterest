@@ -77,11 +77,6 @@ $dir = "assets/images/";
                 </button>
             </div>
         </form>
-
-        <?php if (isset($_POST['caches'])) {
-            include("caches.php");
-        }
-        ?>
 	</nav></br>
 <form action="page_utilisateur.php?pseudo=<?php echo $pseudo?>" method="post">
 <div style="display:flex; margin-left:16em;">
@@ -110,6 +105,11 @@ $dir = "assets/images/";
     //$qui = 'util';
     include("function.php");
 }
+
+else if (isset($_POST['caches'])) {
+    include("caches.php");
+}
+
 else {?>
     <h1>Toutes les photos</h1><?php
         // seulement afficher ses photos
