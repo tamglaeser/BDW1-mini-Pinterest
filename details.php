@@ -180,14 +180,14 @@ function details($ImageId, $link) {?>
                         echo "stat of pic is : ". $stat;
                     }
 
-                    if ($stat = 'montre') {
+                    if ($stat == 'montre') {
                         echo "enter to cacher";
                         ?>
                         echo "enter to cacher";
                         <a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/cacher.php?ftn=cacher"> cacher la photo </a><br>
                     <?php }
 
-                    else if ($stat = 'cache') {
+                    else if ($stat == 'cache') {
                         echo "enter to afficher";
                         ?>
                         <a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/cacher.php?ftn=afficher"> afficher la photo </a><br>
