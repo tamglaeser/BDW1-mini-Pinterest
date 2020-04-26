@@ -179,11 +179,11 @@ function details($ImageId, $link) {?>
                     }
 
                     if ($stat = 'montre') {?>
-                        <a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/cacher.php?ftn='cacher'"> cacher la photo </a><br>
+                        <a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/cacher.php?ftn=cacher"> cacher la photo </a><br>
                     <?php }
 
                     else if ($stat = 'cache') {?>
-                        <a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/cacher.php?ftn='afficher'"> afficher la photo </a><br>
+                        <a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/cacher.php?ftn=afficher"> afficher la photo </a><br>
                     <?php } ?>
 				</div>
 				<?php
