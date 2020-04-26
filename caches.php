@@ -10,7 +10,7 @@ $pseudo = $_SESSION['pseudo'];
         <div style='display:flex; margin-left:5em;'>
             <?php
             // seulement afficher ses categories
-            $resultat_cat = executeQuery($GLOBALS['conn'], "SELECT DISTINCT c.nomCat, c.catId FROM Categorie c JOIN Photo p ON p.catId=c.catId WHERE p.utilId IN (SELECT utilId FROM utilisateur WHERE utilPseudo='" . $pseudo . "') AND p.statut='cache'");
+            $resultat_cat = executeQuery($GLOBALS['conn'], "SELECT DISTINCT c.nomCat, c.catId FROM Categorie c JOIN Photo p ON p.catId=c.catId WHERE p.utilId IN (SELECT u.utilId FROM utilisateur u WHERE u.utilPseudo='" . $pseudo . "') AND p.statut='cache'");
             ?>
             <select name="dowpdown_cache" >
                 <option value="0">Toutes les photos</option>
