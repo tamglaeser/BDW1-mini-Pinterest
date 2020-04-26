@@ -1,7 +1,7 @@
 <?php
 //require_once ('page_utilisateur.php');
 require_once ('bd.php');
-//session_start();
+session_start();
 $pseudo = $_SESSION['pseudo'];
 $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 
