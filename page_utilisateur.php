@@ -159,6 +159,7 @@ if (isset($_POST['ajouter'])) {
 
 if (isset($_POST['caches'])) {
     header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/caches.php');
+    exit();
 
 }
 

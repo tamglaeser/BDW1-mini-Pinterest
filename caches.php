@@ -4,7 +4,7 @@ require_once('utilisateur.php');
 /*bdw1.univ-lyon1.fr/p1501149/tp4*/
 
 //session_start();
-$pseudo = $GLOBALS['pseudo'];
+$pseudo = $_SESSION['pseudo'];
 echo "PSEUDO: ".$pseudo;
 //$temp=$_SESSION['expire'] - time(); //MARINE
 
