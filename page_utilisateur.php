@@ -98,7 +98,8 @@ $dir = "assets/images/";
 else {?>
     <h1>Toutes les photos</h1><?php
         // seulement afficher ses photos
-        $resultat_photoId = executeQuery($GLOBALS['conn'], "SELECT DISTINCT photoId FROM Photo WHERE utilId IN (SELECT utilId FROM utilisateur WHERE utilPseudo = '" . $pseudo . "')");
+        echo "PSEUDO :" . $pseudo;
+        $resultat_photoId = executeQuery($GLOBALS['conn'], "SELECT DISTINCT p.photoId FROM Photo p WHERE p.utilId IN (SELECT u.utilId FROM utilisateur u WHERE u.utilPseudo = '" . $pseudo . "')");
         while ($row_photoId = $resultat_photoId->fetch_assoc()) {
             $resultat_imNom = executeQuery($GLOBALS['conn'], "SELECT nomFich FROM Photo WHERE photoId = " . $row_photoId["photoId"] );
             $row_imNom = $resultat_imNom->fetch_assoc();
