@@ -37,7 +37,7 @@ function category(int $cat, $link)
     $resultat_catNoms = executeQuery($link, "SELECT nomCat FROM Categorie WHERE catId = $cat");
     $row_catNom = $resultat_catNoms->fetch_assoc();
     echo "<h1>Les photos de la catégorie " . $row_catNom["nomCat"] . "</h1>";
-    if (!empty($_SESSION['pseudo']) && !empty($_SESSION['motdepasse']) && getUserUtil($GLOBALS['pseudo'], $GLOBALS['pwd'], $link) == 1) { //seulement afficher ses photos de la categorie choisi
+    if (!empty($_SESSION['pseudo']) && !empty($_SESSION['motdepasse']) && getUserUtil($_SESSION['pseudo'], $_SESSION['motdepasse'], $link) == 1) { //seulement afficher ses photos de la categorie choisi
         $resultat_photoId = executeQuery($link, "SELECT p.photoId FROM Photo p WHERE p.catId = $cat AND p.utilId IN (SELECT u.utilId FROM utilisateur u WHERE u.utilPseudo = '" . $_SESSION['pseudo'] . "')");
     }
     else {
