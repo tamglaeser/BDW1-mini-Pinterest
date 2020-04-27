@@ -168,10 +168,12 @@ if(isset($_POST["submit"])) {
 
             // FIXER -- ON A PAS LA UTILID POUR CHAQUE UTILID???
             else if (getUserAdmin($pseudo, $pwd, $conn) == 1) {
-                $resultat_utilId = executeQuery($GLOBALS['conn'], "SELECT utilId FROM utilisateur");
+                echo "on rentre pour ajouter pour admin";
+                /*$resultat_utilId = executeQuery($GLOBALS['conn'], "SELECT utilId FROM utilisateur");
                 while ($row_utilId = $resultat_utilId->fetch_assoc()) {
                     $resultat_nom = executeQuery($GLOBALS['conn'], "INSERT INTO Photo(nomFich, description, catId, utilId, statut) VALUES ('" . basename($_FILES["fileToUpload"]["name"]) . "', '" . $_POST["description"] . "', " . $_POST["categories"] . ", " . $row_utilId["utilId"] . ", 'montre')");
-                }
+                }*/
+                $resultat_add_admin = executeQuery($GLOBALS['conn'], "INSERT INTO Photo(nomFich, description, catId, statut) VALUES ('" . basename($_FILES["fileToUpload"]["name"]) . "', '" . $_POST["description"] . "', " . $_POST["categories"] . ", 'montre')");
 
             }
 

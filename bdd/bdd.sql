@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS Photo (
   nomFich varchar(255) NOT NULL,
   description varchar(255) NOT NULL,
   catId int NOT NULL,
-  utilId int NOT NULL,
+  utilId int,
   statut varchar(255) NOT NULL,
   PRIMARY KEY (photoId),
   FOREIGN KEY (catId) REFERENCES Categorie (catId),
