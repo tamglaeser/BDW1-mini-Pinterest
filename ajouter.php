@@ -49,11 +49,15 @@ $dir = "assets/images/";
 </div>
     <nav class="crumbs">
         <?php
-        if ($_GET['qui'] == 'util') {
+
+        echo $_GET['qui'];
+        echo getValue('qui');
+
+        if (getValue('qui') == 'util') {
         ?>
         <form name="accueil" action="page_utilisateur.php?pseudo=<?php $_SESSION['pseudo']?>" method="POST">
         <?php}
-        else {?>
+        else if (getValue('qui') == 'admin'){?>
         <form name="accueil" action="page_administrateur.php?pseudo=<?php $_SESSION['pseudo']?>" method="POST">
         <?php } ?>
 
