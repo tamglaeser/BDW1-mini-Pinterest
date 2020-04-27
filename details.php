@@ -76,9 +76,11 @@ function details($ImageId, $link) {?>
    <div  class="row justify-content-start p-2">
    <div class="col-4" >
 
+       <div id="imageDiv">
    <?php foreach ($images as $image):
-        echo "<img src='" . $image . "' hspace = '10' border = '5' width='600' height='400'/>";
+        echo "<img src='" . $image . "'hspace = '10' border = '5' width='800' height='400'/>";
     endforeach;
+   ?></div><?php
     $resultat_description = executeQuery($link, "SELECT description FROM Photo WHERE photoId = $ImageId");
     $row_description = $resultat_description->fetch_assoc();
 

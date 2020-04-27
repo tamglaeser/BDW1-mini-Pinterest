@@ -65,7 +65,10 @@ ul {
 	display: block;
 }
 
-
+.imageDiv{
+	position:relative !important;
+	left:1em !important;
+}
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {background-color: #ddd;}
