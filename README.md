@@ -13,7 +13,7 @@ On n'a pas besoin des conditions préalables.
 
 ## Construit Avec
 
-- **phpMyAdmin** - pour réaliser la base de données
+- **phpMyAdmin** - pour réaliser et acéder la base de données
     - username: p1926029
     - mot de passe: ef5d0c
 - **PhpStorm** de JetBrains IDEs- pour écrire le programme
