@@ -157,7 +157,7 @@ function details($ImageId, $link) {?>
 			$pseudo = $_SESSION['pseudo'];?>
 			<div class="row justify-content-center p-2">
 			<a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/sup.php"> supprimer la photo</a><br>
-			
+			<?php echo "         " ?>
 			
 			<a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/modif.php"> modifier les détails </a><br>
 			</div>
@@ -170,6 +170,7 @@ function details($ImageId, $link) {?>
 		
 			?>	<div class="row justify-content-center p-2">
 				    <a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/sup.php"> supprimer la photo</a><br>
+				    <?php echo "         " ?>
 				    <a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/modif.php"> modifier les détails </a><br>
 
                     <?php
