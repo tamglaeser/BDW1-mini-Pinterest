@@ -149,7 +149,7 @@ if (isset($_POST['val'])){
     $m=$_POST['m'];
     $p=$_POST['p'];
     if(getUserAdmin($pseudo, $pwd, $conn) == 1) {
-        executeUpdate($conn,"UPDATE administrateur a1 SET a1.adminMdp= \"$m\" ,a1.adminPseudo= \"$p\" WHERE a1.adminId IN (SELECT a2.adminId FROM administrateur a2.WHERE a2.adminPseudo='".$pseudo."'");
+        executeUpdate($conn,"UPDATE administrateur a1 SET a1.adminMdp= \"$m\" ,a1.adminPseudo= \"$p\" WHERE a1.adminId IN (SELECT a2.adminId FROM administrateur a2 WHERE a2.adminPseudo='".$pseudo."')");
         $_SESSION['motdepasse']=$m;
         $_SESSION['pseudo']=$p;
         $pseudo = $p;//MARINE
@@ -160,7 +160,7 @@ if (isset($_POST['val'])){
     }else{
         if(getUserUtil($pseudo, $pwd, $conn) == 1) {
 
-            executeUpdate($conn,"UPDATE utilisateur u1 SET u1.utilMdp= \"$m\" ,u1.utilPseudo= \"$p\" WHERE u1.utilId IN (SELECT u2.utilId FROM utilisateur u2 WHERE u2.utilPseudo='".$pseudo."'");
+            executeUpdate($conn,"UPDATE utilisateur u1 SET u1.utilMdp= \"$m\" ,u1.utilPseudo= \"$p\" WHERE u1.utilId IN (SELECT u2.utilId FROM utilisateur u2 WHERE u2.utilPseudo='".$pseudo."')");
             $_SESSION['motdepasse']=$m;
             $_SESSION['pseudo']=$p;
             $pseudo=$p; //MARINE
