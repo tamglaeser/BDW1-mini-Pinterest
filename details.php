@@ -75,7 +75,7 @@ function details($ImageId, $link) {?>
 	<div class="row justify-content-center " style="margin:1em;padding:0;">
    <div  class="row justify-content-start p-2">
    <div class="col-4" >
-   <div style="width: 50%">
+   <div id="imageDiv">
    <?php foreach ($images as $image):
         echo "<img src='" . $image . "' hspace = '10' border = '5'/>";
     endforeach;

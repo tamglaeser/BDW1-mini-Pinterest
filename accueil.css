@@ -65,6 +65,14 @@ ul {
 	display: block;
 }
 
+.imageDiv{
+	position:relative;
+	top:16%;
+	left:16%;
+	right:16%;
+	bottom:70%;
+}
+
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {background-color: #ddd;}
 
@@ -73,6 +81,8 @@ ul {
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+
 
 table {
 	width: 200px;
