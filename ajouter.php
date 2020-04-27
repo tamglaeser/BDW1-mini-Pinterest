@@ -12,6 +12,8 @@ session_start();
 $temp=$_SESSION['expire'] - time(); //MARINE
 
 require_once('bd.php');
+require_once ('utilisateur.php');
+require_once ('administrateur.php');
 
 
 $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
