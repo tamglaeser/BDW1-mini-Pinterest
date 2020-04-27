@@ -12,9 +12,10 @@ ul {
 	left: 0em;
 }
 .block{
-left:16%;
-height:350px;
-width:459px;
+	position: relative;
+	left:16%;
+	height:350px;
+	width:459px;
 }
 .hypertext{
 	margin: 250px;
