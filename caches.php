@@ -57,22 +57,9 @@ $dir = "assets/images/";
             <button style="float: left;" type="submit" name="accueil" class="btn btn-success">
                 Accueil
             </button>
-            <button style="float: left;" type="submit" name="compte" class="btn btn-success">
-                Mon Compte
-            </button>
             <div class='deconnexion'>
                 <button style="float: right;" type="submit" name="deconnexion" class="btn btn-success">
                     Deconnexion
-                </button>
-            </div>
-            <div class='ajouter'>
-                <button style="float: right;" type="submit" name="ajouter" class="btn btn-success">
-                    Ajouter une Photo
-                </button>
-            </div>
-            <div class='caches'>
-                <button style="float: right;" type="submit" name="caches" class="btn btn-success">
-                    Mes Photos Cachées
                 </button>
             </div>
     </nav></br></br></br>
@@ -135,13 +122,6 @@ if (isset($_POST['accueil'])) {
     header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_utilisateur.php?pseudo='.$pseudo);
     exit();
 }
-//MARINE
-if (isset($_POST['compte'])) {
-    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/compte.php');
-    exit();
-}
-//MARINE
-
 if (isset($_POST['deconnexion'])) {
     setDisconnectedUtil($pseudo, $conn);
     //MARINE
@@ -152,16 +132,5 @@ if (isset($_POST['deconnexion'])) {
     header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/accueil.php');
     exit();
 }
-
-if (isset($_POST['ajouter'])) {
-    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/ajouter.php?qui=util&pseudo='.$pseudo);
-}
-
-if (isset($_POST['caches'])) {
-    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/caches.php');
-
-}
-
-
 closeConnexion($conn);
 ?>

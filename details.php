@@ -49,23 +49,13 @@ $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 </div>
 <!-- MARINE -->
 <nav class="crumbs">
-	<?php 
-	if(empty($_SESSION['pseudo']) && empty($_SESSION['motdepasse'])){
-		echo "<a href='https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/accueil.php'>ACCUEIL</a>";
-	}else{
-		
-		if(getUserAdmin($pseudo, $pwd, $conn) == 1) {
-			echo "<a href='https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_administrateur.php?pseudo=".$pseudo."'>ACCUEIL</a>";
-				
-		}else{
-					
-			if(getUserUtil($pseudo, $pwd, $conn) == 1) {
-				echo "<a href='https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_utilisateur.php?pseudo=".$pseudo."'>ACCUEIL</a>";
-					
-			}
-		}
-	}
-?>
+
+    <form name="accueil" action="details.php" method="POST">
+        <button style="float: left;" type="submit" name="accueil" class="btn btn-success">
+            Accueil
+        </button>
+    </form>
+
 	</nav><br>
 
 <?php
@@ -206,3 +196,25 @@ function details($ImageId, $link) {?>
 		
 </body>
 </html>
+
+<?php
+if(isset($_POST['accueil'])) {
+
+    if (empty($_SESSION['pseudo']) && empty($_SESSION['motdepasse'])) {
+        header ('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/accueil.php');
+    } else {
+
+        if (getUserAdmin($pseudo, $pwd, $conn) == 1) {
+            header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_administrateur.php?pseudo=' . $pseudo);
+
+        } else {
+
+            if (getUserUtil($pseudo, $pwd, $conn) == 1) {
+                header('Location:https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_utilisateur.php?pseudo=' . $pseudo);
+
+            }
+        }
+    }
+}
+?>
+
