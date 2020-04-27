@@ -101,8 +101,6 @@ session_start();
                 </div>
             </div>
         </form>
-        <div style="display:flex;margin-top:1em; margin-left:9em; padding-right:8em;padding-left:2em;">
-		</div></br>
 		<div style="padding-left:2em;">
 		    <a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/connexion.php"> Déja Inscrit ? </a>
 		</div>
