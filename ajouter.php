@@ -14,6 +14,16 @@ $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 $dir = "assets/images/";
 
 ?>
+<div style="background-image:url(img/accueil_bis.jpg);" ><B><h1>PhotouCat</h1></B><br> </div>
+    <nav class="crumbs">
+        <form name="accueil" action="accueil.php" method="POST">
+           <button style="float: left;" type="submit" name="accueil" class="btn btn-success">
+            Accueil
+            </button>
+        </form>
+    </nav>
+    <div class="row justify-content-center">
+        <div class="block container p-4 m-4 border rounded border-dark" name='block'>
 
 <h1>Quelle photo?</h1>
 
@@ -40,7 +50,8 @@ $dir = "assets/images/";
     </select><br>
     <input type="submit" value="Envoyer" name="submit">
 </form>
-
+</div>
+</div>
 </body>
 </html>
 
