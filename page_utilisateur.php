@@ -66,22 +66,22 @@ $dir = "assets/images/";
 		</button>
 		</div>
         <div class='ajouter'>
-            <button style="float: right;" type="submit" name="ajouter" class="btn btn-success">
+            <button style="float: left;" type="submit" name="ajouter" class="btn btn-success">
                 Ajouter une Photo
             </button>
         </div>
         <div class='caches'>
-            <button style="float: right;" type="submit" name="caches" class="btn btn-success">
+            <button style="float: left;" type="submit" name="caches" class="btn btn-success">
                 Mes Photos Cachées
             </button>
         </div>
-	</nav></br>
+	</nav></br></br></br>
 
     <form action="page_utilisateur.php?pseudo=<?php echo $pseudo?>" method="post">
-        <div style="display:flex; margin-left:16em;">
+        <div style="display:flex; margin-left:13em;">
             <h5> Selection de la catégorie d'image à afficher : </h5>
             <!-- here start the dropdown list -->
-            <div style='display:flex; margin-left:5em;'>
+            <div style='display:flex; margin-left:1em;'>
                 <?php
                 // seulement afficher ses categories et celles montres
                 $resultat_cat = executeQuery($GLOBALS['conn'], "SELECT DISTINCT c.nomCat, c.catId FROM Categorie c JOIN Photo p ON p.catId=c.catId WHERE p.utilId IN (SELECT utilId FROM utilisateur WHERE utilPseudo='" . $pseudo . "') AND p.statut = 'montre'");
