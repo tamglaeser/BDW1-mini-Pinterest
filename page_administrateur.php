@@ -140,11 +140,11 @@ if (isset($_POST['deconnexion'])) {
 
 /*MARINE*/
 if (isset($_POST['compte'])) {
-    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/compte.php?pseudo='.$pseudo);
+    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/compte.php');
     exit();
 }
 if (isset($_POST['cat'])) {
-    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/cat.php?pseudo='.$pseudo);
+    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/cat.php');
     exit();
 }
 /*MARINE*/
