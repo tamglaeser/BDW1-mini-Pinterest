@@ -77,7 +77,7 @@ function details($ImageId, $link) {?>
    <div class="col-4" >
    <div id="imageDiv">
    <?php foreach ($images as $image):
-        echo "<img src='" . $image . "' hspace = '10' border = '5'/>";
+        echo "<img src='" . $image . "' hspace = '10' border = '5' width='200' height='300'/>";
     endforeach;
    ?></div></div><?php
     $resultat_description = executeQuery($link, "SELECT description FROM Photo WHERE photoId = $ImageId");
