@@ -160,7 +160,7 @@ if(isset($_POST["submit"])) {
 
 
             if (getUserUtil($pseudo, $pwd, $conn) == 1) {
-                $resultat_utilId = executeQuery($GLOBALS['conn'], "SELECT utilId FROM utilisateur WHERE utilPseudo='" . $_GET['pseudo'] . "'");
+                $resultat_utilId = executeQuery($GLOBALS['conn'], "SELECT utilId FROM utilisateur WHERE utilPseudo='" . $_SESSION['pseudo'] . "'");
                 while ($row_utilId = $resultat_utilId->fetch_assoc()) {
                     $resultat_nom = executeQuery($GLOBALS['conn'], "INSERT INTO Photo(nomFich, description, catId, utilId, statut) VALUES ('" . basename($_FILES["fileToUpload"]["name"]) . "', '" . $_POST["description"] . "', " . $_POST["categories"] . ", " . $row_utilId["utilId"] . ", 'montre')");
                 }
