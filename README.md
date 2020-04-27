@@ -8,8 +8,8 @@ Categorie(<ins>catId</ins>, nomCat), une table administrateur(<ins>adminId</ins>
 
 ## Pour Commencer
 
-Cliquer sur ce lien pour retrouver notre page web: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/index.php. On n'a
-pas besoin des conditions préalables.
+Cliquer sur ce lien pour retrouver notre page web: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/index.php.  
+On n'a pas besoin des conditions préalables.
 
 ## Construit Avec
 
@@ -21,5 +21,5 @@ pas besoin des conditions préalables.
 
 ## Auteurs
 
-**Tullia Glaeser** -- *l'Université de Claude Bernard Lyon 1, Tulane University* -- Base de données et Programmation WEB: 2A -- printemps 2020 
+**Tullia Glaeser** -- *l'Université de Claude Bernard Lyon 1, Tulane University* -- Base de données et Programmation WEB: 2A -- printemps 2020  
 **Marine Masingarbe** -- *l'Université de Claude Bernard Lyon 1* -- Base de données et Programmation WEB: 2A -- printemps 2020
