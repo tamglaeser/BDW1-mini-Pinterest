@@ -51,6 +51,8 @@ $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 <!-- MARINE -->
 <nav class="crumbs">
 
+    <?php
+    echo "photoId avant de rentrer dans la forme: ".$_GET['photoId']?>
     <form name="accueil" action="details.php?photoId=<?php $_GET['photoId']?>" method="POST">
         <button style="float: left;" type="submit" name="accueil" class="btn btn-success">
             Accueil
