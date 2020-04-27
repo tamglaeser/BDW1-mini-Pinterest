@@ -1,7 +1,6 @@
 <?php
 session_start();
 $pseudo = $_SESSION['pseudo'];
-echo "PSEUDO : ". $pseudo;
 
 
 require_once('bd.php');
@@ -26,7 +25,7 @@ $dir = "assets/images/";
 <div style="background-image:url(img/accueil_bis.jpg);" ><B><h1>PhotoCat Admin</h1></B><br>
     <?php if (!isset($_SESSION['pseudo'])) {
         echo "Please Login again";
-        //header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/connexion.php');
+        header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/connexion.php');
     }
     else {
         $now = time(); // Checking the time now when home page starts.
@@ -104,7 +103,6 @@ $dir = "assets/images/";
 	</div><br><br><br>
 </form>
 <?php if ((isset($_POST['show_dowpdown_value']) and $_POST['dowpdown'] !=0) or (isset($_GET['catId']))) {
-    //$qui = 'admin';
     include("function.php");}
 else {?>
     <h1>Toutes les photos</h1><?php
@@ -135,11 +133,9 @@ if (isset($_POST['accueil'])) {
     exit();
 }
 if (isset($_POST['deconnexion'])) {
-    //MARINE
     unset($_SESSION["pseudo"]);
     unset($_SESSION["motdepasse"]);
     session_destroy();
-    //MARINE
     header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/accueil.php');
     exit();
 }
