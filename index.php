@@ -9,7 +9,7 @@ session_start();
 ?>
 
 <!doctype html>
-<html lang="fr" style="background-image:url(data/accueil.jpg);">
+<html lang="fr" style="background-image:url(img/accueil.jpg);">
 <head>
   <meta charset="utf-8">
   <title>Accueil</title>
