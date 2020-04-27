@@ -94,7 +94,7 @@ session_start();
                                 ?>
                             </small>
                         </div>
-                        <div style="display:flex;margin-top:1em; margin-left:9em; padding-right:8em;padding-left:2em;">
+                        <div style="display:flex;margin-top:0em; margin-left:9em; padding-right:8em;padding-left:2em;">
                         <input type="submit" name="submit" value="Valider"/>
                         </div>
                     </div>
