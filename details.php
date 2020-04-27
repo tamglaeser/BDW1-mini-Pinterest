@@ -156,10 +156,10 @@ function details($ImageId, $link) {?>
 		if(getUserAdmin($_SESSION['pseudo'], $_SESSION['motdepasse'], $link) == 1) { 
 			$pseudo = $_SESSION['pseudo'];?>
 			<div class="row justify-content-center p-2">
-			<a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/sup.php"> supprimer la photo</a><br>
+			<a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/sup.php"> supprimer la photo</a>&nbsp;<br>
 			<?php echo "         " ?>
 			
-			<a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/modif.php"> modifier les détails </a><br>
+			<a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/modif.php"> modifier les détails</a>&nbsp;<br>
 			</div>
 			<?php
 	
@@ -169,9 +169,9 @@ function details($ImageId, $link) {?>
 
 		
 			?>	<div class="row justify-content-center p-2">
-				    <a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/sup.php"> supprimer la photo</a><br>
+				    <a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/sup.php"> supprimer la photo</a>&nbsp;<br>
 				    <?php echo "         " ?>
-				    <a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/modif.php"> modifier les détails </a><br>
+				    <a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/modif.php"> modifier les détails </a>&nbsp;<br>
 
                     <?php
                     $resultat_statut = executeQuery($link, "SELECT p.statut FROM Photo p WHERE p.photoId = " . $_SESSION['photoId']);
@@ -181,12 +181,12 @@ function details($ImageId, $link) {?>
 
                     if ($stat == 'montre') {
                         ?>
-                        <a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/cacher.php?ftn=cacher"> cacher la photo </a><br>
+                        <a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/cacher.php?ftn=cacher"> cacher la photo </a>&nbsp;<br>
                     <?php }
 
                     else if ($stat == 'cache') {
                         ?>
-                        <a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/cacher.php?ftn=afficher"> afficher la photo </a><br>
+                        <a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/cacher.php?ftn=afficher"> afficher la photo </a>&nbsp;<br>
                     <?php } ?>
 				</div>
 				<?php
