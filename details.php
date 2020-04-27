@@ -50,13 +50,13 @@ $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 <!-- MARINE -->
 <nav class="crumbs">
 
-    <form name="accueil" action="details.php" method="POST">
+    <form name="accueil" action="details.php?photoId=<?php $photoId?>" method="POST">
         <button style="float: left;" type="submit" name="accueil" class="btn btn-success">
             Accueil
         </button>
     </form>
 
-	</nav><br>
+</nav><br>
 
 <?php
 
