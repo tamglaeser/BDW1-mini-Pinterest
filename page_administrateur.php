@@ -20,7 +20,7 @@ $dir = "assets/images/";
 <div style="background-image:url(img/accueil_bis.jpg);" ><B><h1>PhotoCat Admin</h1></B><br>
     <?php if (!isset($_SESSION['pseudo'])) {
         echo "Please Login again";
-        header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/connexion.php');
+        //header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/connexion.php');
     }
     else {
         $now = time(); // Checking the time now when home page starts.
@@ -69,7 +69,7 @@ $dir = "assets/images/";
                 Ajouter une Photo
             </button>
         </div>
-		</form>
+    </form>
 		<form name="Stats" action="Stats.php" method="POST">
 		<button style="float: left;" type="submit" name="Stats" class="btn btn-success">
 		Statistique
