@@ -11,6 +11,9 @@
 session_start();
 $temp=$_SESSION['expire'] - time(); //MARINE
 
+$pseudo = $_SESSION['pseudo'];
+$pwd = $_SESSION['motdepasse'];
+
 require_once('bd.php');
 require_once ('utilisateur.php');
 require_once ('administrateur.php');
