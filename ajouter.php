@@ -182,8 +182,11 @@ if(isset($_POST["submit"])) {
 
              $resultat_photoId = executeQuery($GLOBALS['conn'], "SELECT photoId FROM Photo WHERE nomFich='".basename($_FILES["fileToUpload"]["name"])."'");
              while ($row_photoId = $resultat_photoId->fetch_assoc()) {
-                 header("Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/details.php?photoId=" . $row_photoId["photoId"]);
+                 $photoId=$row_photoId['photoId'];
              }
+            header("Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/details.php?photoId=" . $photoId);
+
+
         } else {
             echo "Sorry, there was an error uploading your file.";
         }
