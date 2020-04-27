@@ -154,7 +154,7 @@ if (isset($_POST['deconnexion'])) {
 }
 
 if (isset($_POST['ajouter'])) {
-    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/ajouter.php?qui=util&pseudo='.$pseudo);
+    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/ajouter.php');
 }
 
 if (isset($_POST['caches'])) {

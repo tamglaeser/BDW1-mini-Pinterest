@@ -48,20 +48,8 @@ $dir = "assets/images/";
     ?>
 </div>
     <nav class="crumbs">
-        <?php
-
-        echo $_GET['qui'];
-        echo getValue('qui');
-
-        if (getValue('qui') == 'util') {
-        ?>
-        <form name="accueil" action="page_utilisateur.php?pseudo=<?php $_SESSION['pseudo']?>" method="POST">
-        <?php}
-        else if (getValue('qui') == 'admin'){?>
-        <form name="accueil" action="page_administrateur.php?pseudo=<?php $_SESSION['pseudo']?>" method="POST">
-        <?php } ?>
-
-            <button style="float: left;" type="submit" name="accueil" class="btn btn-success">
+        <form name="accueil" action="ajouter.php" method="POST">
+           <button style="float: left;" type="submit" name="accueil" class="btn btn-success">
             Accueil
             </button>
         </form>
@@ -72,7 +60,7 @@ $dir = "assets/images/";
 <h1>Quelle photo?</h1>
 
 
-<form action="ajouter.php?qui=<?php echo $_GET['qui']?>&pseudo=<?php echo $_GET['pseudo']?>" method="post" name = "Ajouter" enctype="multipart/form-data">
+<form action="ajouter.php" method="post" name = "Ajouter" enctype="multipart/form-data">
     Choisir le fichier:<br>
         <!--<label for="fileToUpload" class="btn btn-primary">Parcourir..</label>-->
     <script>$('#fileToUpload').inputFileText({
@@ -166,7 +154,7 @@ if(isset($_POST["submit"])) {
             echo "The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
 
 
-            if (getValue('qui') == 'util') {
+            if (getUserUtil($pseudo, $pwd, $conn) == 1) {
                 $resultat_utilId = executeQuery($GLOBALS['conn'], "SELECT utilId FROM utilisateur WHERE utilPseudo='" . $_GET['pseudo'] . "'");
                 while ($row_utilId = $resultat_utilId->fetch_assoc()) {
                     $resultat_nom = executeQuery($GLOBALS['conn'], "INSERT INTO Photo(nomFich, description, catId, utilId, statut) VALUES ('" . basename($_FILES["fileToUpload"]["name"]) . "', '" . $_POST["description"] . "', " . $_POST["categories"] . ", " . $row_utilId["utilId"] . ", 'montre')");
@@ -174,7 +162,7 @@ if(isset($_POST["submit"])) {
             }
 
             // FIXER -- ON A PAS LA UTILID POUR CHAQUE UTILID???
-            else if (getValue('qui') == 'admin') {
+            else if (getUserAdmin($pseudo, $pwd, $conn) == 1) {
                 $resultat_utilId = executeQuery($GLOBALS['conn'], "SELECT utilId FROM utilisateur");
                 while ($row_utilId = $resultat_utilId->fetch_assoc()) {
                     $resultat_nom = executeQuery($GLOBALS['conn'], "INSERT INTO Photo(nomFich, description, catId, utilId, statut) VALUES ('" . basename($_FILES["fileToUpload"]["name"]) . "', '" . $_POST["description"] . "', " . $_POST["categories"] . ", " . $row_utilId["utilId"] . ", 'montre')");
