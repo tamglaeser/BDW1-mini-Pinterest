@@ -9,6 +9,7 @@
 <body>
 <?php
 session_start();
+$temp=$_SESSION['expire'] - time(); //MARINE
 
 require_once('bd.php');
 
