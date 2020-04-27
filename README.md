@@ -5,6 +5,6 @@ statistiques de tous les utilisateurs ainsi que ajouter une categorie. On peut a
 basé sur une base de données avec une table Photo(<ins>photoId</ins>, nomFich, description, &#35;catId, &#35;utilId, statut), une table 
 Categorie(<ins>catId</ins>, nomCat), une table administrateur(<ins>adminId</ins>, adminPseudo, adminMdp), et une table utilisateur(<ins>utilId</ins>, utilPseudo, utilMdp, etat).
 
-##Auteurs
+## Auteurs
 **Tullia Glaeser** -- *l'Université de Claude Bernard Lyon 1* -- Base de données et Programmation WEB: 2A -- printemps 2020 
 **Marine Masingarbe** -- *l'Université de Claude Bernard Lyon 1* -- Base de données et Programmation WEB: A -- printemps 2020
