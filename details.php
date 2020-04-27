@@ -65,8 +65,12 @@ $dir = "assets/images/";
 details($_GET['photoId'], $conn);
 
 function details($ImageId, $link) {?>
+
     <h1>Les détails sur cette photo</h1><br><br><p> <p><br><br>
     <?php
+
+    echo "ECHOOOO PHOTOID: ". $ImageId;
+
     $resultat_imNom = executeQuery($link, "SELECT nomFich FROM Photo WHERE photoId = $ImageId");
     $row_imNom = $resultat_imNom->fetch_assoc();
     $images = glob($GLOBALS['dir'] . $row_imNom["nomFich"], GLOB_BRACE);?>
