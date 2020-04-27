@@ -5,6 +5,7 @@ require_once ('utilisateur.php');
 require_once ('function.php');
 
 $photoId = $_GET['photoId'];
+echo "enter details.php, photoid: ". $photoId;
 $_SESSION['photoId']=$photoId;
 if(isset($_SESSION['pseudo'])){$pseudo = $_SESSION['pseudo'];}
 if(isset($_SESSION['motdepasse'])){$pwd = $_SESSION['motdepasse'];}
