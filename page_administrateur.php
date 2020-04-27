@@ -10,7 +10,11 @@
 <?php
 session_start();
 $pseudo = $_SESSION['pseudo'];
+echo "PSEUDO : ". $pseudo;
+
+
 require_once('bd.php');
+require_once ('administrateur.php');
 $temp=$_SESSION['expire'] - time(); //MARINE
 
 $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
