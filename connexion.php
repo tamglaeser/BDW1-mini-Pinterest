@@ -104,7 +104,6 @@ if (isset($_POST['submit'])) {
                             <div class="col-6 ">
                                 <input type="password" name="motdepasse" id="motdepasse">
                             </div>
-                            <small class="col-10">
                                 <?php
                                 if(isset($pwdErr) && $pwdErr){
                                     echo $pwdErr;
@@ -112,8 +111,9 @@ if (isset($_POST['submit'])) {
                                 ?>
                             </small class="col-10">
                         </div>
+                        <div style="display:flex;margin-top:1em; margin-left:9em; padding-right:8em;padding-left:2em;">
                         <input type="submit" name="submit" value="Se Connecter"/>
-
+                        </div>
                     </div>
                 </div>
 
