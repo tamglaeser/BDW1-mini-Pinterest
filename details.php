@@ -5,7 +5,6 @@ require_once ('utilisateur.php');
 require_once ('function.php');
 
 $photoId = $_GET['photoId'];
-echo "enter details.php, photoid: ". $photoId;
 $_SESSION['photoId']=$photoId;
 if(isset($_SESSION['pseudo'])){$pseudo = $_SESSION['pseudo'];}
 if(isset($_SESSION['motdepasse'])){$pwd = $_SESSION['motdepasse'];}
@@ -69,8 +68,6 @@ function details($ImageId, $link) {?>
 
     <h1>Les détails sur cette photo</h1><br><br><p> <p><br><br>
     <?php
-
-    echo "ECHOOOO PHOTOID: ". $ImageId;
 
     $resultat_imNom = executeQuery($link, "SELECT nomFich FROM Photo WHERE photoId = $ImageId");
     $row_imNom = $resultat_imNom->fetch_assoc();
