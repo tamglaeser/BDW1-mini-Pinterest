@@ -1,12 +1,3 @@
-<!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <title>PhotouCat</title>
-  <link rel="stylesheet" href="bootstrap.css">
-  <link rel="stylesheet" href="accueil.css">
-</head>
-<body>
 <?php
 session_start();
 $pseudo = $_SESSION['pseudo'];
@@ -21,6 +12,17 @@ $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 $dir = "assets/images/";
 
 ?>
+
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>PhotouCat</title>
+  <link rel="stylesheet" href="bootstrap.css">
+  <link rel="stylesheet" href="accueil.css">
+</head>
+<body>
+
 <div style="background-image:url(img/accueil_bis.jpg);" ><B><h1>PhotoCat Admin</h1></B><br>
     <?php if (!isset($_SESSION['pseudo'])) {
         echo "Please Login again";
