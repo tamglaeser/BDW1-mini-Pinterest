@@ -202,8 +202,8 @@ if(isset($_POST['accueil'])) {
     } else {
 
         if (getUserAdmin($pseudo, $pwd, $conn) == 1) {
-            echo "PSEUDO : ". $pseudo;
-            //header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_administrateur.php?pseudo=' . $pseudo);
+            //echo "PSEUDO : ". $pseudo;
+            header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_administrateur.php?pseudo=' . $pseudo);
 
         } else {
 
