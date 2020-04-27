@@ -14,6 +14,8 @@ On n'a pas besoin des conditions préalables.
 ## Construit Avec
 
 - **phpMyAdmin** - pour réaliser la base de données
+    - username: p1926029
+    - mot de passe: ef5d0c
 - **PhpStorm** de JetBrains IDEs- pour écrire le programme
 - **Git** - logiciel système - et **Bash** - language d'Unix de shell et commande pour transmettre notre fichiers du local sur git et sur le serveur de l'université
 - **FileZilla** - un moyen de transmettre notre fichiers sur le serveur de l'université
