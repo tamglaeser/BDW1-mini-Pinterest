@@ -75,12 +75,12 @@ $dir = "assets/images/";
 		Statistique
 		</button>
 		</form>
-	</nav><br>
+	</nav><br><br><br>
 <form action="page_administrateur.php?pseudo=<?php $pseudo?>" method="post">
-<div style="display:flex; margin-left:16em;">
+<div style="display:flex; margin-left:13em;">
 	<h5> Selection de la catégorie d'image à afficher : </h5>
     <!-- here start the dropdown list -->
-	<div style='display:flex; margin-left:5em;'>
+	<div style='display:flex; margin-left:1em;'>
         <?php
         $resultat_cat = executeQuery($GLOBALS['conn'], "SELECT nomCat FROM Categorie");
         ?>
