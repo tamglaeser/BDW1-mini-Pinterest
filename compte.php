@@ -154,7 +154,7 @@ if (isset($_POST['val'])){
         $_SESSION['pseudo']=$p;
         $pseudo = $p;//MARINE
         $pwd = $m;//MARINE
-        header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_administrateur.php?pseudo='.$pseudo);
+        //header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_administrateur.php?pseudo='.$pseudo);
         exit();
 
     }else{
@@ -166,7 +166,7 @@ if (isset($_POST['val'])){
             $pseudo=$p; //MARINE
             $pwd=$m; //MARINE
 
-            header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_utilisateur.php?pseudo='.$pseudo);
+            //header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_utilisateur.php?pseudo='.$pseudo);
             exit();
 
         }
