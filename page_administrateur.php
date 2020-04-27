@@ -2,6 +2,8 @@
 session_start();
 $pseudo = $_SESSION['pseudo'];
 
+echo "PSEUDO PAGE ADMIN: ". $pseudo;
+
 
 require_once('bd.php');
 require_once ('administrateur.php');
