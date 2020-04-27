@@ -50,18 +50,11 @@ $dir = "assets/images/";
             Accueil
         </button>
         <div class='connexion'>
-            <button style="float: left;" type="submit" name="compte" class="btn btn-success">
-                Mon Compte
-            </button>
+            
             <button style="float: right;" type="submit" name="deconnexion" class="btn btn-success">
                 Deconnexion
             </button>
         </div>
-    </form>
-    <form name="Stats" action="Stats.php" method="POST">
-        <button style="float: left;" type="submit" name="Stats" class="btn btn-success">
-            Statistique
-        </button>
     </form>
 </nav><br>
 <div class="row justify-content-center">
@@ -119,14 +112,6 @@ if (isset($_POST['deconnexion'])) {
     unset($_SESSION["pseudo"]);
     unset($_SESSION["motdepasse"]);
     header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/accueil.php');
-    exit();
-}
-if (isset($_POST['compte'])) {
-    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/compte.php');
-    exit();
-}
-if (isset($_POST['Stats'])) {
-    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/Stats.php');
     exit();
 }
 
