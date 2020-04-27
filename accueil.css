@@ -66,11 +66,11 @@ ul {
 }
 
 .imageDiv{
-	position:relative;
-	top:16%;
-	left:16%;
-	right:50%;
-	bottom:70%;
+	position:relative !important;
+	top:16% !important;
+	left:16% !important;
+	right:50% !important;
+	bottom:70% !important;
 }
 
 /* Change color of dropdown links on hover */
