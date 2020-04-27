@@ -100,10 +100,10 @@ session_start();
                     </div>
                 </div>
             </div>
+            <div style="padding-left:2em;">
+                <a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/connexion.php"> Déja Inscrit ? </a>
+            </div>
         </form>
-		<div style="padding-left:2em;">
-		    <a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/connexion.php"> Déja Inscrit ? </a>
-		</div>
     </div>
 </div>
 
