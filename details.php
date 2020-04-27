@@ -51,9 +51,7 @@ $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 <!-- MARINE -->
 <nav class="crumbs">
 
-    <?php
-    echo "photoId avant de rentrer dans la forme: ".$_GET['photoId']?>
-    <form name="accueil" action="details.php?photoId=<?php $_GET['photoId']?>" method="POST">
+    <form name="accueil" action="details.php?photoId=<?php$_GET['photoId']?>" method="POST">
         <button style="float: left;" type="submit" name="accueil" class="btn btn-success">
             Accueil
         </button>
@@ -64,9 +62,9 @@ $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 <?php
 
 $dir = "assets/images/";
-
-details($_GET['photoId'], $conn);
-
+if (!isset($_POST['accueil'])) {
+    details($_GET['photoId'], $conn);
+}
 function details($ImageId, $link) {?>
 
     <h1>Les détails sur cette photo</h1><br><br><p> <p><br><br>
