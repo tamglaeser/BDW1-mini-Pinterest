@@ -127,11 +127,6 @@ function details($ImageId, $link) {?>
                 }
                 ?>
 
-
-                <!--
-                <?php
-                echo "<a href='accueil.php?catId=" . $row_cat_id['catId']. "'>" . $row_cat['nomCat'] . "</a>";
-                ?>-->
             </td>
         </tr>
     </table>
@@ -147,8 +142,7 @@ function details($ImageId, $link) {?>
 			$pseudo = $_SESSION['pseudo'];?>
 			<div class="row justify-content-center p-2">
 			<a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/sup.php"> supprimer la photo</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-			<?php echo "         " ?>
-			
+
 			<a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/modif.php"> modifier les détails</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
 			</div>
 			<?php
@@ -160,7 +154,6 @@ function details($ImageId, $link) {?>
 		
 			?>	<div class="row justify-content-center p-2">
 				    <a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/sup.php"> supprimer la photo</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-				    <?php echo "         " ?>
 				    <a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/modif.php"> modifier les détails </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
 
                     <?php
