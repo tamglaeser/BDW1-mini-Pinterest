@@ -6,7 +6,7 @@ statistiques de tous les utilisateurs ainsi que ajouter une categorie. On peut a
 basé sur une base de données avec une table Photo(<ins>photoId</ins>, nomFich, description, &#35;catId, &#35;utilId, statut), une table 
 Categorie(<ins>catId</ins>, nomCat), une table administrateur(<ins>adminId</ins>, adminPseudo, adminMdp), et une table utilisateur(<ins>utilId</ins>, utilPseudo, utilMdp, etat).
 
-## Pour Commencer
+## Environnement et Workflow
 
 Cliquer sur ce lien pour retrouver notre page web: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/index.php. S'il demande le sign-in pour https://bdw1.univ-lyon1.fr,
 c'est le suivant:
