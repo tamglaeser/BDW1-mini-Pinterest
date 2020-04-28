@@ -19,7 +19,7 @@ On n'a pas besoin des conditions préalables.
 ## Environnement et Workflow
 
 - **forge.univ-lyon1.fr** : Git serveur
-    - port: 443 -- default pour HTTPS  
+- port: 443 -- default pour HTTPS  
 
 - **bdw1.univ-lyon1.fr**
     - Web serveur
