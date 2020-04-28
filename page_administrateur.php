@@ -1,12 +1,10 @@
 <?php
+require_once('bd.php');
+require_once ('administrateur.php');
 session_start();
 $pseudo = $_SESSION['pseudo'];
 
-echo "PSEUDO PAGE ADMIN: ". $pseudo;
 
-
-require_once('bd.php');
-require_once ('administrateur.php');
 $temp=$_SESSION['expire'] - time(); //MARINE
 
 $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
@@ -54,7 +52,7 @@ $dir = "assets/images/";
     ?></div>
 
 <nav class="crumbs">
-	<form name="accueil_admin" action="page_administrateur.php?pseudo=<?php echo $pseudo?>" method="POST">
+	<form name="accueil_admin" action="page_administrateur.php?pseudo=<?php echo $pseudo?>" method="post">
 	   <button style="float: left;" type="submit" name="accueil" class="btn btn-success">
 		Accueil
 		</button>
@@ -66,7 +64,7 @@ $dir = "assets/images/";
             Ajouter Catégorie
         </button>
         <!--MARINE-->
-        <div class='connexion'>
+        <div class='deconnexion'>
 		<button style="float: right;" type="submit" name="deconnexion" class="btn btn-success">
 		Deconnexion 
 		</button>
@@ -82,7 +80,7 @@ $dir = "assets/images/";
 		Statistique
 		</button>
 		</form>
-	</nav><br><br><br>
+	</nav></br></br></br>
 <form action="page_administrateur.php?pseudo=<?php $pseudo?>" method="post">
 <div style="display:flex; margin-left:13em;">
 	<h5> Selection de la catégorie d'image à afficher : </h5>
