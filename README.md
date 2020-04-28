@@ -6,7 +6,7 @@ statistiques de tous les utilisateurs ainsi que ajouter une categorie. On peut a
 basé sur une base de données avec une table Photo(<ins>photoId</ins>, nomFich, description, &#35;catId, &#35;utilId, statut), une table 
 Categorie(<ins>catId</ins>, nomCat), une table administrateur(<ins>adminId</ins>, adminPseudo, adminMdp), et une table utilisateur(<ins>utilId</ins>, utilPseudo, utilMdp, etat).
 
-## Pour Commencer
+## Environnement et Workflow
 
 Cliquer sur ce lien pour retrouver notre page web: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/index.php. S'il demande le sign-in pour https://bdw1.univ-lyon1.fr,
 c'est le suivant:
@@ -16,14 +16,28 @@ c'est le suivant:
 
 On n'a pas besoin des conditions préalables.
 
-## Construit Avec
+## Environement
 
-- **phpMyAdmin** - pour réaliser et acéder la base de données
-  - type de serveur: MariaDB
-  - user: p1926029@localhost
-- **PhpStorm** de JetBrains IDEs- pour écrire le programme
-- **Git** - logiciel système - et **Bash** - language d'Unix de shell et commande pour transmettre notre fichiers du local sur git et sur le serveur de l'université
-- **FileZilla** - un moyen de transmettre notre fichiers sur le serveur de l'université
+- forge.univ-lyon1.fr : Git serveur
+  - port: 443 -- default pour HTTPS
+
+- bdw1.univ-lyon1.fr
+  - Web serveur
+    - port: 443
+  - Base de données:
+    - port: 3306
+    - **phpMyAdmin** - pour réaliser et acéder la base de données
+      - type de serveur: MariaDB
+
+- Local
+  - **PhpStorm** de JetBrains IDEs- pour écrire le programme
+  - **FileZilla** - un moyen de transmettre notre fichiers sur le serveur de l'université, de local à bdw1.univ-lyon1.fr
+
+- Local & bdw1.univ-lyon1.fr
+  - **Bash** - language d'Unix de shell et commande pour transmettre notre fichiers du local sur git et sur le serveur de l'université
+    - **SSH**: connexion de l'host local a bdw1.univ-lyon1.fr
+    - **Git** - local et sur bdw1.univ-lyon1.fr pour faire git clone, push, et pull de et à forge.univ-lyon1.fr
+
 
 
 ## Auteurs
