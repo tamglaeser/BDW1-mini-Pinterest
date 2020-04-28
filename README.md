@@ -18,25 +18,25 @@ On n'a pas besoin des conditions préalables.
 
 ## Environnement et Workflow
 
-- <ins>forge.univ-lyon1.fr</ins> : Git serveur
-  - port: 443 -- default pour HTTPS  
+- **forge.univ-lyon1.fr** : Git serveur
+    - port: 443 -- default pour HTTPS  
 
-- <ins>bdw1.univ-lyon1.fr</ins>
-  - Web serveur
-    - port: 443
-  - Base de données:
-    - port: 3306
-    - **phpMyAdmin** - pour réaliser et acéder la base de données
-      - type de serveur: MariaDB  
+- **bdw1.univ-lyon1.fr**
+    - Web serveur
+      - port: 443
+    - Base de données:
+      - port: 3306
+      - <ins>phpMyAdmin</ins> - pour réaliser et acéder la base de données
+             - type de serveur: MariaDB  
 
-- <ins>Local</ins>
-  - **PhpStorm** de JetBrains IDEs- pour écrire le programme
-  - **FileZilla** - un moyen de transmettre notre fichiers sur le serveur de l'université, de local à bdw1.univ-lyon1.fr  
+- **Local**
+    - <ins>PhpStorm</ins> de JetBrains IDEs- pour écrire le programme
+    - <ins>FileZilla</ins> - un moyen de transmettre notre fichiers sur le serveur de l'université, de local à bdw1.univ-lyon1.fr  
 
-- <ins>Local & bdw1.univ-lyon1.fr</ins>
-  - **Bash** - language d'Unix de shell et commande pour transmettre notre fichiers du local sur git et sur le serveur de l'université
-    - **SSH**: connexion de l'host local a bdw1.univ-lyon1.fr
-    - **Git** - local et sur bdw1.univ-lyon1.fr pour faire git clone, push, et pull de et à forge.univ-lyon1.fr
+- **Local & bdw1.univ-lyon1.fr**
+    - <ins>Bash</ins> - language d'Unix de shell et commande pour transmettre notre fichiers du local sur git et sur le serveur de l'université
+           - <ins>SSH</ins>: connexion de l'host local a bdw1.univ-lyon1.fr
+           - <ins>Git</ins> - local et sur bdw1.univ-lyon1.fr pour faire git clone, push, et pull de et à forge.univ-lyon1.fr
 
 
 
