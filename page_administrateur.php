@@ -165,6 +165,6 @@ else {?>
 
 
 
-
+<?php
 closeConnexion($conn);
 ?>
