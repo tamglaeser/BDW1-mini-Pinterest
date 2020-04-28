@@ -153,6 +153,7 @@ if (isset($_POST['cat'])) {
 
 if (isset($_POST['ajouter'])) {
     header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/ajouter.php');
+    exit();
 }
 
 if (isset($_POST['Stats'])) {
