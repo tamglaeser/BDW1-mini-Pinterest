@@ -31,7 +31,7 @@ On n'a pas besoin des conditions préalables.
 
 - **Local**
   * <ins>PhpStorm</ins> de JetBrains IDEs- pour écrire le programme
-  * ins>FileZilla</ins> - un moyen de transmettre notre fichiers sur le serveur de l'université, de local à bdw1.univ-lyon1.fr  
+  * <ins>FileZilla</ins> - un moyen de transmettre notre fichiers sur le serveur de l'université, de local à bdw1.univ-lyon1.fr  
 
 - **Local & bdw1.univ-lyon1.fr**
   * <ins>Bash</ins> - language d'Unix de shell et commande pour transmettre notre fichiers du local sur git et sur le serveur de l'université
