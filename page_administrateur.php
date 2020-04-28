@@ -10,6 +10,8 @@ $temp=$_SESSION['expire'] - time(); //MARINE
 $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 $dir = "assets/images/";
 
+
+
 ?>
 
 <!doctype html>
@@ -75,6 +77,47 @@ $dir = "assets/images/";
             </button>
         </div>
     </form>
+
+    <?php
+/**
+if (isset($_GET['catId'])) {
+    $Id = htmlspecialchars($_GET["catId"]);
+    include("function.php");
+}**/
+
+if (isset($_POST['accueil'])) {
+    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_administrateur.php?pseudo='.$pseudo);
+    exit();
+}
+if (isset($_POST['deconnexion'])) {
+    unset($_SESSION["pseudo"]);
+    unset($_SESSION["motdepasse"]);
+    session_destroy();
+    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/accueil.php');
+    exit();
+}
+
+/*MARINE*/
+if (isset($_POST['compte'])) {
+    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/compte.php');
+    exit();
+}
+if (isset($_POST['cat'])) {
+    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/cat.php');
+    exit();
+}
+/*MARINE*/
+
+if (isset($_POST['ajouter'])) {
+    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/ajouter.php');
+    exit();
+}
+
+if (isset($_POST['Stats'])) {
+    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/Stats.php?pseudo='.$pseudo);
+    exit();
+}
+ ?>
 		<form name="Stats" action="Stats.php" method="POST">
 		<button style="float: left;" type="submit" name="Stats" class="btn btn-success">
 		Statistique
@@ -120,46 +163,7 @@ else {?>
 </body>
 </html>
 
-<?php
-/**
-if (isset($_GET['catId'])) {
-    $Id = htmlspecialchars($_GET["catId"]);
-    include("function.php");
-}**/
 
-
-if (isset($_POST['accueil'])) {
-    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_administrateur.php?pseudo='.$pseudo);
-    exit();
-}
-if (isset($_POST['deconnexion'])) {
-    unset($_SESSION["pseudo"]);
-    unset($_SESSION["motdepasse"]);
-    session_destroy();
-    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/accueil.php');
-    exit();
-}
-
-/*MARINE*/
-if (isset($_POST['compte'])) {
-    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/compte.php');
-    exit();
-}
-if (isset($_POST['cat'])) {
-    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/cat.php');
-    exit();
-}
-/*MARINE*/
-
-if (isset($_POST['ajouter'])) {
-    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/ajouter.php');
-    exit();
-}
-
-if (isset($_POST['Stats'])) {
-    header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/Stats.php?pseudo='.$pseudo);
-    exit();
-}
 
 
 closeConnexion($conn);
