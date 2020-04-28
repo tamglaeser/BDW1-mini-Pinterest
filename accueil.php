@@ -65,7 +65,7 @@ else {?>
 ?>
 </body>
 </html>
-f
+
 <?php
 /**
 if (isset($_GET['catId'])) {
