@@ -14,7 +14,7 @@ c'est le suivant:
 - mot de passe: ef5d0c  
  
 
-On n'a pas besoin des conditions préalables.
+On n'a pas besoin de conditions préalables.
 
 ## Environnement et Workflow
 
