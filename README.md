@@ -8,7 +8,7 @@ Categorie(<ins>catId</ins>, nomCat), une tableau administrateur(<ins>adminId</in
 
 ## Pour Commencer
 
-Cliquer sur ce lien pour retrouver notre page web: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/index.php. S'il demande le sign-in pour https://bdw1.univ-lyon1.fr,
+Cliquer sur ce lien pour retrouver notre page web: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/index.php. Lorsqu'il demande le sign-in pour https://bdw1.univ-lyon1.fr,
 c'est le suivant:
 - username: p1926029
 - mot de passe: ef5d0c  
