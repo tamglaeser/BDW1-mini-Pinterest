@@ -18,10 +18,14 @@ c'est le suivant:
 
 On n'a pas besoin de conditions préalables.
 
-## Environnement et Workflow
+## Workflow et Environnement
+
+Le programme était développé **localement** dans l'IDE, après on a fait un `git commit` à notre local git repository et après on a fait un `git push` à [**forge.univ-lyon1.fr**](https://forge.univ-lyon1.fr/p1501149/bdw1_projet).
+Puis on a fait un `git pull` de GitLab à notre directoire sur [**bdw1.univ-lyon1.fr**](https://bdw1.univ-lyon1.fr/) dont le web serveur a acces. Alternativement, on pourrait aussi utiliser FileZilla pour transmettre
+notre fichiers *directement* du local à bdw1.univ-lyon1.fr.
 
 - **forge.univ-lyon1.fr**
-  - Git serveur
+  - *GitLab* - Git serveur
 - **bdw1.univ-lyon1.fr**
   - Web serveur
     - port: 443 -- default pour HTTPS
