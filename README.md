@@ -6,6 +6,8 @@ statistiques de tous les utilisateurs ainsi que ajouter une categorie. On peut a
 basé sur une base de données avec une tableau Photo(<ins>photoId</ins>, nomFich, description, &#35;catId, &#35;utilId, statut), une tableau 
 Categorie(<ins>catId</ins>, nomCat), une tableau administrateur(<ins>adminId</ins>, adminPseudo, adminMdp) et une tableau utilisateur(<ins>utilId</ins>, utilPseudo, utilMdp, etat).
 
+Vous pouvez trouver notre présentation [ici](https://docs.google.com/presentation/d/1CnX2UKTs0m4WMiUYSfFnOpbxuXEd_v2zn0E4gZPTQQc/edit?usp=sharing).
+
 ## Pour Commencer
 
 Cliquer sur ce lien pour retrouver [notre page web](https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/index.php). Lorsqu'il demande le sign-in,
