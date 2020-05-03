@@ -24,7 +24,7 @@ $dir = "assets/images/";
 </head>
 <body>
 
-<div style="background-image:url(img/accueil_bis.jpg);" ><B><h1>PhotoCat Admin</h1></B><br>
+<div class="head" ><B><h1>PhotoCat Admin</h1></B><br>
     <?php if (!isset($_SESSION['pseudo'])) {
         echo "Please Login again";
         header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/connexion.php');
@@ -123,12 +123,13 @@ if (isset($_POST['Stats'])) {
 		Statistique
 		</button>
 		</form>
-	</nav></br></br></br>
+	</nav>
 <form action="page_administrateur.php?pseudo=<?php $pseudo?>" method="post">
-<div style="display:flex; margin-left:13em;">
-	<h5> Selection de la catégorie d'image à afficher : </h5>
+<table class="menu">
+<tr>
+	<td> Selection de la catégorie d'image à afficher : </td>
     <!-- here start the dropdown list -->
-	<div style='display:flex; margin-left:1em;'>
+	<td>
         <?php
         $resultat_cat = executeQuery($GLOBALS['conn'], "SELECT nomCat FROM Categorie");
         ?>
@@ -142,8 +143,9 @@ if (isset($_POST['Stats'])) {
             ?>
         </select>
     <input type="submit" name="show_dowpdown_value" value="Valider"/>
-	</div>
-	</div><br><br><br>
+	</td>
+	</tr>
+</table>
 </form>
 <?php if ((isset($_POST['show_dowpdown_value']) and $_POST['dowpdown'] !=0) or (isset($_GET['catId']))) {
     include("function.php");}

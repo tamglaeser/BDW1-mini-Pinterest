@@ -65,10 +65,11 @@ $dir = "assets/images/";
     </nav></br></br></br>
 
     <form action="caches.php" method="post">
-        <div style="display:flex; margin-left:13em;">
-            <h5> Selection de la catégorie d'image à afficher : </h5>
+	<table class="menu">
+	<tr>
+            <td> Selection de la catégorie d'image à afficher : </td>
             <!-- here start the dropdown list -->
-            <div style='display:flex; margin-left:1em;'>
+            <td>
                 <?php
                 // seulement afficher ses categories et celles montres
                 $resultat_cat = executeQuery($GLOBALS['conn'], "SELECT DISTINCT c.nomCat, c.catId FROM Categorie c JOIN Photo p ON p.catId=c.catId WHERE p.utilId IN (SELECT utilId FROM utilisateur WHERE utilPseudo='" . $pseudo . "') AND p.statut = 'cache'");
@@ -84,8 +85,9 @@ $dir = "assets/images/";
                     ?>
                 </select>
                 <input type="submit" name="show_dowpdown_cache_value" value="Valider"/>
-            </div>
-        </div><br><br><br>
+	    </td>
+	</tr>
+        </table>
     </form>
     <?php if (isset($_POST['show_dowpdown_cache_value']) and $_POST['dowpdown_cache'] !=0) {
         //$qui = 'util';

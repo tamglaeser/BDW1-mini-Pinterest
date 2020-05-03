@@ -21,7 +21,7 @@ $dir = "assets/images/";
   <link rel="stylesheet" href="accueil.css">
 </head>
 <body>
-<div style="background-image:url(img/accueil_bis.jpg);" ><B><h1>PhotouCat_Util</h1></B><br>
+<div class="head" ><B><h1>PhotouCat_Util</h1></B><br>
     <?php if (!isset($_SESSION['pseudo'])) {
         echo "Please Login again";
         header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/connexion.php');
@@ -75,13 +75,14 @@ $dir = "assets/images/";
                 Mes Photos Cachées
             </button>
         </div>
-	</nav></br></br></br>
+	</nav>
 
     <form action="page_utilisateur.php?pseudo=<?php echo $pseudo?>" method="post">
-        <div style="display:flex; margin-left:13em;">
-            <h5> Selection de la catégorie d'image à afficher : </h5>
+        <table class="menu">
+	<tr>    
+	<td> Selection de la catégorie d'image à afficher : </td>
             <!-- here start the dropdown list -->
-            <div style='display:flex; margin-left:1em;'>
+            <td>
                 <?php
                 // seulement afficher ses categories et celles montres
                 $resultat_cat = executeQuery($GLOBALS['conn'], "SELECT DISTINCT c.nomCat, c.catId FROM Categorie c JOIN Photo p ON p.catId=c.catId WHERE p.utilId IN (SELECT utilId FROM utilisateur WHERE utilPseudo='" . $pseudo . "') AND p.statut = 'montre'");
@@ -97,8 +98,9 @@ $dir = "assets/images/";
                     ?>
                 </select>
             <input type="submit" name="show_dowpdown_value" value="Valider"/>
-            </div>
-        </div><br><br><br>
+	    </td>
+	</tr>
+        </table>
     </form>
     <?php if ((isset($_POST['show_dowpdown_value']) and $_POST['dowpdown'] !=0) or (isset($_GET['catId']))) {
         //$qui = 'util';

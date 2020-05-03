@@ -25,12 +25,13 @@ $dir = "assets/images/";
 		Connexion 
 		</button>
 		</div>
-	</nav><br>
+	</nav>
 <form action="accueil.php" method="post">
-<div style="display:flex; margin-left:16em;">
-	<h5> Selection de la catégorie d'image à afficher : </h5>
+<table class="menu">
+	<tr>
+	<td> Selection de la catégorie d'image à afficher : </td>
     <!-- here start the dropdown list -->
-	<div style='display:flex; margin-left:5em;'>
+	<td>
         <?php
         $resultat_cat = executeQuery($GLOBALS['conn'], "SELECT nomCat FROM Categorie");
         ?>
@@ -44,8 +45,9 @@ $dir = "assets/images/";
         ?>
     </select>
     <input type="submit" name="show_dowpdown_value" value="Valider"/>
-	</div>
-	</div><br><br><br>
+	</td>
+	</tr>
+</table>
 </form>
 <?php if ((isset($_POST['show_dowpdown_value']) and $_POST['dowpdown'] !=0) or (isset($_GET['catId']))) {
     //$qui = 'personne';
