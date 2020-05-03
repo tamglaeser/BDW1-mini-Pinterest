@@ -66,6 +66,7 @@ if (isset($_POST['submit'])) {
             </button>
         </form>
     </nav>
+<div class="menu">&nbsp;</div>
     <div class="row justify-content-center">
         <div class="block container p-4 m-4 border rounded border-dark" name='block'>
             <form action="connexion.php" method="POST">
@@ -117,7 +118,6 @@ if (isset($_POST['submit'])) {
                         </div>
                     </div>
                 </div>
-
             </form>
             <!--<div style="display:flex; margin-top :3em;margin-left:9em; padding-right:8em;padding-left:2em;">
                 <form action="connexion.php" method="POST">
@@ -130,7 +130,6 @@ if (isset($_POST['submit'])) {
 
         </div>
     </div>
-
 <?php
 
 /*Cette fonction doit être définie hors d'une condition (if/else), donc on la définie avant de l'utiliser dans une boucle*/

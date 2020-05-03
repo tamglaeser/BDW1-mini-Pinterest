@@ -31,7 +31,7 @@ session_start();
 <!-- utilisation du framework bootstrap.
 	Beaucoup de mot compliqués pour désigner une feuille de style toute prète.
 -->
-
+<div class="menu">&nbsp;</div>
 <div class="row justify-content-center">
 	<div class="block container p-4 m-4 border rounded border-dark" name='block'>
 		<form action="inscription.php" method="POST">

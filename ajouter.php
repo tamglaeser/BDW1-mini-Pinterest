@@ -61,6 +61,7 @@ $dir = "assets/images/";
             </button>
         </form>
     </nav>
+<div class="menu">&nbsp;</div>
     <div class="row justify-content-center">
         <div class="block container p-4 m-4 border rounded border-dark" name='block'>
 
