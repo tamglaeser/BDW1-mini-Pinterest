@@ -55,16 +55,18 @@ $dir = "assets/images/";
     //$qui = 'personne';
     include("function.php");}
 else {?>
-    <h1>Toutes les photos</h1><?php
+	<h1>Toutes les photos</h1>
+	<div class="gallery"><?php
         $resultat_photoId = executeQuery($GLOBALS['conn'], "SELECT photoId FROM Photo");
         while ($row_photoId = $resultat_photoId->fetch_assoc()) {
             $resultat_imNom = executeQuery($GLOBALS['conn'], "SELECT nomFich FROM Photo WHERE photoId = " . $row_photoId["photoId"] );
             $row_imNom = $resultat_imNom->fetch_assoc();
             $images = glob($GLOBALS['dir'] . $row_imNom["nomFich"], GLOB_BRACE);
-            foreach ($images as $image):
-                echo "<a href='details.php?photoId=" . $row_photoId["photoId"] . "'><img src='" . $image . "' hspace = '10' border = '5'/></a>";
-            endforeach;
-        }
+	    foreach ($images as $image):
+                echo "<a href='details.php?photoId=" . $row_photoId["photoId"] . "'><img src='" . $image . "' class = 'assets'/></a>";
+	    endforeach;
+	}
+	echo "</div>";
     }
 ?>
 </body>

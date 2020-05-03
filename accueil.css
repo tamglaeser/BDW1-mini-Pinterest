@@ -1,14 +1,29 @@
 nav {
-    border: hidden;
-    /*display: grid;*/
+    	border: hidden;
+    	/*display: grid;*/
 }
 
 
 ul {
-  position: fixed;
-  top: 0;
-  width: 100%;
+	position: fixed;
+	top: 0;
+	width: 100%;
 }
+
+.gallery{
+	display: grid;
+	grid-template-rows: auto;
+	grid-template-columns: repeat(5, 5fr);
+	grid-gap: 15px;
+	margin: 30px;
+}
+
+.assets{
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
 
 .menu{
 	width: 100%;

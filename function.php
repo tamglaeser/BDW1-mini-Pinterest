@@ -60,14 +60,16 @@ function category(int $cat, $link, $statut)
     else {
         $resultat_photoId = executeQuery($link, "SELECT photoId FROM Photo WHERE catId = $cat");
     }
+    echo "<div class='gallery'>";
     while ($row_photoId = $resultat_photoId->fetch_assoc()) {
         $resultat_imNom = executeQuery($link, "SELECT nomFich FROM Photo WHERE photoId = " . $row_photoId["photoId"] );
         $row_imNom = $resultat_imNom->fetch_assoc();
         $images = glob($GLOBALS['dir'] . $row_imNom["nomFich"], GLOB_BRACE);
         foreach ($images as $image):
-            echo "<a href='details.php?photoId=" . $row_photoId["photoId"] . "'><img src='" . $image . "' hspace = '10' border = '5'/></a>";
+            echo "<a href='details.php?photoId=" . $row_photoId["photoId"] . "'><img src='" . $image . "' class = 'assets'/></a>";
         endforeach;
     }
+    echo "</div>";
 }
 
 ?>
