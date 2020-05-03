@@ -22,8 +22,17 @@ ul {
 }
 
 .head{
-	background-image:url(img/accueil_bis.jpg);
+	background-image:url(img/accueil_bis2.jpg);
+	background-repeat: no-repeat;
+	background-position: bottom;
+	background-size: cover;
 }
+
+.head h1, h2, h3, h4, h5, h6 {
+	color:black;
+	text-shadow: 3px 0px #FECA5D;
+}
+
 
 .head h6 {
 	margin-bottom:0px;

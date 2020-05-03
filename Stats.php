@@ -17,7 +17,7 @@ $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
   <link rel="stylesheet" href="bootstrap.css">
   <link rel="stylesheet" href="accueil.css">
 </head>
-<div style="background-image:url(img/accueil_bis.jpg);" ><B><h1>PhotouCat_Admin</h1></B><br>
+<div class="head" ><B><h1>PhotouCat_Admin</h1></B><br>
 
 <?php if (!isset($_SESSION['pseudo'])) {
     echo "Please Login again";

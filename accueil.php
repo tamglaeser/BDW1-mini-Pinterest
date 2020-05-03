@@ -14,7 +14,7 @@ $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
 $dir = "assets/images/";
 
 ?>
-<div style="background-image:url(img/accueil_bis.jpg);" ><B><h1>PhotoCat</h1></B><br> </div>
+<div class="head" ><B><h1>PhotoCat</h1></B><br> </div>
 	<nav class="crumbs">
 	<form name="accueil" action="accueil.php" method="POST">
 	   <button style="float: left;" type="submit" name="accueil" class="btn btn-success">

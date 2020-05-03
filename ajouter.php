@@ -26,7 +26,7 @@ $dir = "assets/images/";
 </head>
 <body>
 
-<div style="background-image:url(img/accueil_bis.jpg);" ><B><h1>PhotouCat</h1></B><br> 
+<div class="head"><B><h1>PhotouCat</h1></B><br> 
   <?php if (!isset($_SESSION['pseudo'])) {
         echo "Please Login again";
         header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/connexion.php');

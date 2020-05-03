@@ -75,9 +75,16 @@ $dir = "assets/images/";
             <button style="float: right;" type="submit" name="ajouter" class="btn btn-success">
                 Ajouter une Photo
             </button>
-        </div>
-    </form>
+	</div>
 
+<div class="Stats">
+                <button style="float: left;" type="submit" name="Stats" class="btn btn-success">
+                Statistique
+                </button>
+                </div>
+
+    </form>
+</nav>
     <?php
 /**
 if (isset($_GET['catId'])) {
@@ -118,12 +125,7 @@ if (isset($_POST['Stats'])) {
     exit();
 }
  ?>
-		<form name="Stats" action="Stats.php" method="POST">
-		<button style="float: left;" type="submit" name="Stats" class="btn btn-success">
-		Statistique
-		</button>
-		</form>
-	</nav>
+	
 <form action="page_administrateur.php?pseudo=<?php $pseudo?>" method="post">
 <table class="menu">
 <tr>
