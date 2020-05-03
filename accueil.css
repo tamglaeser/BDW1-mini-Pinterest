@@ -133,9 +133,13 @@ width: 1%;
 	display: block;
 }
 
-.imageDiv{
+#imageDiv{
 	position:relative !important;
 	left:1em !important;
+}
+
+#descriptionTab{
+	position: relative;
 }
 
 /* Change color of dropdown links on hover */

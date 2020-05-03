@@ -72,9 +72,9 @@ function details($ImageId, $link) {?>
     $resultat_imNom = executeQuery($link, "SELECT nomFich FROM Photo WHERE photoId = $ImageId");
     $row_imNom = $resultat_imNom->fetch_assoc();
     $images = glob($GLOBALS['dir'] . $row_imNom["nomFich"], GLOB_BRACE);?>
-	<div class="row justify-content-center " style="margin:1em;padding:0;">
+	<!--<div class="row justify-content-center " style="margin:1em;padding:0;">
    <div  class="row justify-content-start p-2">
-   <div class="col-4" >
+   <div class="col-4" >-->
 
        <div id="imageDiv">
    <?php foreach ($images as $image):
@@ -90,9 +90,9 @@ function details($ImageId, $link) {?>
     $resultat_cat_Id = executeQuery($link, "SELECT catId FROM Photo WHERE photoId = $ImageId");
     $row_cat_id = $resultat_cat_Id->fetch_assoc();
     ?>
-	</div>
-	<div class="col-8" >
-    <table>
+	<!--</div>
+	<div class="col-8" >-->
+    <table id="descriptionTab">
         <tr>
             <th>Description</th>
             <td>
@@ -134,11 +134,10 @@ function details($ImageId, $link) {?>
             </td>
         </tr>
     </table>
-	</div>
-	</div>
-	</div>
-	</br></br>
-		<?php 
+        <!--</div>
+        </div>
+        </div>-->
+			<?php
 	if(empty($_SESSION['pseudo']) && empty($_SESSION['motdepasse'])){
 		
 	}else{
