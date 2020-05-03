@@ -18,6 +18,21 @@ ul {
 	margin: 30px;
 }
 
+.details{
+        display: grid;
+        grid-template-columns: repeat(2, 5fr);
+        grid-gap: 15px;
+        margin: 30px;
+
+}
+
+.statistiques{
+        display: grid;
+        grid-template-columns: repeat(4, 5fr);
+        grid-gap: 15px;
+        margin: 30px;
+}
+
 .assets{
 	height: 100%;
 	width: 100%;
@@ -34,6 +49,11 @@ ul {
 .menu tr td:first-of-type {
 	text-align: right;
 	border: hidden;
+}
+
+#stat, #stat td, #stat th {
+	border: 1px solid black;
+	border-collapse: collapse;
 }
 
 .head{
@@ -133,14 +153,22 @@ width: 1%;
 	display: block;
 }
 
+.fonctions{
+	float:bottom;
+}
+/*
 #imageDiv{
-	position:relative !important;
-	left:1em !important;
-}
+	float: left;
+}*/
 
-#descriptionTab{
-	position: relative;
+.details img {
+	max-width: 600px;
+	max-height: 600px;
 }
+/*
+#descriptionTab{
+	float:right;
+}*/
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {background-color: #ddd;}

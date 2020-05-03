@@ -56,7 +56,7 @@ $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
         </button>
     </form>
 
-</nav><br>
+</nav><div class="menu">&nbsp;</div>
 
 <?php
 
@@ -66,7 +66,7 @@ if (!isset($_POST['accueil'])) {
 }
 function details($ImageId, $link) {?>
 
-    <h1>Les détails sur cette photo</h1><br><br><p> <p><br><br>
+    <h1>Les détails sur cette photo</h1>
     <?php
 
     $resultat_imNom = executeQuery($link, "SELECT nomFich FROM Photo WHERE photoId = $ImageId");
@@ -75,12 +75,12 @@ function details($ImageId, $link) {?>
 	<!--<div class="row justify-content-center " style="margin:1em;padding:0;">
    <div  class="row justify-content-start p-2">
    <div class="col-4" >-->
-
-       <div id="imageDiv">
+<div class="details">
+      <!-- <div id="imageDiv">-->
    <?php foreach ($images as $image):
-        echo "<img src='" . $image . "'hspace = '10' border = '5'/>";
+        echo "<img src='" . $image . "'/>";
     endforeach;
-   ?></div><?php
+   ?><!--</div>--><?php
     $resultat_description = executeQuery($link, "SELECT description FROM Photo WHERE photoId = $ImageId");
     $row_description = $resultat_description->fetch_assoc();
 
@@ -92,7 +92,7 @@ function details($ImageId, $link) {?>
     ?>
 	<!--</div>
 	<div class="col-8" >-->
-    <table id="descriptionTab">
+    <table>
         <tr>
             <th>Description</th>
             <td>
@@ -135,19 +135,15 @@ function details($ImageId, $link) {?>
         </tr>
     </table>
         <!--</div>
-        </div>
         </div>-->
-			<?php
+	<?php
 	if(empty($_SESSION['pseudo']) && empty($_SESSION['motdepasse'])){
 		
 	}else{
 		if(getUserAdmin($_SESSION['pseudo'], $_SESSION['motdepasse'], $link) == 1) { 
 			$pseudo = $_SESSION['pseudo'];?>
-			<div class="row justify-content-center p-2">
-			<a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/sup.php"> supprimer la photo</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-
-			<a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/modif.php"> modifier les détails</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-			</div>
+			<a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/sup.php"> supprimer la photo</a>
+			<a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/modif.php"> modifier les détails</a>
 			<?php
 	
 		}else{
@@ -155,10 +151,8 @@ function details($ImageId, $link) {?>
 			if(getUserUtil($_SESSION['pseudo'], $_SESSION['motdepasse'], $link) == 1) { 
 
 		
-			?>	<div class="row justify-content-center p-2">
-				    <a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/sup.php"> supprimer la photo</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-				    <a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/modif.php"> modifier les détails </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-
+			?><div>
+				    <a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/sup.php"> supprimer la photo</a>
                     <?php
                     $resultat_statut = executeQuery($link, "SELECT p.statut FROM Photo p WHERE p.photoId = " . $_SESSION['photoId']);
                     while ($row_statut = $resultat_statut->fetch_assoc()) {
@@ -167,20 +161,20 @@ function details($ImageId, $link) {?>
 
                     if ($stat == 'montre') {
                         ?>
-                        <a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/cacher.php?ftn=cacher"> cacher la photo </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+                        <br><a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/cacher.php?ftn=cacher"> cacher la photo </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
                     <?php }
 
                     else if ($stat == 'cache') {
                         ?>
-                        <a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/cacher.php?ftn=afficher"> afficher la photo </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-                    <?php } ?>
-				</div>
+                        <br><a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/cacher.php?ftn=afficher"> afficher la photo </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+		    <?php } ?>
+		</div><a href="https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/modif.php"> modifier les détails </a>
 				<?php
 				
 					
 			}
 		}
-	}
+	} echo "</div>";
 
 			
 

@@ -59,12 +59,12 @@ else { //Starting this else one [else1]
 		</button>
 		</div>
     </form>
-</nav></br>
+</nav><div class="menu">&nbsp;</div>
 
 
 
 
-<h1> Page de Statistiques</h1><br><br><br>
+<h1> Page de Statistiques</h1>
 <?php  $res = executeQuery($conn,"SELECT utilPseudo FROM utilisateur ");
 //$row_res = $res->fetch_assoc();
 $users = array();
@@ -110,13 +110,14 @@ while($row1 = mysqli_fetch_assoc($re1)) {
 
 $array=getConnectedUsersUtil($conn);
 ?>
-<table>
+<div class="statistiques">
+<table id="stat">
     <tr>
         <th>le nombre d'utilisateur inscrit: </th>
         <td><?php echo $a; ?></td>
     </tr>
 </table>
-<table>
+<table id="stat">
     <tr>
         <th>nom utilisateur </th>
         <td>nombre de photo</td>
@@ -129,7 +130,7 @@ $array=getConnectedUsersUtil($conn);
     <?php }?>
     <tr>
 </table>
-<table>
+<table id="stat">
     <th>nom Categorie </th>
     <td>nombre de photo</td>
     </tr>
@@ -140,7 +141,7 @@ $array=getConnectedUsersUtil($conn);
         </tr>
     <?php }?>
 </table>
-<table>
+<table id="stat">
     <th>utilisateur connecte </th>
     </tr>
     <?php for($j=0; $j< sizeof($array); $j++){?>
@@ -150,7 +151,7 @@ $array=getConnectedUsersUtil($conn);
     <?php }?>
 </table>
 
-
+</div>
 
 
 
