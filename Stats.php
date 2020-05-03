@@ -17,7 +17,7 @@ $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
   <link rel="stylesheet" href="bootstrap.css">
   <link rel="stylesheet" href="accueil.css">
 </head>
-<div class="head" ><B><h1>PhotouCat_Admin</h1></B><br>
+<table class="head" ><tr><td><h1>PhotouCat_Admin</h1>
 
 <?php if (!isset($_SESSION['pseudo'])) {
     echo "Please Login again";
@@ -39,14 +39,14 @@ else { //Starting this else one [else1]
     ?></h5>
         <h6> votre temps de connexion restant :  <?php
             echo $temp;
-            ?></h6>
+            ?></h6></td>
 
                 <?php
                 }
                 }
 
                 ?>
-</div>
+<td><img src="img/accueil.jpg"/></td></tr></table>
 
 <nav class="crumbs">
 	<form name="accueil_stats" action="Stats.php" method="POST">

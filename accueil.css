@@ -1,6 +1,6 @@
 nav {
-    border-top: 1px solid black;
-    display: grid;
+    border: hidden;
+    /*display: grid;*/
 }
 
 
@@ -11,7 +11,7 @@ ul {
 }
 
 .menu{
-	width: -webkit-fill-available;
+	width: 100%;
 	margin: 5px 0px 5px 0px;
 	border: hidden;
 }
@@ -22,10 +22,32 @@ ul {
 }
 
 .head{
-	background-image:url(img/accueil_bis2.jpg);
-	background-repeat: no-repeat;
+	/*background-repeat: no-repeat;
 	background-position: bottom;
-	background-size: cover;
+	background-size: cover;*/
+	background-color: #FECD4D;
+	width: 100%;
+	margin: 0px;
+	border-width:0px 0px 1px 0px;
+
+}
+
+.head td{
+	border-width:0px 0px 1px 0px;
+}
+
+.head td:first-of-type{
+	padding-left: 10px;
+	
+}
+
+.head td:last-of-type {
+width: 1%;
+}
+
+.head img {
+	max-width: 170px;
+        height: auto;
 }
 
 .head h1, h2, h3, h4, h5, h6 {

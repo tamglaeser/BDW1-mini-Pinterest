@@ -18,7 +18,8 @@ session_start();
   <link rel="stylesheet" href="accueil.css">
 </head>
 <body>
-<div style="background-image:url(img/accueil_bis.jpg);" ><B><h1>PhotouCat</h1></B><br> </div>
+<table class="head" ><tr><td><h1>PhotouCat</h1></td>
+	<td><img src="img/accueil.jpg"/></td></tr></table>
 <nav class="crumbs">
 	<form name="accueil" action="accueil.php" method="POST">
 	   <button style="float: left;" type="submit" name="accueil" class="btn btn-success">
