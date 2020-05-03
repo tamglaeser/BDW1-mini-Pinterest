@@ -22,7 +22,7 @@ $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
     <link rel="stylesheet" href="accueil.css">
 </head>
 <body>
-<div class="head" ><B><h1>PhotoCat</h1></B><br>
+<table class="head" ><tr><td><h1>PhotoCat</h1>
 <!-- MARINE -->
 <?php
     if (!isset($_SESSION['pseudo'])) {
@@ -42,11 +42,11 @@ $conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
             <h5>Welcome
                 <?php echo $_SESSION['pseudo']; ?></h5>
             <h6> votre temps de connexion restant :  <?php
-                echo $temp; ?></h6>
+                echo $temp; ?></h6></td>
                     <?php
         }
     } ?>
-</div>
+<td><img src="img/accueil.jpg"/></td></tr></table>
 <!-- MARINE -->
 <nav class="crumbs">
 

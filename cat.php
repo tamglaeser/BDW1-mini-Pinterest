@@ -15,7 +15,7 @@ $conn = getConnection($dbHost, $dbUser, $dbPwd, $dbName);
 $dir = "assets/images/";
 
 ?>
-<div class="head" ><B><h1>PhotoCat Admin</h1></B><br>
+<table class="head" ><tr><td><h1>PhotoCat Admin</h1>
     <?php if (!isset($_SESSION['pseudo'])) {
         echo "Please Login again";
         header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/connexion.php');
@@ -36,14 +36,14 @@ $dir = "assets/images/";
         ?></h5>
             <h6> votre temps de connexion restant :  <?php
                 echo $temp;
-                ?></h6>
+                ?></h6></td>
 
                     <?php
                     }
                     }
 
                     ?>
-</div>
+<td><img src="img/accueil.jpg"/></td></tr></table>
 <nav class="crumbs">
     <form name="accueil" action="page_administrateur.php?pseudo<?php $_SESSION['pseudo']?>" method="POST">
         <button style="float: left;" type="submit" name="accueil" class="btn btn-success">
