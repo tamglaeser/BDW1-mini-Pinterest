@@ -1,10 +1,10 @@
 # Projet Final BDW1 : Application mini-Pinterest
 
-Une page web pour photos organisées en catégories. On se pourrait connecter soit comme utilisateur soit comme administrateur. Tous les deux puevent supprimer,
+Une page web pour photos organisées en catégories. On peut se connecter soit comme utilisateur soit comme administrateur. Tous les deux peuvent supprimer,
 modifier, et ajouter des photos; l'utilisateur peut également cacher ses photos et voir son compte et l'administrateur peut voir les
-statistiques de tous les utilisateurs ainsi que ajouter une categorie. On peut aussi voir les details des photos. Enfin, c'est tout
-basé sur une base de données avec une tableau Photo(<ins>photoId</ins>, nomFich, description, &#35;catId, &#35;utilId, statut), une tableau 
-Categorie(<ins>catId</ins>, nomCat), une tableau administrateur(<ins>adminId</ins>, adminPseudo, adminMdp) et une tableau utilisateur(<ins>utilId</ins>, utilPseudo, utilMdp, etat).
+statistiques de tous les utilisateurs ainsi que ajouter une categorie. On peut aussi voir les details des photos. De plus, tout est
+basé sur une base de données avec une table Photo(<ins>photoId</ins>, nomFich, description, &#35;catId, &#35;utilId, statut), une table 
+Categorie(<ins>catId</ins>, nomCat), une table administrateur(<ins>adminId</ins>, adminPseudo, adminMdp) et une table utilisateur(<ins>utilId</ins>, utilPseudo, utilMdp, etat).
 
 Vous pouvez trouver notre présentation [ici](https://docs.google.com/presentation/d/1CnX2UKTs0m4WMiUYSfFnOpbxuXEd_v2zn0E4gZPTQQc/edit?usp=sharing).
 
