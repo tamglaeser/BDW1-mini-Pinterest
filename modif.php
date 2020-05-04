@@ -1,10 +1,15 @@
 <?php 
 
+
 session_start();
 require_once ('bd.php');
 require_once ('administrateur.php');
 require_once ('utilisateur.php');
 require_once ('function.php');
+
+
+$conn = getConnection('localhost', "p1926029", "ef5d0c", "p1926029");
+
 
 $pId = $_SESSION['photoId'];
 $ps = $_SESSION['pseudo'];
@@ -62,8 +67,19 @@ if (isset($_POST['submit'])) {
 
                      ?>
 <td><img src="img/accueil.jpg"/></td></tr></table>
-                     <nav class="crumbs">
-        <?php 
+<nav class="crumbs">
+        <form name="accueil" action="modif.php" method="POST">
+           <button style="float: left;" type="submit" name="accueil" class="btn btn-success">
+            Accueil
+            </button>
+        </form>
+    </nav>
+<div class="menu">&nbsp;</div>
+
+
+
+             <!--       <nav class="crumbs">
+        < ?php 
 	if(empty($_SESSION['pseudo']) && empty($_SESSION['motdepasse'])){
 		echo "<a href='https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/accueil.php'>ACCUEIL</a>";
 	}else{
@@ -79,7 +95,7 @@ if (isset($_POST['submit'])) {
 			}
 		}
 	}
-?>
+?>-->
     </nav>
 <div class="row justify-content-center">
         <div class="block container p-4 m-4 border rounded border-dark" name='block'>
@@ -131,7 +147,24 @@ if (isset($_POST['submit'])) {
 	}
 	
 }
- 
+
+if(isset($_POST['accueil'])){
+                if(getUserAdmin($ps, $pwd, $conn) == 1) {
+                        header('Location: https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_administrateur.php?pseudo='.$ps);
+
+                }else{
+
+                        if(getUserUtil($ps, $pwd, $conn) == 1) {
+                                header('Location:https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/page_utilisateur.php?pseudo='.$ps);
+
+                        }
+                }
+
+}
+
+
+
+
 ?>
 
 </body>
