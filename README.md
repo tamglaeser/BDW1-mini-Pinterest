@@ -1,4 +1,5 @@
-English version
+[English version](#BDW1-Final-Project-Mini-Pinterest-App)  
+[French version](#Projet-Final-BDW1-Application-mini-Pinterest)
 
 # BDW1 Final Project : Mini-Pinterest App
 
@@ -49,7 +50,6 @@ Next we did a `git pull` from GitLab to our directory on [**bdw1.univ-lyon1.fr**
 **Marine Masingarbe** -- *l'Université de Claude Bernard Lyon 1* -- Database and Web Programming: A -- Spring 2020
 
 
-French version
 # Projet Final BDW1 : Application mini-Pinterest
 
 Une page web pour photos organisées en catégories. On peut se connecter soit comme utilisateur soit comme administrateur. Tous les deux peuvent supprimer,
