@@ -1,3 +1,55 @@
+English version
+
+# BDW1 Final Project : Mini-Pinterest App
+
+A web page for organizing photos in categories. One can connect as either a user or an administrator. Both user and aministrator can delete, modify, and add photos; the user can also hide his/her photos and see his/her account information and the administrator can see the statistics of all the users as well as add a category. One can also see the details of each photo. Furthermore, this is based off of a database with the following tables: Photo(<ins>photoId</ins>, nomFich, description, &#35;catId, &#35;utilId, statut), Categorie(<ins>catId</ins>, nomCat), administrateur(<ins>adminId</ins>, adminPseudo, adminMdp), and utilisateur(<ins>utilId</ins>, utilPseudo, utilMdp, etat).
+
+** I have left the table and variable names in their original french, however here is the translation: Photo(<ins>photoId</ins>, fileName, description, &#35;catId, &#35;utilId, status), Category(<ins>catId</ins>, catName), administrator(<ins>adminId</ins>, adminPseudo, adminPwd), and user(<ins>utilId</ins>, utilPseudo, utilPwd, state).
+
+We have begun organizing our program with the style in CSS and the rest in PHP/HTML files.
+
+One can find our presentation [here](https://docs.google.com/presentation/d/1CnX2UKTs0m4WMiUYSfFnOpbxuXEd_v2zn0E4gZPTQQc/edit?usp=sharing).
+
+## To Begin
+
+Click on this link to see [our web page](https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/index.php). Use the following to sign in:
+- username: p1926029
+- password: ef5d0c  
+ 
+
+There's no need for any prerequisited.
+
+## Workflow and Environnement
+
+The program was developed **locally** in the IDE, then we did a `git commit` to our local git repository, and lastly we did a `git push` to [**forge.univ-lyon1.fr**](https://forge.univ-lyon1.fr/p1501149/bdw1_projet).
+Next we did a `git pull` from GitLab to our directory on [**bdw1.univ-lyon1.fr**](https://bdw1.univ-lyon1.fr/) which the web server has access to. Alternatively, one could also simply modify the program using *Vim* on bdw1.univ-lyon1.fr. Finally, FileZilla is another method of transmitting our files *directly* from the local environment to bdw1.univ-lyon1.fr.
+
+- **forge.univ-lyon1.fr**
+  - *GitLab* - Git server
+- **bdw1.univ-lyon1.fr**
+  - Web server
+    - port: 443 -- default for HTTPS
+  - Database
+    - port: 3306 -- default for MariaDB/MySQL
+    - *phpMyAdmin* - to realize and access the database
+  - *Vim* - to edit the program directly on bdw1.univ-lyon1.fr
+- **Local**
+  - *PhpStorm* - JetBrains IDE, to write the program
+  - *FileZilla* - a way to transmit our files to the university's server, from the local environment to bdw1.univ-lyon1.fr  
+- **Local >> bdw1.univ-lyon1.fr**
+  - *Bash* - Unix shell and command language to transmit our files from the local environment to git and to the university's server
+    - *SSH* - connection from the local host to bdw1.univ-lyon1.fr
+    - *Git* - local and on bdw1.univ-lyon1.fr to do git clone, push, and pull from and to forge.univ-lyon1.fr
+
+
+
+## Authors
+
+**Tullia Glaeser** -- *l'Université de Claude Bernard Lyon 1, Tulane University* -- Database and Web Programming: A -- Spring 2020  
+**Marine Masingarbe** -- *l'Université de Claude Bernard Lyon 1* -- Database and Web Programming: A -- Spring 2020
+
+
+French version
 # Projet Final BDW1 : Application mini-Pinterest
 
 Une page web pour photos organisées en catégories. On peut se connecter soit comme utilisateur soit comme administrateur. Tous les deux peuvent supprimer,
