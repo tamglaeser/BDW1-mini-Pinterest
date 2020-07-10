@@ -18,7 +18,7 @@ Click on this link to see [our web page](https://bdw1.univ-lyon1.fr/p1926029/BDW
 
 There's no need for any prerequisited.
 
-## Workflow and Environnement
+## Workflow and Environment
 
 The program was developed **locally** in the IDE, then we did a `git commit` to our local git repository, and lastly we did a `git push` to [**forge.univ-lyon1.fr**](https://forge.univ-lyon1.fr/p1501149/bdw1_projet).
 Next we did a `git pull` from GitLab to our directory on [**bdw1.univ-lyon1.fr**](https://bdw1.univ-lyon1.fr/) which the web server has access to. Alternatively, one could also simply modify the program using *Vim* on bdw1.univ-lyon1.fr. Finally, FileZilla is another method of transmitting our files *directly* from the local environment to bdw1.univ-lyon1.fr.
