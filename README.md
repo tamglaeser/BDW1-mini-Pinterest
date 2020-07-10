@@ -47,7 +47,7 @@ Next we did a `git pull` from GitLab to our directory on [**bdw1.univ-lyon1.fr**
 **Tullia Glaeser** -- *l'Université de Claude Bernard Lyon 1, Tulane University* -- Database and Web Programming: A -- Spring 2020  
 **Marine Masingarbe** -- *l'Université de Claude Bernard Lyon 1* -- Database and Web Programming: A -- Spring 2020
 
-<p style="font-size:10px;"> \*I have left the table and variable names in their original french, however here is the translation: Photo(<ins>photoId</ins>, fileName, description, &#35;catId, &#35;utilId, status), Category(<ins>catId</ins>, catName), administrator(<ins>adminId</ins>, adminPseudo, adminPwd), and user(<ins>utilId</ins>, utilPseudo, utilPwd, state).<a name="translation"></a></p>
+<sub> \*I have left the table and variable names in their original french, however here is the translation: Photo(<ins>photoId</ins>, fileName, description, &#35;catId, &#35;utilId, status), Category(<ins>catId</ins>, catName), administrator(<ins>adminId</ins>, adminPseudo, adminPwd), and user(<ins>utilId</ins>, utilPseudo, utilPwd, state).<a name="translation"></a></sub>
 
 
 # Projet Final BDW1 : Application mini-Pinterest
