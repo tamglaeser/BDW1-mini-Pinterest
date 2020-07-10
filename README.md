@@ -7,16 +7,16 @@ A web page for organizing photos in categories. One can connect as either a user
 
 We have begun organizing our program with the style in CSS and the rest in PHP/HTML files.
 
-One can find our presentation [here](https://docs.google.com/presentation/d/1CnX2UKTs0m4WMiUYSfFnOpbxuXEd_v2zn0E4gZPTQQc/edit?usp=sharing).
+One can find our presentation [here](https://docs.google.com/presentation/d/1CnX2UKTs0m4WMiUYSfFnOpbxuXEd_v2zn0E4gZPTQQc/edit?usp=sharing)(in French).
 
 ## To Begin
 
-Click on this link to see [our web page](https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/index.php). Use the following to sign in:
+Click on this link to see [our web page](https://bdw1.univ-lyon1.fr/p1926029/BDW1-ProjetFinale/bdw1_projet/index.php)(in French). Use the following to sign in:
 - username: p1926029
 - password: ef5d0c  
  
 
-There's no need for any prerequisited.
+There's no need for any prerequisites.
 
 ## Workflow and Environment
 
