@@ -3,9 +3,7 @@
 
 # BDW1 Final Project : Mini-Pinterest App
 
-A web page for organizing photos in categories. One can connect as either a user or an administrator. Both user and aministrator can delete, modify, and add photos; the user can also hide his/her photos and see his/her account information and the administrator can see the statistics of all the users as well as add a category. One can also see the details of each photo. Furthermore, this is based off of a database with the following tables: Photo(<ins>photoId</ins>, nomFich, description, &#35;catId, &#35;utilId, statut), Categorie(<ins>catId</ins>, nomCat), administrateur(<ins>adminId</ins>, adminPseudo, adminMdp), and utilisateur(<ins>utilId</ins>, utilPseudo, utilMdp, etat).
-
-** I have left the table and variable names in their original french, however here is the translation: Photo(<ins>photoId</ins>, fileName, description, &#35;catId, &#35;utilId, status), Category(<ins>catId</ins>, catName), administrator(<ins>adminId</ins>, adminPseudo, adminPwd), and user(<ins>utilId</ins>, utilPseudo, utilPwd, state).
+A web page for organizing photos in categories. One can connect as either a user or an administrator. Both user and aministrator can delete, modify, and add photos; the user can also hide his/her photos and see his/her account information and the administrator can see the statistics of all the users as well as add a category. One can also see the details of each photo. Furthermore, this is based off of a database with the following tables: Photo(<ins>photoId</ins>, nomFich, description, &#35;catId, &#35;utilId, statut), Categorie(<ins>catId</ins>, nomCat), administrateur(<ins>adminId</ins>, adminPseudo, adminMdp), and utilisateur(<ins>utilId</ins>, utilPseudo, utilMdp, etat)[\*](#translation).
 
 We have begun organizing our program with the style in CSS and the rest in PHP/HTML files.
 
@@ -48,6 +46,8 @@ Next we did a `git pull` from GitLab to our directory on [**bdw1.univ-lyon1.fr**
 
 **Tullia Glaeser** -- *l'Université de Claude Bernard Lyon 1, Tulane University* -- Database and Web Programming: A -- Spring 2020  
 **Marine Masingarbe** -- *l'Université de Claude Bernard Lyon 1* -- Database and Web Programming: A -- Spring 2020
+
+##### \*I have left the table and variable names in their original french, however here is the translation: Photo(<ins>photoId</ins>, fileName, description, &#35;catId, &#35;utilId, status), Category(<ins>catId</ins>, catName), administrator(<ins>adminId</ins>, adminPseudo, adminPwd), and user(<ins>utilId</ins>, utilPseudo, utilPwd, state).<a name="translation"></a>
 
 
 # Projet Final BDW1 : Application mini-Pinterest
