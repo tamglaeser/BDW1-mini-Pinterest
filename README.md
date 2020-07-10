@@ -1,5 +1,5 @@
-[English version](#BDW1-Final-Project-Mini-Pinterest-App)  
-[French version](#Projet-Final-BDW1-Application-mini-Pinterest)
+[English version](#bdw1-final-project--mini-pinterest-app)  
+[French version](#Projet-Final-BDW1--Application-mini-Pinterest)
 
 # BDW1 Final Project : Mini-Pinterest App
 
